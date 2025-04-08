@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدينة العبور | هايبر ماركت</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiperJs/swiper-bundle.min.css" />
+
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Link File CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Hypermarket CSS -->
+    <link rel="stylesheet" href="css/hypermarket.css">
+</head>
+<body class="menu-side-in-bag">
+
+    <header>
+        <!-- نفس الهيدر الموجود في الصفحة الرئيسية -->
+        <div class="header-top">
+            <div class="contanier">
+                <p>عبور لخدمتك | خدمات متكاملة بضغطة زر</p>
+                <div class="link-top-heder">
+                    <a href="my-account.html">حسابي</a>
+                    <a href="favorites.html">قائمه المفضله</a>
+                    <a href="Login.html">تسجيل الدخول</a>
+                    <a href="bookings-and-follow-up.html">الحجوزات والمتابعة</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-info">
+            <div class="contanier">
+                <img src="img/scan_12580910.png" alt="">
+
+                <div class="search-bar">
+                    <form action="">
+                        <input type="search" placeholder="ابحث عن طلبك...">
+                        <button class="btn-srch">بحث</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="price">
+                        <p>السلة :</p>
+                        <span>255.00 جنيه</span>
+                    </div>
+                    <a href="mycart.html"><i class="fa-solid fa-bag-shopping"></i> <span class="count-in-card">2</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="contanier">
+                <i id="open-side" class="fa-solid fa-bars"></i>
+                <ul class="nav-links">
+                    <li><a href="index.html"> الرئيسية</a></li>
+                    <li>
+                        <a href="Services.html">الخدمات </a>
+                        <div class="drobdwon">
+                            <ul><li><a href="Services.html">الخدمات</a></li></ul>
+                            <ul><li><a href="pharmacy.html">صيدليات</a></li></ul>
+                            <ul><li><a href="hospitals.html">مستشفيات</a></li></ul>
+                            <ul><li><a href="hypermarket.html">هايبر ماركت</a></li></ul>
+                            <ul><li><a href="labs.html">معامل تحاليل</a></li></ul>
+                            <ul><li><a href="restaurants.html">مطاعم</a></li></ul>
+                            <ul><li><a href="car-maintenance.html">صيانة سيارات</a></li></ul>
+                        </div>
+                    </li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html">المميزات</a></li>
+                    <li><a href="Offers.html">العروض</a></li>
+                    <li><a href="Products.html">المنتجات</a></li>
+                </ul>
+                <a href="Register.html" class="sign-in-btn"><i class="fa-solid fa-user-plus"></i> إنشاء حساب </a>
+                <a href="control/Trader Control Panel/admin.html" class="merchant-btn"><i class="fa-solid fa-store"></i> لوحة صاحب الخدمة </a>
+            </div>
+        </div>
+        <section class="slide-sec contanier">
+            <div id="side-bar" class="side-bar">
+                <h5><i class="fa-solid fa-bars"></i> التسوق حسب القسم</h5>
+                <img class="logo-slide" src="img/scan_12580910.png" alt="">
+                <i id="btn-close" class="fa-solid fa-bars fa-times"></i>
+                <ul class="side-links">
+                    <a href="#"><li>الرئيسية</li></a>
+                    <a href="#"><li>الخدمات</li></a>
+                    <a href="#"><li>من نحن</li></a>
+                    <a href="#"><li>المميزات</li></a>
+                    <a href="#"><li>العروض</li></a>
+                    <a href="#"><li>المنتجات</li></a>
+                    <a href="#"><li>التاجر</li></a>
+                    <a href="#"><li>إكسسوارات</li></a>
+                    <a href="#"><li>مستحضرات التجميل</li></a>
+                    <a href="#"><li>التلفزيونات</li></a>
+
+                </ul>
+
+            </div>
+            <div class="slide">
+                <div class="slide-swp swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-slide1">
+                            <img src="img/hypermarket-1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-slide2">
+                            <img src="img/hypermarket-2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-slide3">
+                            <img src="img/hypermarket-3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-slide3">
+                            <img src="img/hypermarket-4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-slide3">
+                            <img src="img/hypermarket-5.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+            </div>
+        </section>
+    </header>
+
+    <section class="top-banner">
+        <h3>ابحث عن هايبر ماركتك المفضل</h3>
+        <p>اختر من بين مجموعة من الهايبر ماركت القريبة لك وتمتع بأفضل العروض.</p>
+
+        <div class="info-box">
+            <p>حدد الهايبر ماركت من القائمة لعرض المنتجات والعروض المتاحة</p>
+        </div>
+    </section>
+
+    <section class="hypermarket-section">
+        <!-- المنطقة اليمنى - معلومات الهايبر ماركت وفوقها الفلتر -->
+        <aside class="right-sidebar">
+            <div class="hypermarket-details">
+                <div class="hypermarket-image">
+                    <img id="hypermarketImg" src="img/default-hypermarket.jpg" alt="صورة الهايبر ماركت">
+                </div>
+                <h2 id="hypermarketName">اسم الهايبر ماركت</h2>
+                <p id="hypermarketDescription">وصف الهايبر ماركت يظهر هنا عند اختيار هايبر ماركت معين.</p>
+            </div>
+
+            <!-- فلتر التصفية -->
+            <div class="filter-sidebar">
+                <h3>تصفية النتائج</h3>
+                <div class="filter-group">
+                    <label for="priceRange">نطاق السعر:</label>
+                    <input type="range" id="priceRange" min="0" max="10000" value="100">
+                    <div class="price-display" id="priceDisplay">السعر: 100</div>
+                </div>
+                <div class="filter-group">
+                    <label for="category">الفئة:</label>
+                    <select id="category">
+                        <option value="all">الكل</option>
+                        <option value="fruits-vegetables">الفواكه والخضروات</option>
+                        <option value="meat-poultry">اللحوم والدواجن</option>
+                        <option value="seafood">الأسماك والمأكولات البحرية</option>
+                        <option value="dairy-cheese">الألبان والأجبان</option>
+                        <option value="bakery-pastry">المخبوزات والمعجنات</option>
+                        <option value="staples">المواد التموينية (زيوت، سكر، أرز، دقيق...)</option>
+                        <option value="legumes-nuts">البقوليات والمكسرات</option>
+                        <option value="sweets-chocolates">الحلويات والشوكولاتة</option>
+                        <option value="beverages-juices">المشروبات والعصائر</option>
+                        <option value="cleaning-supplies">المنظفات والمطهرات</option>
+                        <option value="cleaning-tools">أدوات التنظيف</option>
+                        <option value="paper-products">الورقيات (مناديل، فوط...)</option>
+                        <option value="laundry-care">العناية بالملابس والغسيل</option>
+                        <option value="personal-care">مستحضرات التجميل والعناية بالبشرة</option>
+                        <option value="hair-care">العناية بالشعر</option>
+                        <option value="perfumes">العطور والمزيلات</option>
+                        <option value="shaving-tools">أدوات الحلاقة والعناية الرجالية</option>
+                        <option value="oral-care">العناية بالأسنان والفم</option>
+                        <option value="medical-supplies">المستلزمات الطبية والصحية</option>
+                        <option value="baby-products">الحفاضات والمناديل المبللة</option>
+                        <option value="baby-food">الحليب الصناعي والطعام الخاص بالأطفال</option>
+                        <option value="baby-skin-hair">العناية بالبشرة والشعر للأطفال</option>
+                        <option value="feeding-supplies">مستلزمات التغذية والزجاجات</option>
+                        <option value="pet-food">طعام الحيوانات الأليفة</option>
+                        <option value="pet-care">مستلزمات العناية والنظافة</option>
+                        <option value="pet-toys">ألعاب الحيوانات</option>
+                        <option value="kitchen-tools">أدوات المطبخ والطهي</option>
+                        <option value="dinnerware">الأواني والأطباق</option>
+                        <option value="tea-coffee">مستلزمات الشاي والقهوة</option>
+                        <option value="food-containers">حافظات الطعام</option>
+                        <option value="kitchen-appliances">الأدوات الكهربائية للمطبخ</option>
+                        <option value="personal-health">الأجهزة الصحية والعناية الشخصية</option>
+                        <option value="batteries-accessories">البطاريات والإكسسوارات</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="availability">التوفر:</label>
+                    <select id="availability">
+                        <option value="all">الكل</option>
+                        <option value="in-stock">متوفر</option>
+                        <option value="out-of-stock">غير متوفر</option>
+                    </select>
+                </div>
+                <div class="filter-group search-bar">
+                    <label for="search">بحث عن منتج:</label>
+                    <input type="text" id="search" placeholder="أدخل اسم المنتج...">
+                </div>
+            </div>
+        </aside>
+
+        <!-- المنطقة اليسرى - اختيار الهايبر ماركت والمنتجات -->
+        <div class="main-content">
+            <div class="hypermarket-filter">
+                <h3>اختر هايبر ماركتك</h3>
+                <select id="hypermarketFilter">
+                    <option value="0">اختر هايبر ماركت</option>
+                    <option value="1">هايبر ماركت الراية</option>
+                    <option value="2">هايبر ماركت الفرجاني</option>
+                    <option value="3">هايبر ماركت المحلاوي</option>
+                </select>
+            </div>
+
+            <!-- كروت المنتجات -->
+            <div class="hypermarket-products" id="hypermarketProducts">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/product1.jpg" alt="تفاح">
+                        <span class="discount">خصم 10%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>تفاح</h3>
+                        <p class="product-description">فاكهة طازجة وغنية بالفيتامينات.</p>
+                        <div class="price">
+                            <span class="original-price">25 جنيه</span>
+                            <span class="discounted-price">22.5 جنيه</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-favorite"><i class="fa-regular fa-heart"></i></button>
+                            <button class="add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="slider-container-custom">
+        <!-- النسخة الأولى من السلايدر -->
+        <div class="slide">
+            <div class="slide-swp swiper mySwiper1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/slide1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/slide2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/slide3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/slide4.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/99.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <!-- النسخة الثانية من السلايدر -->
+        <div class="slide">
+            <div class="slide-swp swiper mySwiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/slide1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/slide2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/slide3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/slide4.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/99.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <!-- النسخة الثالثة من السلايدر -->
+        <div class="slide">
+            <div class="slide-swp swiper mySwiper3">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/slide1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/slide2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/slide3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/slide4.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/99.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="deals contanier swiper mySwiper">
+
+        <div class="section-head">
+            <h4>عروض <span> ومنتجات </span> </h4>
+        </div>
+        <div class="boxs swiper-wrapper">
+
+            <div class="box product-item swiper-slide">
+              <a href="#">
+                <div class="product-btn">
+                <ul class="product-action">
+                    <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
+                </ul>
+                </div>
+                <div class="div-img">
+                <span class="discount">34%</span>
+                <img src="img/product-14.jpg" class="img-product">
+                <img src="img/product-2.jpg" class="hover-img">
+                </div>
+                <div class="content">
+                <a href="buy product.html" class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="price">
+                    <span>2500.00 جنيه</span>
+                    <del>2600.00 جنيه</del>
+                </div>
+                <p class="product-parg">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
+                <h4>إسرع! العرض ينتهي في:</h4>
+
+                <ul class="countdown">
+                    <li><span>0</span> أيام</li>
+                    <li><span>19</span> ساعات</li>
+                    <li><span>54</span> دقائق</li>
+                    <li><span>39</span> ثواني</li>
+                </ul>
+
+                </div>
+              </a>
+            </div>
+            <div class="box product-item swiper-slide">
+                <a href="#">
+                  <div class="product-btn">
+                  <ul class="product-action">
+                      <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                      <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
+                      <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
+                  </ul>
+              </div>
+              <div class="div-img">
+                  <span class="discount">34%</span>
+                  <img src="img/product-13.jpg" class="img-product">
+                  <img src="img/product-2.jpg" class="hover-img">
+              </div>
+              <div class="content">
+                  <a href="buy product.html" class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
+                  <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half-stroke"></i>
+                  </div>
+                  <div class="price">
+                      <span>2500.00 جنيه</span>
+                      <del>2600.00 جنيه</del>
+                  </div>
+                  <p class="product-parg">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
+                  <h4>إسرع! العرض ينتهي في:</h4>
+
+                  <ul class="countdown">
+                      <li><span>0</span> أيام</li>
+                      <li><span>19</span> ساعات</li>
+                      <li><span>54</span> دقائق</li>
+                      <li><span>39</span> ثواني</li>
+                  </ul>
+
+              </div>
+                </a>
+              </div>
+
+              <div class="box product-item swiper-slide">
+                <a href="#">
+                  <div class="product-btn">
+                  <ul class="product-action">
+                      <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                      <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
+                      <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
+                  </ul>
+              </div>
+              <div class="div-img">
+                  <span class="discount">34%</span>
+                  <img src="img/product-9.jpg" class="img-product">
+                  <img src="img/product-2.jpg" class="hover-img">
+              </div>
+              <div class="content">
+                  <a href="buy product.html" class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
+                  <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half-stroke"></i>
+                  </div>
+                  <div class="price">
+                      <span>2500.00 جنيه</span>
+                      <del>2600.00 جنيه</del>
+                  </div>
+                  <p class="product-parg">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
+                  <h4>إسرع! العرض ينتهي في:</h4>
+
+                  <ul class="countdown">
+                      <li><span>0</span> أيام</li>
+                      <li><span>19</span> ساعات</li>
+                      <li><span>54</span> دقائق</li>
+                      <li><span>39</span> ثواني</li>
+                  </ul>
+
+              </div>
+                </a>
+              </div>
+
+              <div class="box product-item swiper-slide">
+                <a href="#">
+                  <div class="product-btn">
+                  <ul class="product-action">
+                      <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                      <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
+                      <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
+                  </ul>
+              </div>
+              <div class="div-img">
+                  <span class="discount">34%</span>
+                  <img src="img/product-8.jpg" class="img-product">
+                  <img src="img/product-2.jpg" class="hover-img">
+              </div>
+              <div class="content">
+                  <a href="buy product.html" class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
+                  <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half-stroke"></i>
+                  </div>
+                  <div class="price">
+                      <span>2500.00 جنيه</span>
+                      <del>2600.00 جنيه</del>
+                  </div>
+                  <p class="product-parg">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
+                  <h4>إسرع! العرض ينتهي في:</h4>
+
+                  <ul class="countdown">
+                      <li><span>0</span> أيام</li>
+                      <li><span>19</span> ساعات</li>
+                      <li><span>54</span> دقائق</li>
+                      <li><span>39</span> ثواني</li>
+                  </ul>
+
+              </div>
+                </a>
+              </div>
+
+        </div>
+
+        <div class="swiper-button-next swiper-btn"></div>
+        <div class="swiper-button-prev swiper-btn"></div>
+    </section>
+
+    <div class="newsletter">
+        <div class="container">
+            <div class="subscribe-content">
+                <div class="text">
+                    <h4>سجل للحصول علي آخر الأخبار</h4>
+                    <p>سجل بالبريد الإلكتروني للحصول علي آخر الأخبار والمنتجات الجديدة</p>
+                </div>
+            </div>
+            <div class="subscribe-form">
+                <form action="">
+                    <input type="email" placeholder="أدخل البريد الإلكتروني هنا للتسجيل" required>
+                    <button class="btn-srch" type="submit">سجل</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contanier">
+            <div class="top-footer">
+                <div class="row">
+                    <img src="img/alpha.png" alt="">
+                    <div class="hotline">
+    
+                        <div class="hotline-text">
+                            <h6>خدمة عملاء 24/7</h6>
+                            <span>(+100) 123 456 7890</span>
+                        </div>
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+    
+                </div>
+                <div class="small-row">
+                    <h6> اعرف المزيد عنا</h6>
+                    <div class="links-row">
+                        <a href="about-ecommerce.html"> <i class="fa-solid fa-angle-left"></i>معلومات عن التسوق الإلكتروني </a>
+                        <a href="shipping-delivery.html"><i class="fa-solid fa-angle-left"></i>الشحن و التوصيل </a>
+                    </div>
+                </div>
+                
+                <div class="small-row">
+                    <h6> تسوق معنا</h6>
+                    <div class="links-row">
+                        <a href="account.html"><i class="fa-solid fa-angle-left"></i>حسابك</a>
+                        <a href="orders.html"><i class="fa-solid fa-angle-left"></i>مشترياتك</a>
+                        <a href="addresses.html"><i class="fa-solid fa-angle-left"></i>عناوينك</a>
+                        <a href="wishlist.html"><i class="fa-solid fa-angle-left"></i>قوائمك</a>
+                    </div>
+                </div>
+                
+                <div class="small-row">
+                    <h6> دعنا نساعدك</h6>
+                    <div class="links-row">
+                        <a href="support.html"><i class="fa-solid fa-angle-left"></i>المساعدة و الدعم</a>
+                        <a href="order-tracking.html"><i class="fa-solid fa-angle-left"></i>تتبع الطلب</a>
+                        <a href="return-policy.html"><i class="fa-solid fa-angle-left"></i>سياسة الاسترجاع</a>
+                        <a href="terms.html"><i class="fa-solid fa-angle-left"></i>الشروط و الأحكام </a>
+                    </div>
+                </div>
+            </div>
+    
+                
+    
+        <div class="bottom-footer">
+            <div class="contanier">
+                <p>Copyright &copy; <span>MOHAMED HASHISH</span> Powered by <span>HASHISH</span></p>
+                <div class="payment">
+                <img src="img/payment-1.png" alt="">
+                <img src="img/payment-2.png" alt="">
+                <img src="img/payment-3.png" alt="">
+                <img src="img/payment-4.png" alt="">
+            </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="swiperJs/swiper-bundle.min.js"></script>
+
+    <!-- Linke File JS -->
+    <script src="js/hypermarket.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,599 @@
+/* التنسيق العام */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    direction: rtl;
+    text-align: right;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Top Banner Styles */
+.top-banner {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #6b73ff 0%, #7A1CAC 100%);
+    color: #fff;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 10%;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.top-banner h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.top-banner p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner-content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.banner-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-top: 20px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.info-box p {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* قسم الصيدلية */
+.pharmacy-section {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+        /* فلتر التصفية في أقصى اليسار */
+        .filter-sidebar {
+            width: 280px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            transition: transform 0.3s ease;
+            position: relative;
+            animation: fadeInUp 1s ease-in-out;
+            margin-top: 50px; /* إضافة مسافة في الأعلى */
+        }
+
+        .filter-sidebar h3 {
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: #007bff;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .filter-group {
+            margin-bottom: 25px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .filter-group input[type="range"],
+        .filter-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .price-display {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+/* الفلتر الخاص بتحديد الصيدلية في المنتصف */
+.main-content {
+    flex: 1;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.pharmacy-filter {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.pharmacy-filter:hover {
+    transform: translateY(-10px);
+}
+
+.pharmacy-filter h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #007bff;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.pharmacy-filter select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pharmacy-filter select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* كروت المنتجات */
+.pharmacy-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 30px);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.15);
+}
+
+.discount {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #22e01c;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.product-info h3 {
+    margin: 15px 0;
+    font-size: 22px;
+    color: #007bff;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.price {
+    margin-bottom: 15px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 16px;
+}
+
+.discounted-price {
+    color: #007bff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.product-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #007bff;
+    padding: 12px 25px;
+    border-radius: 35px;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-actions button:hover {
+    color: #0056b3;
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-actions button:active {
+    color: #003366;
+    transform: scale(0.98);
+}
+
+.product-actions button.add-to-favorites {
+    position: relative;
+}
+
+.product-actions button.add-to-favorites:hover::after {
+    content: "تمت إضافته إلى المفضلة";
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.product-actions button.add-to-favorites::after {
+    opacity: 0;
+}
+
+/* تأثير الزر عند التركيز */
+.product-actions button:focus {
+    outline: none;
+    border: 2px solid #7A1CAC;
+    background-color: rgb(255, 255, 255);
+}
+
+/* صورة الصيدلية واسمها ووصفها في أقصى اليمين */
+.pharmacy-details {
+    width: 280px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.pharmacy-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.pharmacy-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.pharmacy-image img:hover {
+    transform: scale(1.15);
+}
+
+.pharmacy-details h2 {
+    margin: 20px 0 15px;
+    font-size: 28px;
+    color: #007bff;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.pharmacy-details p {
+    font-size: 16px;
+    color: #777;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* تنسيق شريط البحث */
+.search-bar {
+    margin-top: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.search-bar label {
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* تأثيرات الأنيميشن */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* استعلامات الوسائط للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .top-banner {
+        padding: 40px 10px;
+        margin: 0 5%;
+    }
+
+    .banner-content h1 {
+        font-size: 28px;
+    }
+
+    .banner-content p {
+        font-size: 16px;
+    }
+
+    .info-box {
+        margin-top: 10px;
+    }
+
+    .info-box p {
+        font-size: 14px;
+    }
+
+    .pharmacy-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .filter-sidebar, .pharmacy-details {
+        width: 100%;
+    }
+
+    .main-content {
+        flex: none;
+    }
+
+    .pharmacy-filter {
+        padding: 15px;
+    }
+
+    .pharmacy-filter h3 {
+        font-size: 18px;
+    }
+
+    .pharmacy-filter select {
+        font-size: 13px;
+    }
+
+    .pharmacy-products {
+        justify-content: center;
+    }
+
+    .product-card {
+        width: calc(50% - 20px);
+        padding: 15px;
+    }
+
+    .product-image {
+        height: 150px;
+    }
+
+    .product-info h3 {
+        font-size: 18px;
+    }
+
+    .product-description {
+        font-size: 14px;
+    }
+
+    .price {
+        margin-bottom: 10px;
+    }
+
+    .original-price {
+        font-size: 14px;
+    }
+
+    .discounted-price {
+        font-size: 16px;
+    }
+
+    .product-actions button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .pharmacy-details h2 {
+        font-size: 24px;
+    }
+
+    .pharmacy-details p {
+        font-size: 14px;
+    }
+
+    .search-bar input {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-banner {
+        padding: 30px 10px;
+        margin: 0;
+    }
+
+    .banner-content h1 {
+        font-size: 24px;
+    }
+
+    .banner-content p {
+        font-size: 14px;
+    }
+
+    .info-box {
+        margin-top: 5px;
+    }
+
+    .info-box p {
+        font-size: 12px;
+    }
+
+    .pharmacy-filter h3 {
+        font-size: 16px;
+    }
+
+    .pharmacy-filter select {
+        font-size: 12px;
+    }
+
+    .product-card {
+        width: calc(100% - 20px);
+    }
+
+    .product-image {
+        height: 120px;
+    }
+
+    .product-info h3 {
+        font-size: 16px;
+    }
+
+    .product-description {
+        font-size: 12px;
+    }
+
+    .price {
+        margin-bottom: 5px;
+    }
+
+    .original-price {
+        font-size: 12px;
+    }
+
+    .discounted-price {
+        font-size: 14px;
+    }
+
+    .product-actions button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .pharmacy-details h2 {
+        font-size: 20px;
+    }
+
+    .pharmacy-details p {
+        font-size: 12px;
+    }
+
+    .search-bar input {
+        padding: 8px;
+        font-size: 12px;
+    }
+}

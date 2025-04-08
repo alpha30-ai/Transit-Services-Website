@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إنشاء حساب - موقعك</title>
+  <link href="https://fonts.googleapis.com/css?family=Cairo:wght@300;400;700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/Register.css">
+</head>
+<body>
+  <div class="container">
+    <div class="glass-card">
+      <!-- الجزء العلوي: النموذج -->
+      <div class="form-section">
+        <!-- استبدال الشعار بصورة -->
+        <div class="image-container">
+          <img src="img/101282.jpg" alt="صورة الموقع" class="top-image">
+        </div>
+        <h1><i class="fas fa-user-plus"></i> إنشاء حساب جديد</h1>
+        <p>قم بملء الحقول التالية لإنشاء حساب جديد.</p>
+        <form id="registrationForm" action="#" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+                <label for="username">الاسم</label>
+                <div class="input-container">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="username" name="username" placeholder="أدخل اسمك" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <div class="input-container">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="phone">رقم الهاتف</label>
+                <div class="input-container">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="governorate">المحافظة</label>
+                <div class="input-container">
+                    <i class="fas fa-map-marker-alt input-icon"></i>
+                    <input type="text" id="governorate" name="governorate" placeholder="أدخل المحافظة" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="city">المدينة</label>
+                <div class="input-container">
+                    <i class="fas fa-city input-icon"></i>
+                    <input type="text" id="city" name="city" placeholder="أدخل المدينة" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="neighborhood">الحي</label>
+                <div class="input-container">
+                    <i class="fas fa-home input-icon"></i>
+                    <input type="text" id="neighborhood" name="neighborhood" placeholder="أدخل الحي" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group password">
+                <label for="password">كلمة المرور</label>
+                <div class="input-container">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
+                </div>
+            </div>
+            <div class="form-group password">
+                <label for="confirm-password">تأكيد كلمة المرور</label>
+                <div class="input-container">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="تأكيد كلمة المرور" required>
+                </div>
+            </div>
+        </div>
+
+          <div class="form-actions">
+            <label class="checkbox">
+              <input type="checkbox" name="agree-terms" required> أوافق على الشروط والأحكام
+            </label>
+          </div>
+          <button type="submit" class="btn-submit"><i class="fas fa-user-plus"></i> إنشاء الحساب</button>
+        </form>
+        <div class="action-buttons">
+          <a href="login.html" class="btn-secondary"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/Register.js"></script>
+
+</body>
+</html>

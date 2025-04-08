@@ -1,0 +1,318 @@
+/* الألوان الأساسية */
+:root {
+    --primary-color: #8E44AD; /* لون أساسي (بنفسجي) */
+    --secondary-color: #FF7675; /* لون ثانوي (وردي) */
+    --accent-color: #00B894; /* لون مميز (أخضر) */
+    --background-color: #F5F6FA; /* لون خلفية فاتح */
+    --text-color: #2D3436; /* لون نص داكن */
+    --shadow-color: rgba(108, 92, 231, 0.2); /* ظل بنفسجي خفيف */
+    --gradient-primary: linear-gradient(145deg, var(--primary-color), var(--secondary-color)); /* تدرج لوني */
+}
+
+/* التصميم العام */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 12px 24px var(--shadow-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 16px 32px var(--shadow-color);
+}
+
+/* العنوان الرئيسي */
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: var(--primary-color);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-in-out;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* تصميم المنتجات */
+.hypermarket-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    width: 300px; /* Default width for larger screens */
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-in-out;
+    margin-bottom: 25px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(108, 92, 231, 0.1);
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+}
+
+.product-card:hover::before {
+    opacity: 0.3;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px var(--shadow-color);
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.1);
+}
+
+.product-info h3 {
+    margin: 20px 0;
+    font-size: 22px;
+    color: var(--primary-color);
+    font-weight: 700;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.price {
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 16px;
+}
+
+.discounted-price {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.product-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--primary-color);
+    padding: 12px 24px;
+    border-radius: 35px;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.product-actions button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.product-actions button:hover::before {
+    opacity: 0.1;
+}
+
+.product-actions button:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.product-actions button:active {
+    transform: scale(0.98);
+}
+
+.product-actions button.ban-btn {
+    color: var(--accent-color);
+}
+
+.product-actions button.ban-btn:hover {
+    color: #00B894;
+}
+
+/* تصميم الكلمة المفضلة */
+.favorite-word {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+}
+
+.favorite-word::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 60%;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* الرسوم المتحركة */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* التصميم للهواتف */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .hypermarket-products {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .product-card {
+        width: calc(50% - 15px); /* Adjust width to account for gap */
+        margin-bottom: 15px;
+    }
+
+    .product-info h3 {
+        font-size: 18px;
+    }
+
+    .product-description {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 18px;
+    }
+
+    .product-actions button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .favorite-word {
+        font-size: 36px;
+    }
+}
+
+/* تنسيق الزر */
+#deleteAllButton {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 35px;
+    display: block;
+    margin: 0 auto 20px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#deleteAllButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+#deleteAllButton:active {
+    transform: translateY(0);
+}

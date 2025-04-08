@@ -1,0 +1,305 @@
+/* إعدادات عامة */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #2E073F, #000000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #000000;
+    animation: fadeIn 1.5s ease-in-out;
+    direction: rtl; /* جعل النصوص من اليمين إلى اليسار */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.glass-card {
+    display: flex;
+    flex-direction: column; /* جعل العناصر في العمود */
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.form-section {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* إعدادات الصورة في الجزء العلوي */
+.image-container {
+    width: 100%;
+    height: 200px; /* يمكنك تعديل الارتفاع حسب الحجم المطلوب */
+    overflow: hidden;
+}
+
+.top-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* يضمن أن الصورة تغطي كامل الحيز */
+}
+
+
+.site-logo {
+    max-width: 25%;
+    height: auto;
+}
+
+.form-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: right; /* إضافة للـ RTL */
+}
+
+.form-section p {
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 15px;
+    text-align: right; /* إضافة للـ RTL */
+}
+
+/* إضافة RTL للنصوص داخل الحقول */
+.form-group label {
+    text-align: right;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* إضافة مسافة بين الحقول */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+    width: calc(50% - 10px); /* عرض الحقول بجانب بعضها */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px 10px 30px;
+    font-size: 0.9rem;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    color: #000000; /* النص داخل الحقل */
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    color: #000000;
+    transition: color 0.3s; /* تغيير اللون عند التفاعل */
+}
+
+.form-group input:hover,
+.form-group input:focus {
+    border-color: #00CCDD;
+    box-shadow: 0 0 10px rgba(122, 28, 172, 0.3);
+    transform: scale(1.05);
+}
+
+/* تغيير لون الأيقونة والنص عند التأثير */
+.form-group input:hover ~ .input-container .input-icon,
+.form-group input:focus ~ .input-container .input-icon {
+    color: #00CCDD;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, #2E073F, #00CCDD, #AD49E1);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #7A1CAC, #00CCDD, #2E073F);
+    transform: scale(1.05);
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.checkbox input {
+    margin-left: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 2px solid #7A1CAC;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.checkbox input:checked {
+    background-color: #00CCDD;
+    transform: scale(1.1);
+}
+
+.checkbox input:hover {
+    background-color: #AD49E1;
+    transform: scale(1.1);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    color: #fff;
+    background: linear-gradient(135deg, #2E073F, #7A1CAC);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #7A1CAC, #AD49E1);
+    transform: scale(1.05);
+}
+
+/* تعديل على حقل كلمة المرور لجعل عرضه مناسب مع الحقول الأخرى */
+.form-group.password {
+    width: calc(50% - 10px); /* نفس عرض الحقول الأخرى */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .glass-card {
+        flex-direction: column;
+    }
+
+    .form-section, .info-section {
+        padding: 15px;
+    }
+
+    .form-section h1 {
+        font-size: 1.4rem;
+    }
+
+    .form-section p {
+        font-size: 0.8rem;
+    }
+
+    .btn-submit {
+        padding: 8px;
+    }
+
+    .social-buttons a {
+        font-size: 1rem;
+    }
+
+    /* تعديل الحقول لتكون بجانب بعضها في الشاشات الصغيرة */
+    .form-row {
+        flex-direction: column;
+    }
+
+    /* عرض الحقول بجانب بعضها في الشاشات الصغيرة */
+    .form-group.password {
+        width: 48%; /* تغيير الحجم ليظهر بجانب حقل كلمة المرور */
+    }
+
+    .form-group {
+        width: 100%; /* جعل الحقول الأخرى تكون في صف واحد */
+    }
+
+    .site-logo {
+        width: 70%;
+        margin-bottom: 8px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-secondary {
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .glass-card {
+        flex-direction: row;
+    }
+
+    .form-section, .info-section {
+        padding: 30px;
+    }
+
+    .form-section h1 {
+        font-size: 1.6rem;
+    }
+
+    .form-section p {
+        font-size: 0.9rem;
+    }
+
+    .btn-submit {
+        padding: 10px;
+    }
+
+    .social-buttons a {
+        font-size: 1.4rem;
+    }
+
+    .form-row {
+        flex-direction: row;
+    }
+
+    .form-group {
+        width: calc(50% - 10px);
+    }
+}

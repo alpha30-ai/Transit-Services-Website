@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استرداد كلمة المرور - موقعك</title>
+  <link href="https://fonts.googleapis.com/css?family=Cairo:wght@300;400;700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/recovery.css">
+</head>
+<body>
+    <div class="container">
+        <div class="glass-card">
+          <!-- الجزء الأيسر: النموذج -->
+          <div class="form-section">
+            <div class="logo-container">
+              <img src="img/alpha.png" alt="شعار الموقع" class="site-logo">
+            </div>
+            <h1><i class="fas fa-key"></i> استرداد كلمة المرور</h1>
+            <p>أهلاً بك! قم بإدخال بريدك الإلكتروني لاسترداد كلمة المرور.</p>
+            <form id="recovery-form" action="#" method="POST">
+              <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <div class="input-container">
+                  <i class="fas fa-envelope input-icon"></i>
+                  <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+                </div>
+              </div>
+              <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> إرسال رابط الاسترداد</button>
+            </form>
+            <div class="action-buttons">
+              <a href="Login.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> العودة إلى تسجيل الدخول</a>
+            </div>
+          </div>
+
+      <!-- الجزء الأيمن: صورة مع نص -->
+      <div class="info-section">
+        <img src="img/124770.jpg" alt="صورة جذابة" class="info-image">
+        <div class="overlay">
+          <h2>هل نسيت كلمة المرور؟</h2>
+          <p>لا داعي للقلق! يمكننا مساعدتك في استعادة الوصول إلى حسابك.</p>
+          <a href="index.html" class="btn-main">التوجه إلى الصفحة الرئيسية</a> <!-- الزر الجديد -->
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="js/recovery.js"></script>
+
+
+</body>
+</html>

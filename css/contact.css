@@ -1,0 +1,242 @@
+/* استيراد خطوط أكثر عصرية */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
+
+/* إعدادات عامة للصفحة */
+body {
+    font-family: 'Tajawal', 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+}
+
+/* تنسيق العنوان الرئيسي */
+h1 {
+    text-align: center;
+    color: #007bff; /* لون احتياطي للمتصفحات التي لا تدعم mask */
+    margin: 40px 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: -1px;
+    background: linear-gradient(45deg, #007bff, #00bfff);
+    -webkit-mask: linear-gradient(45deg, #007bff, #00bfff) text;
+    mask: linear-gradient(45deg, #007bff, #00bfff) text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* تصميم أقسام الميزات */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1330px;
+    margin: auto;
+}
+
+.feature {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    will-change: transform, box-shadow;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.feature:hover img {
+    transform: scale(1.05);
+}
+
+.feature h2 {
+    color: #007bff;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.feature p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* تأثيرات تفاعلية إضافية */
+.feature:active {
+    transform: scale(0.98);
+}
+
+.feature:focus {
+    outline: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* تحسينات للأداء */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lazy Loading للصور */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.lazyloaded {
+    opacity: 1;
+}
+
+/* تصميم أكثر احترافية لقسم المراجعات */
+.reviews-section {
+    width: 90%;
+    max-width: 1330px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.reviews-section h2::after {
+    content: "";
+    width: 70%;
+    height: 4px;
+    background: #6a11cb;
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* تصميم الكروت */
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.review-box {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    border-top: 4px solid #000000;
+}
+
+.review-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* صورة العميل */
+.customer-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #15F5BA;
+    margin: 0 auto 10px; /* توسيط الصورة */
+    display: block;
+}
+
+/* اسم العميل */
+.customer-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* النجوم */
+.stars {
+    color: #ff9800;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* نص التعليق */
+.customer-review {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* تحسينات إضافية للتصميم */
+.review-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.review-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 152, 0, 0.1);
+    z-index: -1;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.review-box:hover::before {
+    transform: scaleX(1);
+}
+
+.review-box:hover .customer-img {
+    border-color: #6a11cb;
+}
+
+.review-box:hover .stars {
+    color: #6a11cb;
+}
+
+.review-box:hover .customer-name {
+    color: #6a11cb;
+}
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: #f5f5f5;
+    text-align: center;
+}

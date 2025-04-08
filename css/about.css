@@ -1,0 +1,395 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.curtain-panel {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #7A1CAC;
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
+}
+
+.curtain-panel.left {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.curtain-panel.right {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.content {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.content.visible {
+    opacity: 1;
+}
+
+/* New Sections */
+.about-us, .location, .creation, .idea, .team, .contact, .services, .testimonials {
+    padding: 60px 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1330px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.section-image {
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+}
+
+.section-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.section-image img:hover {
+    transform: scale(1.05);
+}
+
+.section-content {
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+    text-align: right;
+}
+
+.section-content h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    color: #7A1CAC;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+.section-content p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #000000;
+}
+
+.section-content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.section-content .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Specific Section Styles */
+.about-us, .creation, .team, .services {
+    background-color: #f9f9f9;
+}
+
+.location, .idea, .contact, .testimonials {
+    background-color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-us, .location, .creation, .idea, .team, .contact, .services, .testimonials {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-image, .section-content {
+        margin: 10px 0;
+    }
+
+    .section-content {
+        text-align: center;
+    }
+
+    .section-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-content p {
+        font-size: 1rem;
+    }
+}
+
+.welcome, .project-overview, .team {
+    padding: 60px 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1330px;
+    background-color: #fff;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-image {
+    width: 1200px;
+    height: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.welcome-image:hover {
+    transform: scale(1.05);
+}
+
+.welcome h2 {
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+    color: #7A1CAC;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+.welcome p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+}
+
+.project-overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-image-box {
+    flex: 1;
+    margin-right: 20px; /* Space between image box and description box */
+    text-align: center;
+}
+
+.project-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+}
+
+.project-description-box {
+    flex: 1;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.project-description-box h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    color: #7A1CAC;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+.project-description-box p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+}
+
+.project-description-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: right;
+}
+
+.project-description-box ul li {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.weeks-count {
+    font-weight: bold;
+    color: #7A1CAC;
+}
+
+.team h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+    color: #7A1CAC;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* تغيير إلى 5 أعمدة */
+    gap: 20px; /* تقليل الفجوة بين الكروت */
+    padding: 20px;
+}
+
+.team-member {
+    background: linear-gradient(135deg, #EBD3F8, #7A1CAC, #AD49E1); /* تدرج ألماسي */
+    border-radius: 20px;
+    padding: 20px; /* تقليل الحشو */
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* حد فاتح لتعزيز التأثير الألماسي */
+    z-index: 1;
+    transform-style: preserve-3d; /* تفعيل التحويلات ثلاثية الأبعاد */
+}
+
+.team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 10px,
+        rgba(255, 255, 255, 0.2) 10px,
+        rgba(255, 255, 255, 0.2) 20px
+    ); /* تأثير قشور التنين */
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.team-member:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #9edae5, #66a6ff, #9edae5); /* تدرج ألماسي أغمق عند التمرير */
+}
+
+.team-member img {
+    width: 120px; /* تقليل حجم الصورة */
+    height: 120px; /* تقليل حجم الصورة */
+    border-radius: 50%;
+    margin-bottom: 15px; /* تقليل الهامش */
+    border: 6px solid #CD7F32; /* تقليل سمك الحدود */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+.team-member h3 {
+    margin: 10px 0;
+    font-size: 1.5rem; /* تقليل حجم الخط */
+    color: #fff; /* نص أبيض لتعزيز التباين */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.team-member p {
+    margin: 10px 0;
+    font-size: 1rem; /* تقليل حجم الخط */
+    color: #fff; /* نص أبيض لتعزيز التباين */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.team-member .role {
+    font-weight: bold;
+    color: #fff; /* نص أبيض لتعزيز التباين */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.team-member .leader-badge {
+    position: absolute;
+    top: 10px; /* تقليل المسافة من الأعلى */
+    right: 10px; /* تقليل المسافة من اليمين */
+    background-color: #ffd700; /* لون ذهبي للبادج */
+    color: #000; /* نص أسود لتعزيز التباين */
+    padding: 5px 10px; /* تقليل الحشو */
+    border-radius: 25px;
+    font-size: 0.9rem; /* تقليل حجم الخط */
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    z-index: 3;
+}
+
+.team-member .leader-badge:hover {
+    background-color: #e6b800; /* لون ذهبي أغمق عند التمرير */
+}
+
+/* Interaction between two members */
+.team-member:hover ~ .team-member {
+    background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+}
+
+/* Responsive Design for Team Section */
+@media (max-width: 1200px) {
+    .team-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 أعمدة للشاشات المتوسطة */
+    }
+}
+
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 أعمدة للشاشات الصغيرة */
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 أعمدة للهواتف المحمولة */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* عمود واحد للهواتف الصغيرة */
+    }
+}
