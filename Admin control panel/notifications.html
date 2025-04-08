@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>التنبيهات والإشعارات</title>
+</head>
+
+<body>
+<!-- الشريط الجانبي -->
+<div class="sidebar">
+    <a href="dashboard.html" class="logo">
+        <i class='bx bx-code-alt'></i>
+        <div class="logo-name"><span>مدينة</span>العبور</div>
+    </a>
+    <ul class="side-menu">
+        <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i>لوحة التحكم</a></li>
+        <li><a href="products.html"><i class='bx bx-store-alt'></i>المنتجات</a></li>
+        <li><a href="sellers.html"><i class='bx bx-group'></i>البائعون</a></li>
+        <li><a href="orders.html"><i class='bx bx-receipt'></i>الطلبات</a></li>
+        <li><a href="services.html"><i class='bx bx-message-square-dots'></i>الخدمات</a></li>
+        <li><a href="offers.html"><i class='bx bx-gift'></i>العروض</a></li>
+        <li><a href="settings.html"><i class='bx bx-cog'></i>الإعدادات</a></li>
+        <li><a href="#" id="language-toggle"><i class='bx bx-globe'></i>اللغة</a></li>
+    </ul>
+    <ul class="side-menu">
+        <li>
+            <a href="admin.html" class="logout">
+                <i class='bx bx-log-out-circle'></i>
+                تسجيل الخروج
+            </a>
+        </li>
+    </ul>
+
+    <!-- التأثير تحت زر تسجيل الخروج -->
+    <div class="ekosh-container">
+        <h3 class="animate-charcter">HASHISH</h3>
+    </div>
+</div>
+<!-- نهاية الشريط الجانبي -->
+
+<!-- المحتوى الرئيسي -->
+<div class="content">
+    <!-- شريط التنقل -->
+    <nav>
+        <i class='bx bx-menu'></i>
+        <form action="#">
+            <div class="form-input">
+                <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                <input type="search" placeholder="بحث...">
+            </div>
+        </form>
+        <input type="checkbox" id="theme-toggle" hidden>
+        <label for="theme-toggle" class="theme-toggle"></label>
+
+        <!-- زر الإشعارات -->
+        <a href="notifications.html">
+            <button class="button">
+                <svg viewBox="0 0 448 512" class="bell">
+                    <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path>
+                </svg>
+                الاشعارات
+            </button>
+        </a>
+
+        <a href="settings.html" class="profile">
+            <img src="images/logo.png" alt="الملف الشخصي">
+        </a>
+    </nav>
+    <!-- نهاية شريط التنقل -->
+
+<!-- أزرار إضافية فوق الجدول -->
+<div class="action-buttons" style="text-align: center; margin-top: 20px;">
+    <button class="action-btn" onclick="setNotificationType('b2b')">بائعين</button>
+    <button class="action-btn" onclick="setNotificationType('clients')">عملاء</button>
+    <button class="action-btn" onclick="setNotificationType('individualClient')">عميل فردي</button>
+    <button class="action-btn" onclick="setNotificationType('individualSeller')">بائع فردي</button>
+</div>
+
+<!-- جدول التنبيهات -->
+<div class="alerts">
+    <h1 class="title-box">التنبيهات والإشعارات</h1>
+    <table class="notifications-table">
+        <thead>
+            <tr>
+                <th>النوع</th>
+                <th>التفاصيل</th>
+                <th>التاريخ</th>
+                <th>الإجراء</th>
+                <th>الصورة</th>
+                <th>ID number</th>
+                <th>حذف</th>
+            </tr>
+        </thead>
+        <tbody id="notificationsTableBody">
+            <!-- إشعارات جديدة ستضاف هنا -->
+        </tbody>
+    </table>
+</div>
+
+<!-- نافذة منبثقة لعرض تفاصيل الإشعار -->
+<div class="modal" id="modalDetails">
+    <div class="modal-content">
+        <span class="close" id="closeDetails">&times;</span>
+        <div class="modal-header">
+            <i class='bx bx-info-circle'></i>
+            <h2>تفاصيل الإشعار</h2>
+        </div>
+        <div class="modal-body">
+            <p id="modalDetailsContent">تفاصيل الإشعار هنا.</p>
+            <label for="imageAttachment">إرفاق صورة:</label>
+            <input type="file" id="imageAttachment" name="imageAttachment">
+            <label for="notificationID">ID number:</label>
+            <input type="text" id="notificationID" name="notificationID">
+            <label for="notificationDetails">تفاصيل الإشعار:</label>
+            <textarea id="notificationDetails" name="notificationDetails" placeholder="أدخل تفاصيل الإشعار هنا..."></textarea>
+        </div>
+        <div class="modal-footer">
+            <button class="action-btn" onclick="sendNotification()">إرسال إشعار</button>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة منبثقة لعرض تفاصيل الإجراء -->
+<div class="modal" id="modalAction">
+    <div class="modal-content">
+        <span class="close" id="closeAction">&times;</span>
+        <div class="modal-header">
+            <i class='bx bx-info-circle'></i>
+            <h2>تفاصيل الإجراء</h2>
+        </div>
+        <div class="modal-body">
+            <p id="modalActionContent">تفاصيل الإجراء هنا.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="dashboard.html" class="action-btn">اتخاذ إجراء</a>
+        </div>
+    </div>
+</div>
+
+
+    <!-- نهاية المحتوى الرئيسي -->
+    <script src="js/dashboard.js"></script>
+    <script src="js/notifications.js"></script>
+
+</body>
+
+</html>
