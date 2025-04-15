@@ -1,0 +1,297 @@
+/* تحديثات بطاقات المنتجات في قسم المنتجات الأكثر مبيعاً */
+.bestselling-products-section .product-card {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    overflow: visible;
+}
+
+.bestselling-products-section .product-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.bestselling-products-section .product-category {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    color: var(--light-text);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 12px;
+    border-radius: 30px;
+    display: inline-flex;
+    margin-top: -15px;
+    position: relative;
+    z-index: 3;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bestselling-products-section .product-category i {
+    font-size: var(--font-size-md);
+    color: var(--accent-color);
+}
+
+.bestselling-products-section .product-image {
+    height: 240px;
+    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.bestselling-products-section .product-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+    z-index: 1;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.bestselling-products-section .product-card:hover .product-image::before {
+    opacity: 0.4;
+}
+
+.bestselling-products-section .product-info {
+    padding: var(--spacing-lg);
+    position: relative;
+    z-index: 2;
+}
+
+.bestselling-products-section .product-info h3 {
+    color: var(--light-text);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bestselling-products-section .product-rating {
+    margin-bottom: var(--spacing-md);
+}
+
+.bestselling-products-section .price-info {
+    margin-bottom: var(--spacing-sm);
+}
+
+.bestselling-products-section .original-price {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.bestselling-products-section .discounted-price {
+    color: var(--light-text);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bestselling-products-section .product-badge {
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid rgba(40, 167, 69, 0.3);
+    color: var(--light-text);
+}
+
+.bestselling-products-section .add-to-cart {
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: var(--light-text);
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bestselling-products-section .add-to-cart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.bestselling-products-section .add-to-cart:hover::before {
+    left: 100%;
+}
+
+.bestselling-products-section .add-to-cart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bestselling-products-section .product-badges {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2;
+}
+
+.bestselling-products-section .discount,
+.bestselling-products-section .product-tag {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.bestselling-products-section .discount {
+    background-color: rgba(220, 53, 69, 0.2);
+    border-color: rgba(220, 53, 69, 0.3);
+}
+
+.bestselling-products-section .product-tag.bestseller {
+    background-color: rgba(40, 167, 69, 0.2);
+    border-color: rgba(40, 167, 69, 0.3);
+}
+
+.bestselling-products-section .discount i,
+.bestselling-products-section .product-tag i {
+    font-size: var(--font-size-sm);
+}
+
+.bestselling-products-section .product-card:hover .discount,
+.bestselling-products-section .product-card:hover .product-tag {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* إضافة تأثيرات حركية للخلفية */
+.bestselling-bg {
+    animation: gradientAnimation 15s ease infinite;
+}
+
+.bestselling-pattern {
+    animation: patternMove 30s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes patternMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 300px 300px;
+    }
+}
+
+/* إضافة جزيئات متحركة في الخلفية */
+.bestselling-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: particleAnimation 15s linear infinite;
+}
+
+.particle:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 20s;
+    width: 8px;
+    height: 8px;
+}
+
+.particle:nth-child(2) {
+    top: 60%;
+    left: 30%;
+    animation-delay: 2s;
+    animation-duration: 18s;
+    width: 10px;
+    height: 10px;
+}
+
+.particle:nth-child(3) {
+    top: 40%;
+    left: 70%;
+    animation-delay: 4s;
+    animation-duration: 25s;
+    width: 7px;
+    height: 7px;
+}
+
+.particle:nth-child(4) {
+    top: 80%;
+    left: 50%;
+    animation-delay: 6s;
+    animation-duration: 22s;
+    width: 9px;
+    height: 9px;
+}
+
+.particle:nth-child(5) {
+    top: 30%;
+    left: 90%;
+    animation-delay: 8s;
+    animation-duration: 23s;
+    width: 6px;
+    height: 6px;
+}
+
+@keyframes particleAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-100px) rotate(180deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-200px) rotate(360deg);
+        opacity: 0;
+    }
+}
