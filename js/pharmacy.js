@@ -1,15 +1,93 @@
 document.addEventListener("DOMContentLoaded", function() {
+            // العناصر الرئيسية في الصفحة
             const pharmacyFilter = document.getElementById("pharmacyFilter");
+            const heroPharmacyFilter = document.getElementById("heroPharmacyFilter");
             const priceRange = document.getElementById("priceRange");
             const categoryFilter = document.getElementById("category");
             const availabilityFilter = document.getElementById("availability");
             const searchInput = document.getElementById("search");
+            const heroSearchInput = document.getElementById("heroSearch");
             const pharmacyName = document.getElementById("pharmacyName");
             const pharmacyDescription = document.getElementById("pharmacyDescription");
             const pharmacyImg = document.getElementById("pharmacyImg");
             const pharmacyProducts = document.getElementById("pharmacyProducts");
             const defaultPharmacyImage = "img/75867863.jpg"; // صورة افتراضية
-        
+
+            // عناصر الواجهة المحسنة
+            const backToTopBtn = document.getElementById("backToTop");
+            const successToast = document.getElementById("successToast");
+            const errorToast = document.getElementById("errorToast");
+            const warningToast = document.getElementById("warningToast");
+            const loadingIndicator = document.getElementById("loadingIndicator");
+            const filterTags = document.querySelectorAll(".pharmacy-filter-tag");
+            const resetFiltersBtn = document.querySelector(".reset-filters-btn");
+            const applyFiltersBtn = document.querySelector(".apply-filters-btn");
+            const paginationButtons = document.querySelectorAll(".pagination-btn");
+
+            // تفعيل التبديل بين المنتجات عند الضغط على أزرار الترقيم
+            paginationButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    // إزالة الفئة النشطة من جميع الأزرار
+                    paginationButtons.forEach(btn => btn.classList.remove("active"));
+
+                    // إضافة الفئة النشطة للزر المضغوط
+                    if (!this.classList.contains("prev") && !this.classList.contains("next")) {
+                        this.classList.add("active");
+
+                        // إظهار مؤشر التحميل
+                        loadingIndicator.classList.add("show");
+
+                        // محاكاة تحميل البيانات
+                        setTimeout(() => {
+                            loadingIndicator.classList.remove("show");
+
+                            // إظهار رسالة نجاح بشكل أكثر احترافية
+                            showToast(successToast, "تم عرض المنتجات - الصفحة " + this.textContent);
+
+                            // تمرير تلقائي للأعلى
+                            window.scrollTo({
+                                top: document.querySelector(".pharmacy-products").offsetTop - 100,
+                                behavior: "smooth"
+                            });
+
+                            // إظهار تأثير انتقالي للمنتجات عند تغيير الصفحة
+                            const productCards = document.querySelectorAll(".product-card");
+
+                            // إخفاء المنتجات بشكل متتالي
+                            productCards.forEach((card, index) => {
+                                card.style.opacity = "0";
+                                card.style.transform = "translateY(20px)";
+
+                                // إظهار المنتجات بشكل متتالي مع تأخير مختلف لكل منتج
+                                setTimeout(() => {
+                                    card.style.transition = "all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.5)";
+                                    card.style.opacity = "1";
+                                    card.style.transform = "translateY(0)";
+                                }, 100 + (index * 50));
+                            });
+                        }, 800);
+                    }
+                });
+            });
+
+            // دالة لعرض الإشعارات
+            function showToast(toastElement, message = null) {
+                if (message) {
+                    const messageSpan = toastElement.querySelector("span");
+                    if (messageSpan) {
+                        messageSpan.textContent = message;
+                    }
+                }
+
+                toastElement.classList.add("show");
+                setTimeout(() => {
+                    toastElement.classList.remove("show");
+                }, 3000);
+            }
+
+            // لا نقوم بالتحويل التلقائي إلى الصفحة رقم 2
+            // نترك للمستخدم حرية التنقل بين الصفحات
+
             const productsData = [
                 // صيدلية 1
                 {
@@ -629,7 +707,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     discount: "0%"
                 }
             ];
-        
+
             // بيانات الصيدليات
             const pharmaciesData = [
                 {
@@ -651,142 +729,207 @@ document.addEventListener("DOMContentLoaded", function() {
                     image: "img/pharmacy3.jpg"
                 }
             ];
-        
+
             pharmacyFilter.addEventListener("change", function () {
                 filterProducts();
                 addEventListeners(); // إعادة تعيين مستمعي الأحداث لأزرار السلة والمفضلة
             });
-        
+
             function filterProducts() {
                 const selectedPharmacyId = pharmacyFilter.value;
                 const selectedCategory = categoryFilter.value;
                 const selectedAvailability = availabilityFilter.value;
                 const maxPrice = priceRange.value;
-        
+
                 const filteredProducts = productsData.filter(product => {
                     const matchesPharmacy = selectedPharmacyId === "0" || product.pharmacyId === selectedPharmacyId;
                     const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
                     const matchesAvailability = selectedAvailability === "all" || product.availability === selectedAvailability;
                     const matchesPrice = product.discountedPrice <= maxPrice;
-        
+
                     return matchesPharmacy && matchesCategory && matchesAvailability && matchesPrice;
                 });
-        
+
                 renderProducts(filteredProducts);
             }
-        
+
             function renderProducts(products) {
-                pharmacyProducts.innerHTML = "";  // مسح المنتجات السابقة
-        
-                if (products.length === 0) {
-                    pharmacyProducts.innerHTML = "<p>لا توجد منتجات تتناسب مع الفلاتر المحددة.</p>";
-                } else {
-                    products.forEach(product => {
-                        const productCard = document.createElement("div");
-                        productCard.classList.add("product-card");
-        
-                        productCard.innerHTML = `
-                            <div class="product-image">
-                                <img src="${product.image}" alt="${product.name}">
-                                ${product.discount ? `<span class="discount">خصم ${product.discount}</span>` : ""}
-                            </div>
-                            <div class="product-info">
-                                <h3>${product.name}</h3>
-                                <p class="product-description">${product.description}</p>
-                                <div class="price">
-                                    <span class="original-price">${product.price} جنيه</span>
-                                    <span class="discounted-price">${product.discountedPrice} جنيه</span>
-                                </div>
-                                <div class="product-actions">
-                                    <button class="add-to-favorite"><i class="fa-regular fa-heart"></i></button>
-                                    <button class="add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                </div>
+                // إظهار مؤشر التحميل
+                loadingIndicator.classList.add('show');
+
+                // مسح المنتجات السابقة
+                pharmacyProducts.innerHTML = "";
+
+                setTimeout(() => {
+                    if (products.length === 0) {
+                        pharmacyProducts.innerHTML = `
+                            <div class="no-products-message">
+                                <i class="fas fa-search"></i>
+                                <p>لا توجد منتجات تتناسب مع الفلاتر المحددة.</p>
+                                <button class="reset-filters-btn" id="resetFilters">إعادة ضبط الفلاتر</button>
                             </div>
                         `;
-        
-                        pharmacyProducts.appendChild(productCard);
-                    });
-                }
-        
-                addEventListeners(); // إعادة تعيين مستمعي الأحداث لأزرار السلة والمفضلة
+
+                        // إضافة حدث لزر إعادة الضبط
+                        document.getElementById('resetFilters').addEventListener('click', resetAllFilters);
+                    } else {
+                        products.forEach(product => {
+                            const productCard = document.createElement("div");
+                            productCard.classList.add("product-card");
+
+                            // تحديد حالة المنتج (متوفر أو غير متوفر)
+                            const availabilityClass = product.availability === "in-stock" ? "in-stock" : "out-of-stock";
+                            const availabilityText = product.availability === "in-stock" ? "متوفر" : "غير متوفر";
+
+                            productCard.innerHTML = `
+                                <div class="product-image">
+                                    <img src="${product.image}" alt="${product.name}">
+                                    ${product.discount && product.discount !== "0%" ? `<span class="discount">خصم ${product.discount}</span>` : ""}
+                                </div>
+                                <div class="product-info">
+                                    <h3>${product.name}</h3>
+                                    <p class="product-description">${product.description}</p>
+                                    <div class="price">
+                                        <div class="price-info">
+                                            <span class="original-price">${product.price} جنيه</span>
+                                            <span class="discounted-price">${product.discountedPrice} جنيه</span>
+                                        </div>
+                                        <span class="product-badge ${availabilityClass}">${availabilityText}</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button class="add-to-favorite"><i class="fa-regular fa-heart"></i> المفضلة</button>
+                                        <button class="add-to-cart" ${product.availability !== "in-stock" ? 'disabled' : ''}>
+                                            <i class="fa-solid fa-cart-plus"></i> إضافة للسلة
+                                        </button>
+                                    </div>
+                                </div>
+                            `;
+
+                            pharmacyProducts.appendChild(productCard);
+                        });
+                    }
+
+                    // إخفاء مؤشر التحميل
+                    loadingIndicator.classList.remove('show');
+
+                    // إعادة تعيين مستمعي الأحداث لأزرار السلة والمفضلة
+                    addEventListeners();
+                }, 500); // تأخير بسيط لإظهار مؤشر التحميل
             }
-        
+
+            // وظيفة إعادة ضبط جميع الفلاتر
+            function resetAllFilters() {
+                pharmacyFilter.value = "0";
+                heroPharmacyFilter.value = "0";
+                priceRange.value = priceRange.max;
+                categoryFilter.value = "all";
+                availabilityFilter.value = "all";
+                searchInput.value = "";
+                heroSearchInput.value = "";
+                document.getElementById('priceDisplay').textContent = 'السعر: ' + priceRange.value;
+
+                filterProducts();
+                showToast(successToast, 'تم إعادة ضبط جميع الفلاتر');
+            }
+
             function addEventListeners() {
                 const cartButtons = document.querySelectorAll(".add-to-cart");
                 const favoriteButtons = document.querySelectorAll(".add-to-favorite");
-                const buyNowButtons = document.querySelectorAll(".buy-now");
                 const productImages = document.querySelectorAll(".product-image img");
-        
+
                 cartButtons.forEach((button) => {
+                    if (button.disabled) return; // تخطي الأزرار المعطلة
+
                     button.addEventListener("click", function () {
                         const productCard = this.closest(".product-card");
                         const product = {
+                            id: Date.now().toString(), // إضافة معرف فريد للمنتج
                             image: productCard.querySelector(".product-image img").src,
                             name: productCard.querySelector("h3").textContent,
                             description: productCard.querySelector(".product-description").textContent,
-                            originalPrice: productCard.querySelector(".original-price").textContent,
-                            discountedPrice: productCard.querySelector(".discounted-price").textContent
+                            originalPrice: productCard.querySelector(".price-info .original-price").textContent,
+                            price: parseFloat(productCard.querySelector(".price-info .discounted-price").textContent.replace(/[^\d.]/g, "")),
+                            service: "pharmacy", // إضافة نوع الخدمة
+                            category: "supplements", // إضافة فئة افتراضية
+                            dateAdded: new Date().getTime() // إضافة وقت الإضافة
                         };
-        
-                        let myCart = JSON.parse(localStorage.getItem("myCart")) || [];
-                        const existingProductIndex = myCart.findIndex(item => item.name === product.name);
-        
-                        if (existingProductIndex !== -1) {
-                            myCart[existingProductIndex].quantity = (myCart[existingProductIndex].quantity || 1) + 1;
-                        } else {
-                            product.quantity = 1;
-                            myCart.push(product);
-                        }
-        
-                        localStorage.setItem("myCart", JSON.stringify(myCart));
-                        updateCartDisplay();
-                        alert("تمت إضافة المنتج إلى السلة!");
+
+                        // إظهار مؤشر التحميل
+                        loadingIndicator.classList.add('show');
+
+                        setTimeout(() => {
+                            let myCart = JSON.parse(localStorage.getItem("myCart")) || [];
+                            const existingProductIndex = myCart.findIndex(item => item.name === product.name);
+
+                            if (existingProductIndex !== -1) {
+                                myCart[existingProductIndex].quantity = (myCart[existingProductIndex].quantity || 1) + 1;
+                            } else {
+                                product.quantity = 1;
+                                myCart.push(product);
+                            }
+
+                            localStorage.setItem("myCart", JSON.stringify(myCart));
+                            updateCartDisplay();
+
+                            // إخفاء مؤشر التحميل وإظهار رسالة نجاح
+                            loadingIndicator.classList.remove('show');
+                            showToast(successToast, 'تمت إضافة المنتج إلى السلة!');
+                        }, 500);
                     });
                 });
-        
+
                 favoriteButtons.forEach((button) => {
                     button.addEventListener("click", function () {
                         const productCard = this.closest(".product-card");
                         const product = {
+                            id: Date.now().toString(), // إضافة معرف فريد للمنتج
                             image: productCard.querySelector(".product-image img").src,
                             name: productCard.querySelector("h3").textContent,
                             description: productCard.querySelector(".product-description").textContent,
-                            originalPrice: productCard.querySelector(".original-price").textContent,
-                            discountedPrice: productCard.querySelector(".discounted-price").textContent
+                            originalPrice: productCard.querySelector(".price-info .original-price").textContent,
+                            price: parseFloat(productCard.querySelector(".price-info .discounted-price").textContent.replace(/[^\d.]/g, "")),
+                            discountedPrice: parseFloat(productCard.querySelector(".price-info .discounted-price").textContent.replace(/[^\d.]/g, "")),
+                            service: "pharmacy", // إضافة نوع الخدمة
+                            category: "supplements", // إضافة فئة افتراضية
+                            rating: 4.5, // إضافة تقييم افتراضي
+                            ratingCount: 10, // إضافة عدد تقييمات افتراضي
+                            availability: "in-stock", // إضافة حالة توفر افتراضية
+                            dateAdded: new Date().getTime() // إضافة وقت الإضافة
                         };
-        
-                        let myFavorites = JSON.parse(localStorage.getItem("myFavorites")) || [];
-                        const existingProductIndex = myFavorites.findIndex(item => item.name === product.name);
-        
-                        if (existingProductIndex !== -1) {
-                            alert("المنتج موجود بالفعل في المفضلة!");
-                        } else {
-                            myFavorites.push(product);
-                            localStorage.setItem("myFavorites", JSON.stringify(myFavorites));
-                            alert("تمت إضافة المنتج إلى المفضلة!");
-                        }
+
+                        // إظهار مؤشر التحميل
+                        loadingIndicator.classList.add('show');
+
+                        setTimeout(() => {
+                            let myFavorites = JSON.parse(localStorage.getItem("myFavorites")) || [];
+                            const existingProductIndex = myFavorites.findIndex(item => item.name === product.name);
+
+                            if (existingProductIndex !== -1) {
+                                // إزالة المنتج من المفضلة إذا كان موجوداً بالفعل
+                                myFavorites.splice(existingProductIndex, 1);
+                                localStorage.setItem("myFavorites", JSON.stringify(myFavorites));
+
+                                // تغيير شكل الزر
+                                this.innerHTML = '<i class="fa-regular fa-heart"></i> المفضلة';
+
+                                loadingIndicator.classList.remove('show');
+                                showToast(successToast, 'تمت إزالة المنتج من المفضلة');
+                            } else {
+                                myFavorites.push(product);
+                                localStorage.setItem("myFavorites", JSON.stringify(myFavorites));
+
+                                // تغيير شكل الزر
+                                this.innerHTML = '<i class="fa-solid fa-heart"></i> المفضلة';
+
+                                loadingIndicator.classList.remove('show');
+                                showToast(successToast, 'تمت إضافة المنتج إلى المفضلة!');
+                            }
+
+                            updateFavoritesDisplay();
+                        }, 500);
                     });
                 });
-        
-                buyNowButtons.forEach((button) => {
-                    button.addEventListener("click", function () {
-                        const productCard = this.closest(".product-card");
-                        const product = {
-                            image: productCard.querySelector(".product-image img").src,
-                            name: productCard.querySelector("h3").textContent,
-                            description: productCard.querySelector(".product-description").textContent,
-                            originalPrice: productCard.querySelector(".original-price").textContent,
-                            discountedPrice: productCard.querySelector(".discounted-price").textContent
-                        };
-        
-                        // Store the product in local storage or pass it through URL parameters
-                        localStorage.setItem("quickBuyProduct", JSON.stringify(product));
-        
-                        // Redirect to the quick buy page
-                        window.location.href = "quick-buy.html";
-                    });
-                });
-        
+
                 productImages.forEach((img) => {
                     img.addEventListener("click", function () {
                         const productCard = this.closest(".product-card");
@@ -794,27 +937,114 @@ document.addEventListener("DOMContentLoaded", function() {
                             image: productCard.querySelector(".product-image img").src,
                             name: productCard.querySelector("h3").textContent,
                             description: productCard.querySelector(".product-description").textContent,
-                            originalPrice: productCard.querySelector(".original-price").textContent,
-                            discountedPrice: productCard.querySelector(".discounted-price").textContent
+                            originalPrice: productCard.querySelector(".price-info .original-price").textContent,
+                            discountedPrice: productCard.querySelector(".price-info .discounted-price").textContent
                         };
-        
-                        // Store the product in local storage
+
+                        // إظهار مؤشر التحميل
+                        loadingIndicator.classList.add('show');
+
+                        // تخزين المنتج في التخزين المحلي
                         localStorage.setItem("productDetails", JSON.stringify(product));
-        
-                        // Redirect to the product details page
-                        window.location.href = "product_details.html";
+
+                        // الانتقال إلى صفحة تفاصيل المنتج
+                        setTimeout(() => {
+                            window.location.href = "product_details.html";
+                        }, 300);
                     });
                 });
             }
-        
+
+            // وظيفة لإظهار الرسائل المنبثقة
+            function showToast(toastElement, message = null) {
+                // إغلاق أي إشعارات مفتوحة
+                const activeToasts = document.querySelectorAll('.toast-notification.show');
+                activeToasts.forEach(toast => {
+                    toast.classList.remove('show');
+                });
+
+                // تحديث نص الإشعار إذا تم توفيره
+                if (message) {
+                    toastElement.querySelector('span').textContent = message;
+                }
+
+                // إضافة فئة العرض
+                toastElement.classList.add('show');
+
+                // إعادة تعيين الرسوم المتحركة للمؤقت
+                const timerBar = toastElement.querySelector('::after');
+                if (timerBar) {
+                    timerBar.style.animation = 'none';
+                    setTimeout(() => {
+                        timerBar.style.animation = '';
+                    }, 10);
+                }
+
+                // إضافة زر إغلاق مؤقتاً إذا لم يكن موجوداً
+                if (!toastElement.querySelector('.close-toast')) {
+                    const closeBtn = document.createElement('button');
+                    closeBtn.className = 'close-toast';
+                    closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                    closeBtn.addEventListener('click', () => {
+                        toastElement.classList.remove('show');
+                    });
+                    toastElement.appendChild(closeBtn);
+                }
+
+                // إغلاق الإشعار تلقائياً بعد فترة زمنية
+                let duration = 5000; // المدة الافتراضية
+
+                // تحديد مدة مختلفة حسب نوع الإشعار
+                if (toastElement.classList.contains('success')) {
+                    duration = 5000;
+                } else if (toastElement.classList.contains('error')) {
+                    duration = 7000;
+                } else if (toastElement.classList.contains('warning')) {
+                    duration = 6000;
+                }
+
+                // إضافة تأثير صوتي للإشعار
+                const audio = new Audio();
+                if (toastElement.classList.contains('success')) {
+                    audio.src = 'sounds/success.mp3';
+                } else if (toastElement.classList.contains('error')) {
+                    audio.src = 'sounds/error.mp3';
+                } else if (toastElement.classList.contains('warning')) {
+                    audio.src = 'sounds/warning.mp3';
+                }
+                audio.volume = 0.5;
+                audio.play().catch(e => console.log('Audio play failed:', e));
+
+                // إغلاق الإشعار بعد المدة المحددة
+                clearTimeout(toastElement.timeoutId);
+                toastElement.timeoutId = setTimeout(() => {
+                    toastElement.classList.remove('show');
+                }, duration);
+            }
+
             function updateCartDisplay() {
                 const cartCount = document.getElementById("cartCount");
                 if (cartCount) {
                     const myCart = JSON.parse(localStorage.getItem("myCart")) || [];
-                    cartCount.textContent = myCart.length;
+                    const totalItems = myCart.reduce((total, item) => total + (item.quantity || 1), 0);
+                    cartCount.textContent = totalItems;
+
+                    // إضافة تأثير لعدد المنتجات في السلة
+                    cartCount.classList.add('animate-count');
+                    setTimeout(() => {
+                        cartCount.classList.remove('animate-count');
+                    }, 500);
+                }
+
+                // تحديث إجمالي سعر السلة
+                const cartTotalPrice = document.getElementById('cartTotalPrice');
+                if (cartTotalPrice) {
+                    const myCart = JSON.parse(localStorage.getItem("myCart")) || [];
+                    const totalPrice = myCart.reduce((total, item) => total + ((item.price || 0) * (item.quantity || 1)), 0);
+                    cartTotalPrice.textContent = `${totalPrice.toFixed(2)} جنيه`;
                 }
             }
-        
+
             function updateFavoritesDisplay() {
                 const favoritesCount = document.getElementById("favoritesCount");
                 if (favoritesCount) {
@@ -822,36 +1052,134 @@ document.addEventListener("DOMContentLoaded", function() {
                     favoritesCount.textContent = myFavorites.length;
                 }
             }
-        
+
+            // ربط فلتر البانر الرئيسي مع فلتر المنتجات
+            if (heroPharmacyFilter) {
+                heroPharmacyFilter.addEventListener("change", function() {
+                    pharmacyFilter.value = this.value;
+                    filterProducts();
+                });
+            }
+
+            // ربط بحث البانر الرئيسي مع بحث المنتجات
+            if (heroSearchInput) {
+                heroSearchInput.addEventListener("input", function() {
+                    searchInput.value = this.value;
+                    searchProducts();
+                });
+            }
+
+            // مستمع حدث لشريط السعر
             priceRange.addEventListener("input", function () {
                 filterProducts();
-                document.getElementById('priceDisplay').textContent = 'السعر: ' + this.value;
+                document.querySelector('#priceDisplay span:last-child').textContent = this.value + ' جنيه';
             });
-        
+
+            // مستمعات أحداث للفلاتر
             categoryFilter.addEventListener("change", filterProducts);
             availabilityFilter.addEventListener("change", filterProducts);
-        
-            searchInput.addEventListener("input", function () {
+            searchInput.addEventListener("input", searchProducts);
+
+            // مستمعات أحداث لأزرار الفلتر
+            if (resetFiltersBtn) {
+                resetFiltersBtn.addEventListener('click', resetAllFilters);
+            }
+
+            if (applyFiltersBtn) {
+                applyFiltersBtn.addEventListener('click', function() {
+                    filterProducts();
+                    showToast(successToast, 'تم تطبيق الفلاتر بنجاح');
+                });
+            }
+
+            // مستمعات أحداث لشارات الفلتر
+            if (filterTags) {
+                filterTags.forEach(tag => {
+                    tag.addEventListener('click', function() {
+                        // إزالة الشارة عند النقر عليها
+                        this.style.display = 'none';
+                        // إعادة تطبيق الفلاتر
+                        filterProducts();
+                        // إظهار رسالة نجاح
+                        showToast(successToast, 'تمت إزالة الفلتر: ' + this.querySelector('span').textContent);
+                    });
+                });
+            }
+
+            // زر العودة للأعلى
+            if (backToTopBtn) {
+                // إظهار الزر عند التمرير لأسفل
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+
+                // العودة للأعلى عند النقر
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // وظيفة البحث في المنتجات
+            function searchProducts() {
                 const searchText = searchInput.value.trim().toLowerCase();
                 const productCards = document.querySelectorAll(".product-card");
-        
+
+                if (searchText === "") {
+                    // إذا كان البحث فارغاً، أعد تطبيق الفلاتر
+                    filterProducts();
+                    return;
+                }
+
                 productCards.forEach((card) => {
                     const productName = card.querySelector("h3")?.textContent.trim().toLowerCase() || "";
-                    const productDescription = card.querySelector("p")?.textContent.trim().toLowerCase() || "";
-        
+                    const productDescription = card.querySelector(".product-description")?.textContent.trim().toLowerCase() || "";
+
                     if (productName.includes(searchText) || productDescription.includes(searchText)) {
-                        card.style.display = "block";
+                        card.style.display = "";
                     } else {
                         card.style.display = "none";
                     }
                 });
-            });
-        
+
+                // إذا لم يتم العثور على نتائج
+                const visibleCards = document.querySelectorAll(".product-card[style='']:not([style='display: none'])");
+                if (visibleCards.length === 0) {
+                    if (!document.querySelector('.no-search-results')) {
+                        const noResults = document.createElement('div');
+                        noResults.className = 'no-search-results';
+                        noResults.innerHTML = `
+                            <i class="fas fa-search"></i>
+                            <p>لا توجد نتائج للبحث عن "${searchText}"</p>
+                            <button class="reset-search-btn" id="resetSearch">مسح البحث</button>
+                        `;
+                        pharmacyProducts.appendChild(noResults);
+
+                        document.getElementById('resetSearch').addEventListener('click', function() {
+                            searchInput.value = '';
+                            heroSearchInput.value = '';
+                            filterProducts();
+                        });
+                    }
+                } else {
+                    const noResults = document.querySelector('.no-search-results');
+                    if (noResults) {
+                        noResults.remove();
+                    }
+                }
+            }
+
+            // تهيئة الصفحة عند التحميل
             filterProducts();
+
+            // إظهار رسالة ترحيبية
+            setTimeout(() => {
+                showToast(successToast, 'مرحباً بك في صيدليات مدينة العبور!');
+            }, 1000);
         });
-        
-        document.getElementById('priceRange').addEventListener('input', function() {
-            var priceValue = this.value;
-            document.getElementById('priceDisplay').textContent = 'السعر: ' + priceValue;
-        });
-        

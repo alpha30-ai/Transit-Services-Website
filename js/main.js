@@ -38,7 +38,7 @@ var swiper = new Swiper(".slide-swp", {
         0 :{
           slidesPerView : 1,
         }
-        
+
       }
   });
 
@@ -75,12 +75,12 @@ var swiper = new Swiper(".slide-swp", {
           slidesPerView : 2,
           spaceBetween: 10,
         }
-        
+
       }
   });
 
 
-  
+
   var swiper = new Swiper(".swip-with-img", {
     slidesPerView: 4,
     spaceBetween: 30,
@@ -112,10 +112,10 @@ var swiper = new Swiper(".slide-swp", {
           slidesPerView : 2,
           spaceBetween: 10,
         }
-        
+
       }
   });
-  
+
 
 
   /* side bar in Resbonsive */
@@ -148,13 +148,15 @@ var swiper = new Swiper(".slide-swp", {
 
         // product page
         //buy fast order
-        
+
         let btnbuyNowF = document.querySelector('.buyNow')
         let divcretAcBuyF = document.querySelector('.creatacountfast')
 
 
-btnbuyNowF.onclick = ()=> {
-  divcretAcBuyF.classList.toggle('active')
+if (btnbuyNowF && divcretAcBuyF) {
+  btnbuyNowF.onclick = ()=> {
+    divcretAcBuyF.classList.toggle('active')
+  }
 }
 
 const slider = document.getElementById('unique-slider');
@@ -255,9 +257,122 @@ var swiper3 = new Swiper('.mySwiper3', {
 
 
 
+// تفعيل فلترة التقييمات
+document.addEventListener('DOMContentLoaded', function() {
+  // تبديل علامات التبويب في قسم الفلترة
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const filterContents = document.querySelectorAll('.filter-content');
 
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // إزالة الفئة النشطة من جميع علامات التبويب
+      filterTabs.forEach(t => t.classList.remove('active'));
+      // إضافة الفئة النشطة للعلامة المحددة
+      this.classList.add('active');
 
+      // إخفاء جميع محتويات الفلترة
+      filterContents.forEach(content => content.style.display = 'none');
+      // إظهار المحتوى المرتبط بالعلامة المحددة
+      const tabId = this.getAttribute('data-tab');
+      document.getElementById(tabId + '-filters').style.display = 'flex';
+    });
+  });
 
+  // تفعيل أزرار الفلترة
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const reviewBoxes = document.querySelectorAll('.review-box');
 
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // إزالة الفئة النشطة من جميع الأزرار
+      const parentContent = this.closest('.filter-content');
+      parentContent.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      // إضافة الفئة النشطة للزر المحدد
+      this.classList.add('active');
 
+      const filter = this.getAttribute('data-filter');
+      const filterType = parentContent.id.replace('-filters', '');
+
+      // فلترة صناديق المراجعات
+      reviewBoxes.forEach(box => {
+        if (filter === 'all') {
+          box.style.display = 'block';
+        } else {
+          const boxValue = box.getAttribute('data-' + filterType);
+          if (boxValue === filter) {
+            box.style.display = 'block';
+          } else {
+            box.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+
+  // تفعيل أزرار الإعجاب
+  const likeButtons = document.querySelectorAll('.like-button');
+
+  likeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      this.classList.toggle('liked');
+      const likesCount = this.nextElementSibling;
+      let count = parseInt(likesCount.textContent);
+
+      if (this.classList.contains('liked')) {
+        likesCount.textContent = count + 1;
+        this.innerHTML = '<i class="fas fa-thumbs-up"></i>';
+      } else {
+        likesCount.textContent = count - 1;
+        this.innerHTML = '<i class="far fa-thumbs-up"></i>';
+      }
+    });
+  });
+
+  // تحريك أرقام الإحصائيات
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+  function animateNumbers() {
+    statNumbers.forEach(number => {
+      const target = parseInt(number.getAttribute('data-count'));
+      const duration = 2000; // مدة التحريك بالمللي ثانية
+      const step = target / (duration / 16); // 16ms لكل إطار في 60fps
+      let current = 0;
+
+      const updateNumber = () => {
+        current += step;
+        if (current < target) {
+          number.textContent = Math.floor(current).toLocaleString();
+          requestAnimationFrame(updateNumber);
+        } else {
+          number.textContent = target.toLocaleString();
+        }
+      };
+
+      updateNumber();
+    });
+  }
+
+  // تفعيل تحريك الأرقام عند ظهور القسم في الشاشة
+  const statsSection = document.querySelector('.testimonials-stats-enhanced');
+
+  if (statsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateNumbers();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(statsSection);
+  }
+});
+
+// تفعيل تأثيرات AOS للتحريك عند التمرير
+AOS.init({
+  duration: 1000,
+  once: true,
+  offset: 100,
+});
 
