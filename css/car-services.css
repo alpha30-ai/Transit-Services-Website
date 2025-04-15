@@ -2001,7 +2001,146 @@ ul, ol {
         gap: var(--spacing-sm);
     }
 
-    .service-card {
+    .service-card, .product-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .service-image {
+        height: 180px;
+    }
+
+    .service-info {
+        padding: var(--spacing-sm);
+    }
+
+    .service-info h3 {
+        font-size: 1rem;
+    }
+
+    .service-description {
+        font-size: 0.85rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .price {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .original-price {
+        font-size: 0.8rem;
+    }
+
+    .discounted-price {
+        font-size: 1.1rem;
+    }
+
+    .service-actions button {
+        padding: 8px 0;
+        font-size: 0.85rem;
+    }
+
+    .toast-notification {
+        width: 95%;
+        padding: 10px 12px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .filter-group label {
+        font-size: 0.9rem;
+    }
+
+    .filter-group select, .filter-group.search-bar input {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .car-services-filter select {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    .car-services-filter-tags {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: var(--spacing-xs);
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .car-services-filter-tag {
+        flex-shrink: 0;
+    }
+
+    .car-services-breadcrumb {
+        padding: var(--spacing-xs) 0;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .car-services-breadcrumb li {
+        font-size: var(--font-size-xs);
+    }
+
+    .pagination-btn {
+        width: 35px;
+        height: 35px;
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* استعلامات الوسائط للشاشات الصغيرة */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+
+    .car-services-hero-section {
+        padding: 40px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        padding: 0 var(--spacing-xs);
+    }
+
+    .hero-search-container {
+        width: 95%;
+        gap: var(--spacing-sm);
+    }
+
+    .hero-search-box input {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    .hero-search-box .search-btn {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .car-services-section {
+        gap: var(--spacing-md);
+        padding: 0 var(--spacing-xs);
+    }
+
+    .car-services-filter, .filter-sidebar, .car-services-details {
+        padding: var(--spacing-sm);
+    }
+
+    .car-services-filter h3, .filter-sidebar h3 {
+        font-size: 1.1rem;
+    }
+
+    .car-services-services {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .product-card {
         width: 100%;
         margin: 0 auto;
     }
@@ -2089,7 +2228,7 @@ ul, ol {
 }
 
 /* استعلامات الوسائط للشاشات الصغيرة جداً */
-@media (max-width: 480px) {
+@media (max-width: 400px) {
     .container {
         padding: 0 5px;
     }
@@ -2139,7 +2278,7 @@ ul, ol {
         gap: 15px;
     }
 
-    .service-image {
+    .service-image, .product-image {
         height: 120px;
     }
 
