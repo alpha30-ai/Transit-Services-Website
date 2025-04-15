@@ -13,9 +13,23 @@
     <!-- Link Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Link File CSS -->
+    <!-- Link Critical CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contact.css">
+
+    <!-- Link Non-Critical CSS with preload -->
+    <link rel="preload" href="css/testimonials-enhanced.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/features-enhanced.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/testimonials-enhanced.css">
+        <link rel="stylesheet" href="css/features-enhanced.css">
+    </noscript>
+
+    <!-- Link AOS CSS -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    </noscript>
 
 </head>
 <body class="menu-side-in-bag">
@@ -85,9 +99,9 @@
                             <li><a href="restaurants.html">مطاعم</a></li>
                         </ul>
                         <ul>
-                            <li><a href="car-maintenance.html">صيانة سيارات</a></li>
+                            <ul><li><a href="car-services.html">خدمات السيارات</a></li></ul>
                         </ul>
-                        
+
                     </div>
                 </li>
 
@@ -117,109 +131,703 @@
             <img class="logo-slide" src="img/scan_12580910.png" alt="">
             <i id="btn-close" class="fa-solid fa-bars fa-times"></i>
             <ul class="side-links">
-                <a href="#"><li>الرئيسية</li></a>
-                <a href="#"><li>الخدمات</li></a>
-                <a href="#"><li>من نحن</li></a>
-                <a href="#"><li>المميزات</li></a>
-                <a href="#"><li>العروض</li></a>
-                <a href="#"><li>المنتجات</li></a>
-                <a href="#"><li>التاجر</li></a>
-                <a href="#"><li>إكسسوارات</li></a>
-                <a href="#"><li>مستحضرات التجميل</li></a>
-                <a href="#"><li>التلفزيونات</li></a>
-
+                <a href="index.html"><li>الرئيسية</li></a>
+                <a href="Services.html"><li>الخدمات</li></a>
+                <a href="labs.html"><li>معامل التحاليل</li></a>
+                <a href="hospitals.html"><li>المستشفيات</li></a>
+                <a href="car-services.html"><li>خدمات السيارات</li></a>
+                <a href="pharmacy.html"><li>الصيدليات</li></a>
+                <a href="hypermarket.html"><li>هايبر ماركت</li></a>
+                <a href="restaurants.html"><li>المطاعم</li></a>
+                <a href="about.html"><li>من نحن</li></a>
+                <a href="contact.html"><li>المميزات</li></a>
+                <a href="offers.html"><li>العروض</li></a>
+                <a href="products.html"><li>المنتجات</li></a>
             </ul>
 
         </div>
+    </section>
 
-        <div class="slide">
-            <div class="slide-swp swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide swiper-slide1">
-                        <img src="img/slide1.jpg" alt="">
+    <!-- قسم آراء العملاء المحسن والاحترافي -->
+    <section class="testimonials-section-enhanced" id="testimonials">
+        <div class="testimonials-overlay"></div>
+
+        <div class="section-title testimonials-title">
+            <h2>آراء عملائنا المميزين</h2>
+            <p>استمع إلى تجارب عملائنا الحقيقية مع خدماتنا المتنوعة</p>
+            <div class="title-decoration">
+                <span></span>
+                <i class="fas fa-quote-right"></i>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- قسم الفلترة المحسن -->
+        <div class="testimonials-filter-container">
+            <div class="filter-title">
+                <i class="fas fa-filter"></i>
+                <span>تصفية التقييمات حسب:</span>
+            </div>
+
+            <div class="testimonials-filter-tabs">
+                <div class="filter-tab active" data-tab="rating">التقييم</div>
+                <div class="filter-tab" data-tab="service">نوع الخدمة</div>
+            </div>
+
+            <div class="filter-content" id="rating-filters">
+                <button class="filter-btn active" data-filter="all">جميع التقييمات</button>
+                <button class="filter-btn" data-filter="5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></button>
+                <button class="filter-btn" data-filter="4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></button>
+                <button class="filter-btn" data-filter="3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></button>
+            </div>
+
+            <div class="filter-content" id="service-filters" style="display: none;">
+                <button class="filter-btn" data-filter="all">جميع الخدمات</button>
+                <button class="filter-btn" data-filter="shopping"><i class="fas fa-shopping-cart"></i> التسوق</button>
+                <button class="filter-btn" data-filter="delivery"><i class="fas fa-truck"></i> التوصيل</button>
+                <button class="filter-btn" data-filter="food"><i class="fas fa-utensils"></i> المطاعم</button>
+                <button class="filter-btn" data-filter="maintenance"><i class="fas fa-tools"></i> الصيانة</button>
+                <button class="filter-btn" data-filter="pharmacy"><i class="fas fa-prescription-bottle-alt"></i> الصيدلية</button>
+                <button class="filter-btn" data-filter="medical"><i class="fas fa-stethoscope"></i> الخدمات الطبية</button>
+                <button class="filter-btn" data-filter="support"><i class="fas fa-headset"></i> خدمة العملاء</button>
+            </div>
+        </div>
+
+        <!-- حاوية التقييمات -->
+        <div class="testimonials-container-enhanced" id="reviewsContainer"></div>
+
+        <!-- إحصائيات التقييمات -->
+        <div class="testimonials-stats-enhanced">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number" data-count="15000">15,000+</div>
+                <div class="stat-label">عميل سعيد</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-number" data-count="4.9">4.9</div>
+                <div class="stat-label">متوسط التقييم</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-thumbs-up"></i>
+                </div>
+                <div class="stat-number" data-count="98">98%</div>
+                <div class="stat-label">نسبة الرضا</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-number" data-count="25000">25,000+</div>
+                <div class="stat-label">طلب منجز</div>
+            </div>
+        </div>
+
+        <!-- قسم إضافة تقييم جديد -->
+        <div class="add-testimonial-enhanced">
+            <div class="add-testimonial-content">
+                <h3>شاركنا تجربتك</h3>
+                <p>رأيك يهمنا ويساعدنا على تحسين خدماتنا</p>
+                <a href="#" class="add-testimonial-btn-enhanced">
+                    <i class="fas fa-pen"></i>
+                    <span>أضف رأيك الآن</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم قصص نجاح العملاء -->
+    <section class="success-stories-section" id="success-stories">
+        <div class="section-title">
+            <h2>قصص نجاح مع خدمات العبور</h2>
+            <p>تجارب حقيقية لعملاء استفادوا من خدماتنا وحققوا نتائج مميزة</p>
+            <div class="title-decoration">
+                <span></span>
+                <i class="fas fa-award"></i>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="success-stories-container">
+            <div class="success-story-card">
+                <div class="story-image">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/18/14/05/brick-wall-1834784_640.jpg" alt="قصة نجاح" loading="lazy" width="400" height="250">
+                    <div class="story-category">مطاعم</div>
+                </div>
+                <div class="story-content">
+                    <h3 class="story-title">من مطبخ منزلي إلى مشروع ناجح</h3>
+                    <p class="story-excerpt">"بدأت مشروعي كمطبخ منزلي صغير، وبفضل خدمات العبور للتوصيل تمكنت من الوصول لعملاء جدد وتوسيع نطاق عملي ليصبح مطعماً معروفاً في المنطقة."</p>
+                    <div class="story-author">
+                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="صاحبة القصة">
+                        <div class="author-info">
+                            <div class="author-name">سمر أحمد</div>
+                            <div class="author-title">صاحبة مطعم بيتي</div>
+                        </div>
                     </div>
-                    <div class="swiper-slide swiper-slide2">
-                        <img src="img/slide2.jpg" alt="">
+                    <a href="#" class="read-more-btn">اقرأ القصة كاملة <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+
+            <div class="success-story-card">
+                <div class="story-image">
+                    <img src="https://cdn.pixabay.com/photo/2016/12/19/21/36/woman-1919143_640.jpg" alt="قصة نجاح" loading="lazy" width="400" height="250">
+                    <div class="story-category">صيدلية</div>
+                </div>
+                <div class="story-content">
+                    <h3 class="story-title">خدمة توصيل الأدوية أنقذت حياة والدي</h3>
+                    <p class="story-excerpt">"في ليلة شتاء عاصفة، احتاج والدي لدواء ضروري بشكل عاجل. بفضل خدمة توصيل الأدوية من العبور، وصل الدواء خلال 20 دقيقة فقط رغم الظروف الجوية السيئة."</p>
+                    <div class="story-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="صاحب القصة">
+                        <div class="author-info">
+                            <div class="author-name">محمد عبد الرحمن</div>
+                            <div class="author-title">مهندس برمجيات</div>
+                        </div>
                     </div>
-                    <div class="swiper-slide swiper-slide3">
-                        <img src="img/slide3.jpg" alt="">
+                    <a href="#" class="read-more-btn">اقرأ القصة كاملة <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-all-stories">
+            <a href="#" class="view-all-btn">عرض جميع قصص النجاح <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </section>
+
+    <!-- قسم خدمات مدينة العبور -->
+    <section class="features-section" id="features-section">
+        <div class="section-title">
+            <h1>خدمات مدينة العبور</h1>
+            <p>نقدم لكم مجموعة متكاملة من الخدمات لتلبية احتياجات سكان مدينة العبور</p>
+            <div class="title-decoration">
+                <span></span>
+                <i class="fas fa-city"></i>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="features-container">
+            <!-- الصف الأول: معامل التحاليل والمستشفيات -->
+            <div class="features-row">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
                     </div>
-                    <div class="swiper-slide swiper-slide3">
-                        <img src="img/slide4.jpg" alt="">
+                    <div class="feature-content">
+                        <span class="feature-badge feature-badge-medical">طبي</span>
+                        <h2 class="feature-title">حجز التحاليل الطبية</h2>
+                        <p class="feature-description">احجز تحاليلك الطبية في أفضل معامل مدينة العبور بضغطة زر واحصل على النتائج إلكترونياً في أسرع وقت.</p>
+                        <div class="feature-details">
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>حجز فوري بدون انتظار</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>خصومات حصرية للأعضاء</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>خدمة سحب العينات من المنزل</span>
+                            </div>
+                        </div>
+                        <a href="labs.html" class="featured-service-link">استكشف الخدمة <i class="fas fa-arrow-left"></i></a>
                     </div>
-                    <div class="swiper-slide swiper-slide3">
-                        <img src="img/slide5.jpg" alt="">
+                    <div class="feature-image">
+                        <img src="img/medical-service.jpg" alt="حجز التحاليل الطبية" loading="lazy">
+                        <div class="feature-overlay"></div>
                     </div>
                 </div>
-                <div class="swiper-pagination"></div>
-              </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <span class="feature-badge feature-badge-urgent">عاجل</span>
+                        <h2 class="feature-title">حجز المواعيد الطبية</h2>
+                        <p class="feature-description">احجز موعدك مع أفضل الأطباء والمستشفيات في مدينة العبور بسهولة وسرعة مع إمكانية الاستشارة عن بُعد.</p>
+                        <div class="feature-details">
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>مواعيد مع أفضل الأطباء</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>استشارات طبية عن بُعد</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>تذكير بالمواعيد تلقائياً</span>
+                            </div>
+                        </div>
+                        <a href="hospitals.html" class="featured-service-link">استكشف الخدمة <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                    <div class="feature-image">
+                        <img src="img/medical-service.jpg" alt="حجز المواعيد الطبية" loading="lazy">
+                        <div class="feature-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الصف الثاني: الصيدليات والهايبر ماركت -->
+            <div class="features-row">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">
+                            <i class="fas fa-prescription-bottle-alt"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <span class="feature-badge feature-badge-pharmacy">صيدلية</span>
+                        <h2 class="feature-title">شراء الأدوية والمستلزمات الطبية</h2>
+                        <p class="feature-description">اطلب أدويتك ومستلزماتك الطبية من أفضل الصيدليات في مدينة العبور واستلمها في منزلك بأسرع وقت.</p>
+                        <div class="feature-details">
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>توصيل سريع للأدوية</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>استشارات صيدلانية مجانية</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>تذكير بمواعيد الدواء</span>
+                            </div>
+                        </div>
+                        <a href="pharmacy.html" class="featured-service-link">استكشف الخدمة <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                    <div class="feature-image">
+                        <img src="img/Related Services.jpg" alt="شراء الأدوية والمستلزمات الطبية" loading="lazy">
+                        <div class="feature-overlay"></div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <span class="feature-badge feature-badge-shopping">تسوق</span>
+                        <h2 class="feature-title">التسوق من الهايبر ماركت</h2>
+                        <p class="feature-description">تسوق احتياجاتك اليومية من أفضل هايبر ماركت في مدينة العبور واستلمها في منزلك بأسعار تنافسية.</p>
+                        <div class="feature-details">
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>منتجات طازجة وعالية الجودة</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>توصيل سريع في نفس اليوم</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>عروض وخصومات أسبوعية</span>
+                            </div>
+                        </div>
+                        <a href="hypermarket.html" class="featured-service-link">استكشف الخدمة <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                    <div class="feature-image">
+                        <img src="img/business-shopping.jpg" alt="التسوق من الهايبر ماركت" loading="lazy">
+                        <div class="feature-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الصف الثالث: المطاعم وصيانة السيارات -->
+            <div class="features-row">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <span class="feature-badge feature-badge-food">مطاعم</span>
+                        <h2 class="feature-title">طلب الطعام من المطاعم</h2>
+                        <p class="feature-description">استمتع بأشهى المأكولات من أفضل المطاعم في مدينة العبور مع خدمة توصيل سريعة وموثوقة.</p>
+                        <div class="feature-details">
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>تنوع كبير من المطاعم</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>توصيل سريع للطعام</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>عروض خاصة وخصومات</span>
+                            </div>
+                        </div>
+                        <a href="restaurants.html" class="featured-service-link">استكشف الخدمة <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                    <div class="feature-image">
+                        <img src="img/food service.jpg" alt="طلب الطعام من المطاعم" loading="lazy">
+                        <div class="feature-overlay"></div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <span class="feature-badge feature-badge-car">صيانة</span>
+                        <h2 class="feature-title">خدمات صيانة السيارات</h2>
+                        <p class="feature-description">احجز موعد صيانة سيارتك لدى أفضل مراكز الخدمة في مدينة العبور مع ضمان الجودة والاحترافية.</p>
+                        <div class="feature-details">
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>فنيون معتمدون ومحترفون</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>خدمة المساعدة على الطريق</span>
+                            </div>
+                            <div class="feature-detail">
+                                <i class="fas fa-check-circle"></i>
+                                <span>ضمان على قطع الغيار والإصلاح</span>
+                            </div>
+                        </div>
+                        <a href="car-maintenance.html" class="featured-service-link">استكشف الخدمة <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                    <div class="feature-image">
+                        <img src="img/car-service.jpg" alt="خدمات صيانة السيارات" loading="lazy">
+                        <div class="feature-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- قسم الإحصائيات -->
+        <div class="features-stats">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number">15,000+</div>
+                <div class="stat-label">عميل سعيد</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <div class="stat-number">50+</div>
+                <div class="stat-label">مستشفى ومعمل</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="stat-number">200+</div>
+                <div class="stat-label">مطعم ومتجر</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="stat-number">30+</div>
+                <div class="stat-label">مركز صيانة</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-number">4.9</div>
+                <div class="stat-label">تقييم الخدمات</div>
+            </div>
+        </div>
+
+        <!-- زر الدعوة للعمل -->
+        <div class="features-cta">
+            <a href="Register.html" class="cta-button">
+                <i class="fas fa-user-plus"></i>
+                <span>استفد من خدمات العبور الآن</span>
+            </a>
+            <a href="Services.html" class="cta-button cta-button-secondary">
+                <i class="fas fa-search"></i>
+                <span>استكشف جميع الخدمات</span>
+            </a>
         </div>
     </section>
 
-    <div class="reviews-section">
-        <h2> آراء عملائنا المميزين </h2>
-        <div class="reviews-container" id="reviewsContainer"></div>
-    </div>
 
-    <h1>ميزات الموقع</h1>
-    <section class="features">
-        <div class="feature">
-            <img src="img/online-marketing3.jpg" alt="العروض الحصرية" loading="lazy">
-            <h2>🎁 العروض الحصرية</h2>
-            <p>تخفيضات تصل إلى 50% على منتجات مختارة، وعروض يومية متجددة.</p>
+
+    <!-- قسم لماذا تختارنا -->
+    <section class="why-choose-us-section" id="why-choose-us">
+        <div class="section-title">
+            <h2>لماذا تختار خدمات العبور؟</h2>
+            <p>نقدم لك مجموعة من المزايا التي تجعلنا الخيار الأفضل لخدماتك</p>
+            <div class="title-decoration">
+                <span></span>
+                <i class="fas fa-check-circle"></i>
+                <span></span>
+            </div>
         </div>
-    
-        <div class="feature">
-            <img src="img/online-marketing2.jpg" alt="المنتجات الأكثر مبيعًا" loading="lazy">
-            <h2>🔥 المنتجات الأكثر مبيعًا</h2>
-            <p>استكشف المنتجات الأعلى مبيعًا بناءً على تقييمات العملاء وتجربتهم.</p>
-        </div>
-    
-        <div class="feature">
-            <img src="img/online-marketing1.jpg" alt="المنتجات الجديدة" loading="lazy">
-            <h2>🆕 المنتجات الجديدة</h2>
-            <p>اكتشف أحدث الإصدارات والمنتجات الجديدة التي تم إضافتها حديثًا.</p>
-        </div>
-    
-        <div class="feature">
-            <img src="img/customer-experience-creative-collage.jpg" alt="تقييمات وآراء العملاء" loading="lazy">
-            <h2>⭐ تقييمات العملاء</h2>
-            <p>اقرأ التقييمات الحقيقية من العملاء حول منتجاتنا وخدماتنا.</p>
-        </div>
-    
-        <div class="feature">
-            <img src="img/Related Services.jpg" alt="خدمة العملاء" loading="lazy">
-            <h2>📞 دعم العملاء</h2>
-            <p>تواصل مع فريق الدعم لدينا المتوفر على مدار الساعة لمساعدتك في أي وقت.</p>
-        </div>
-    
-        <div class="feature">
-            <img src="img/cyber-security-concept-digital-art.jpg" alt="الأمان والخصوصية" loading="lazy">
-            <h2>🔒 الأمان والخصوصية</h2>
-            <p>نضمن لك حماية بياناتك الشخصية وإجراء معاملاتك بأمان تام.</p>
-        </div>
-    
-        <div class="feature">
-            <img src="img/fastest-shipping-method-ss-1609947532-1100x733.jpg" alt="الشحن السريع" loading="lazy">
-            <h2>🚚 الشحن السريع</h2>
-            <p>نوفر لك خدمة الشحن السريع لجميع أنحاء البلاد بأفضل الأسعار.</p>
-        </div>
-    
-        <div class="feature">
-            <img src="img/Size-for-WP-Resources-Posts-844-x-532-19.png" alt="برنامج الولاء" loading="lazy">
-            <h2>🎉 برنامج الولاء</h2>
-            <p>احصل على نقاط مكافآت مع كل عملية شراء واستبدلها بعروض حصرية.</p>
+
+        <div class="why-choose-us-container">
+            <div class="why-choose-us-content">
+                <div class="why-choose-us-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="choose-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="choose-content">
+                        <h3>سرعة التوصيل</h3>
+                        <p>نضمن لك وصول طلبك في أسرع وقت ممكن مع إمكانية تتبع الطلب لحظة بلحظة عبر تطبيقنا.</p>
+                    </div>
+                </div>
+
+                <div class="why-choose-us-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="choose-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="choose-content">
+                        <h3>ضمان الجودة</h3>
+                        <p>نقدم ضمان على جميع منتجاتنا وخدماتنا مع إمكانية استرجاع المبلغ في حالة عدم الرضا.</p>
+                    </div>
+                </div>
+
+                <div class="why-choose-us-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="choose-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="choose-content">
+                        <h3>دعم على مدار الساعة</h3>
+                        <p>فريق دعم متخصص متاح على مدار الساعة للرد على استفساراتك وحل أي مشكلة قد تواجهك.</p>
+                    </div>
+                </div>
+
+                <div class="why-choose-us-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="choose-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="choose-content">
+                        <h3>أسعار تنافسية</h3>
+                        <p>نقدم أفضل الأسعار التنافسية في السوق مع عروض وخصومات حصرية لعملائنا الدائمين.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-choose-us-image" data-aos="fade-left">
+                <img src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_640.jpg" alt="لماذا تختارنا" loading="lazy" width="500" height="350">
+                <div class="experience-badge">
+                    <span class="years">10+</span>
+                    <span class="text">سنوات من الخبرة</span>
+                </div>
+            </div>
         </div>
     </section>
-    
+
+    <!-- قسم مقارنة الخدمات -->
+    <section class="service-comparison-section" id="service-comparison">
+        <div class="section-title">
+            <h2>مقارنة بين خدماتنا والمنافسين</h2>
+            <p>اكتشف لماذا تعتبر خدمات العبور الخيار الأفضل لك</p>
+            <div class="title-decoration">
+                <span></span>
+                <i class="fas fa-balance-scale"></i>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="comparison-table-container">
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div class="comparison-feature"></div>
+                    <div class="comparison-provider our-service">
+                        <img src="img/alpha.png" alt="خدمات العبور" class="provider-logo">
+                        <span class="provider-name">خدمات العبور</span>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="provider-name">المنافس أ</span>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="provider-name">المنافس ب</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature">
+                        <i class="fas fa-truck"></i>
+                        <span>سرعة التوصيل</span>
+                    </div>
+                    <div class="comparison-provider our-service">
+                        <span class="value">30 دقيقة</span>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="value">60 دقيقة</span>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="value">90 دقيقة</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature">
+                        <i class="fas fa-tag"></i>
+                        <span>الأسعار</span>
+                    </div>
+                    <div class="comparison-provider our-service">
+                        <span class="value">تنافسية</span>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="value">متوسطة</span>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="value">مرتفعة</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature">
+                        <i class="fas fa-headset"></i>
+                        <span>دعم العملاء</span>
+                    </div>
+                    <div class="comparison-provider our-service">
+                        <span class="value">24/7</span>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="value">ساعات العمل</span>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="value">ساعات محدودة</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature">
+                        <i class="fas fa-undo"></i>
+                        <span>سياسة الاسترجاع</span>
+                    </div>
+                    <div class="comparison-provider our-service">
+                        <span class="value">14 يوم</span>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="value">7 أيام</span>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="value">3 أيام</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-feature">
+                        <i class="fas fa-gift"></i>
+                        <span>برنامج الولاء</span>
+                    </div>
+                    <div class="comparison-provider our-service">
+                        <span class="value">متوفر</span>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="value">محدود</span>
+                    </div>
+                    <div class="comparison-provider">
+                        <span class="value">غير متوفر</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparison-cta">
+            <a href="Register.html" class="comparison-cta-btn">اشترك الآن واحصل على خصم 10% <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </section>
+
 
 
     <!-- Swiper JS -->
     <script src="swiperJs/swiper-bundle.min.js"></script>
 
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
     <!-- Linke File JS -->
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+        // تهيئة AOS بعد تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            // تهيئة AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false,
+                startEvent: 'DOMContentLoaded' // بدء التأثيرات بعد تحميل الصفحة
+            });
+
+            // تفعيل Lazy Loading للصور
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.src; // للتأكد من تحميل الصورة
+                            observer.unobserve(image);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(image => {
+                    imageObserver.observe(image);
+                });
+            }
+
+            // إضافة مستمعي الأحداث لأزرار التبويب في قسم التقييمات
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const filterContents = document.querySelectorAll('.filter-content');
+
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // إزالة الكلاس النشط من جميع التبويبات
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    // إضافة الكلاس النشط للتبويب المضغوط
+                    this.classList.add('active');
+
+                    // إخفاء جميع محتويات التبويب
+                    filterContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+
+                    // إظهار المحتوى المطلوب
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId + '-filters').style.display = 'flex';
+
+                    // إعادة تعيين الفلتر النشط للمحتوى الجديد
+                    const activeFilterBtn = document.querySelector('#' + tabId + '-filters .filter-btn[data-filter="all"]');
+                    if (activeFilterBtn) {
+                        const allFilterBtns = document.querySelectorAll('#' + tabId + '-filters .filter-btn');
+                        allFilterBtns.forEach(btn => btn.classList.remove('active'));
+                        activeFilterBtn.classList.add('active');
+                        filterReviews('all');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

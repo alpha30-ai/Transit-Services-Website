@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>تم الدفع بنجاح | مدينة العبور</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiperJs/swiper-bundle.min.css" />
+
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Link File CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notifications.css">
+
+    <style>
+        .success-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 80px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .success-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .success-message {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .order-details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: right;
+        }
+
+        .order-details h3 {
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: #f1f1f1;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 20px;
+                margin: 30px 15px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="contanier">
+                <div class="left-top">
+                    <div class="lang">
+                        <a href="#">English</a>
+                    </div>
+                    <div class="social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="right-top">
+                    <div class="account">
+                        <a href="login.html"><i class="fa-regular fa-user"></i> حسابي</a>
+                    </div>
+                    <div class="links">
+                        <a href="mycart.html"><i class="fa-solid fa-bag-shopping"></i> عربة التسوق</a>
+                        <a href="favorites.html"><i class="fa-regular fa-heart"></i> المفضلة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-info">
+            <div class="contanier">
+                <img src="img/scan_12580910.png" alt="">
+
+                <div class="search-bar">
+                    <form action="">
+                        <input type="search" placeholder="ابحث عن طلبك...">
+                        <button class="btn-srch">بحث</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="price">
+                        <p>السلة :</p>
+                        <span id="cart-total-price">0 جنيه</span>
+                    </div>
+                    <a href="mycart.html"><i class="fa-solid fa-bag-shopping"></i> <span class="count-in-card" id="cart-count">0</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-nav">
+            <div class="contanier">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="links">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="Products.html">المنتجات</a>
+                    <a href="Services.html">الخدمات</a>
+                    <a href="about.html">من نحن</a>
+                    <a href="contact.html">تواصل معنا</a>
+                </div>
+                <div class="open-side">
+                    <i class="fa-solid fa-bars" id="open-side"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="success-container">
+        <i class="fas fa-check-circle success-icon"></i>
+        <h1 class="success-title">تم الدفع بنجاح!</h1>
+        <p class="success-message">شكراً لك على طلبك. تم استلام طلبك وسيتم معالجته في أقرب وقت ممكن.</p>
+        
+        <div class="order-details">
+            <h3>تفاصيل الطلب</h3>
+            <div class="detail-row">
+                <span class="detail-label">رقم الطلب:</span>
+                <span id="order-number">#000000</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">تاريخ الطلب:</span>
+                <span id="order-date">00/00/0000</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">حالة الطلب:</span>
+                <span id="order-status">تم الدفع</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">إجمالي المبلغ:</span>
+                <span id="order-total">0 ج.م</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">طريقة الدفع:</span>
+                <span id="payment-method">بطاقة ائتمان</span>
+            </div>
+        </div>
+        
+        <p class="success-message">سيتم إرسال تأكيد الطلب إلى بريدك الإلكتروني. يمكنك متابعة حالة طلبك من صفحة تتبع الطلبات.</p>
+        
+        <div class="action-buttons">
+            <a href="order-tracking.html" class="btn btn-primary">تتبع الطلب</a>
+            <a href="Products.html" class="btn btn-secondary">متابعة التسوق</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="top-footer">
+            <div class="contanier">
+                <div class="small-row">
+                    <h6>خدمات العبور</h6>
+                    <p>نقدم خدمات متنوعة لسكان مدينة العبور بأعلى جودة وأفضل الأسعار، مع التركيز على رضا العملاء وتلبية احتياجاتهم.</p>
+                    <div class="contact-info">
+                        <div class="info">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>مدينة العبور، القاهرة، مصر</span>
+                        </div>
+                        <div class="info">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+20 123 456 7890</span>
+                        </div>
+                        <div class="info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>info@transitservices.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="small-row">
+                    <h6>روابط سريعة</h6>
+                    <div class="links-row">
+                        <a href="index.html"><i class="fa-solid fa-angle-left"></i>الرئيسية</a>
+                        <a href="Products.html"><i class="fa-solid fa-angle-left"></i>المنتجات</a>
+                        <a href="Services.html"><i class="fa-solid fa-angle-left"></i>الخدمات</a>
+                        <a href="about.html"><i class="fa-solid fa-angle-left"></i>من نحن</a>
+                        <a href="contact.html"><i class="fa-solid fa-angle-left"></i>تواصل معنا</a>
+                    </div>
+                </div>
+
+                <div class="small-row">
+                    <h6>خدماتنا</h6>
+                    <div class="links-row">
+                        <a href="Services.html"><i class="fa-solid fa-angle-left"></i>خدمات المرافق</a>
+                        <a href="Services.html"><i class="fa-solid fa-angle-left"></i>خدمات الصيانة</a>
+                        <a href="Services.html"><i class="fa-solid fa-angle-left"></i>خدمات النقل</a>
+                        <a href="Services.html"><i class="fa-solid fa-angle-left"></i>خدمات التوصيل</a>
+                        <a href="Services.html"><i class="fa-solid fa-angle-left"></i>خدمات أخرى</a>
+                    </div>
+                </div>
+
+                <div class="small-row">
+                    <h6> دعنا نساعدك</h6>
+                    <div class="links-row">
+                        <a href="support.html"><i class="fa-solid fa-angle-left"></i>المساعدة و الدعم</a>
+                        <a href="order-tracking.html"><i class="fa-solid fa-angle-left"></i>تتبع الطلب</a>
+                        <a href="return-policy.html"><i class="fa-solid fa-angle-left"></i>سياسة الاسترجاع</a>
+                        <a href="terms.html"><i class="fa-solid fa-angle-left"></i>الشروط و الأحكام </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-footer">
+            <div class="contanier">
+                <p>Copyright &copy; <span>MOHAMED HASHISH</span> Powered by <span>HASHISH</span></p>
+                <div class="payment">
+                    <img src="img/payment-1.png" alt="">
+                    <img src="img/payment-2.png" alt="">
+                    <img src="img/payment-3.png" alt="">
+                    <img src="img/payment-4.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="swiperJs/swiper-bundle.min.js"></script>
+
+    <!-- Link File JS -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // تحديث عدد العناصر في السلة
+            const myCart = JSON.parse(localStorage.getItem("myCart")) || [];
+            const cartCount = document.getElementById('cart-count');
+            const cartTotalPrice = document.getElementById('cart-total-price');
+            
+            if (cartCount) {
+                cartCount.textContent = myCart.length;
+            }
+            
+            if (cartTotalPrice) {
+                let total = 0;
+                myCart.forEach(item => {
+                    const price = typeof item.discountedPrice === 'string' ? 
+                        parseFloat(item.discountedPrice.replace(/[^\d.]/g, "")) : 
+                        item.discountedPrice;
+                    total += price * (item.quantity || 1);
+                });
+                cartTotalPrice.textContent = `${total.toFixed(2)} جنيه`;
+            }
+            
+            // عرض تفاصيل الطلب
+            const orderData = JSON.parse(localStorage.getItem("orderTrackingData")) || {};
+            
+            const orderNumber = document.getElementById('order-number');
+            const orderDate = document.getElementById('order-date');
+            const orderStatus = document.getElementById('order-status');
+            const orderTotal = document.getElementById('order-total');
+            const paymentMethod = document.getElementById('payment-method');
+            
+            if (orderNumber) orderNumber.textContent = `#${orderData.orderNumber || '000000'}`;
+            if (orderDate) orderDate.textContent = orderData.orderDate || new Date().toLocaleDateString("ar-EG");
+            if (orderStatus) orderStatus.textContent = orderData.orderStatus || 'تم الدفع';
+            if (orderTotal) orderTotal.textContent = orderData.finalAmount || '0 ج.م';
+            if (paymentMethod) paymentMethod.textContent = orderData.paymentMethod || 'بطاقة ائتمان';
+            
+            // تحديث URL لإزالة معلمات الاستعلام
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -41,9 +41,9 @@
                 <div class="card">
                     <div class="price">
                         <p>السلة :</p>
-                        <span>255.00 جنيه</span>
+                        <span id="cartTotalPrice">0.00 جنيه</span>
                     </div>
-                    <a href="mycart.html"><i class="fa-solid fa-bag-shopping"></i> <span class="count-in-card">2</span></a>
+                    <a href="mycart.html"><i class="fa-solid fa-bag-shopping"></i> <span id="cartCount" class="count-in-card">0</span></a>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                             <ul><li><a href="hypermarket.html">هايبر ماركت</a></li></ul>
                             <ul><li><a href="labs.html">معامل تحاليل</a></li></ul>
                             <ul><li><a href="restaurants.html">مطاعم</a></li></ul>
-                            <ul><li><a href="car-maintenance.html">صيانة سيارات</a></li></ul>
+                            <ul><li><a href="car-services.html">خدمات السيارات</a></li></ul>
                         </div>
                     </li>
                     <li><a href="about.html">من نحن</a></li>
@@ -73,349 +73,147 @@
                 <a href="control/Trader Control Panel/admin.html" class="merchant-btn"><i class="fa-solid fa-store"></i> لوحة صاحب الخدمة </a>
             </div>
         </div>
+        <section class="slide-sec contanier">
+            <div id="side-bar" class="side-bar">
+                <h5><i class="fa-solid fa-bars"></i> التسوق حسب القسم</h5>
+                <img class="logo-slide" src="img/scan_12580910.png" alt="">
+                <i id="btn-close" class="fa-solid fa-bars fa-times"></i>
+                <ul class="side-links">
+                    <a href="index.html"><li>الرئيسية</li></a>
+                    <a href="Services.html"><li>الخدمات</li></a>
+                    <a href="labs.html"><li>معامل التحاليل</li></a>
+                    <a href="hospitals.html"><li>المستشفيات</li></a>
+                    <a href="car-services.html"><li>خدمات السيارات</li></a>
+                    <a href="pharmacy.html"><li>الصيدليات</li></a>
+                    <a href="hypermarket.html"><li>هايبر ماركت</li></a>
+                    <a href="restaurants.html"><li>المطاعم</li></a>
+                    <a href="about.html"><li>من نحن</li></a>
+                    <a href="contact.html"><li>المميزات</li></a>
+                    <a href="offers.html"><li>العروض</li></a>
+                    <a href="products.html"><li>المنتجات</li></a>
+                </ul>
+    
+            </div>
+    
+    
+        </section>
     </header>
 
-    <div class="container">
-        <h1>المفضلة</h1>
-        <div class="hypermarket-products" id="favoritesContainer"></div>
-        <button id="deleteAllButton">حذف الكل</button>
+    <!-- قسم البانر الرئيسي -->
+    <section class="favorites-hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-circle-1"></div>
+        <div class="hero-circle-2"></div>
+        <div class="hero-circle-3"></div>
+        <div class="hero-content">
+            <h1>قائمة المفضلة</h1>
+            <p>استعرض منتجاتك وخدماتك المفضلة من جميع أقسام خدمات العبور</p>
 
-    </div>
-    
-    <div class="banner contanier">
-        <div class="boxs">
-            <div class="box">
-                <a href="#"><img src="img/banner-6.jpg" alt="">
-                <span class="glass-hover"></span></a>
-            </div>
-            <div class="box">
-                <a href="#"><img src="img/banner-7.jpg" alt="">
-                <span class="glass-hover"></span></a>
-            </div>
-            <div class="box">
-                <a href="#"><img src="img/banner-8.jpg" alt="">
-                <span class="glass-hover"></span></a>
+            <div class="favorites-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-number" id="favorites-count">0</div>
+                    <div class="stat-label">منتج مفضل</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="stat-number" id="categories-count">0</div>
+                    <div class="stat-label">فئة مختلفة</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="stat-number" id="services-count">0</div>
+                    <div class="stat-label">خدمة متنوعة</div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <section class="sale-sec contanier swiper mySwiper">
-
-        <div class="section-head">
-            <h4> المنتجات التي تمت مشاهدتها<span></span> </h4>
-        </div>
-
-        <div class="boxs swiper-wrapper">
-
-            <div class="box column product-item swiper-slide">
-
-                <div class="product-btn">
-                    <ul class="product-action">
-                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                    </ul>
-                </div>
-
-                <div class="div-img">
-
-                    <img src="img/product-8.jpg" class="img-product">
-                    <img src="img/product-1.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                    <a class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="price">
-                        <span>2500.00 جنيه</span>
-                        <del>2600.00 جنيه</del>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="box column product-item swiper-slide">
-
-                <div class="product-btn">
-                    <ul class="product-action">
-                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                    </ul>
-                </div>
-                <div class="div-img">
-
-                    <img src="img/product-2.jpg" class="img-product">
-                    <img src="img/product-9.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                    <a class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="price">
-                        <span>2500.00 جنيه</span>
-                        <del>2600.00 جنيه</del>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="box column product-item swiper-slide">
-
-                <div class="product-btn">
-                    <ul class="product-action">
-                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                    </ul>
-                </div>
-                <div class="div-img">
-
-                    <img src="img/product-3.jpg" class="img-product">
-                    <img src="img/product-10.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                    <a class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="price">
-                        <span>2500.00 جنيه</span>
-                        <del>2600.00 جنيه</del>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="box column product-item swiper-slide">
-
-                <div class="product-btn">
-                    <ul class="product-action">
-                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                    </ul>
-                </div>
-                <div class="div-img">
-
-                    <img src="img/product-4.jpg" class="img-product">
-                    <img src="img/product-8.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                    <a class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="price">
-                        <span>2500.00 جنيه</span>
-                        <del>2600.00 جنيه</del>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="box column product-item swiper-slide">
-                <div class="div-img">
-
-                    <img src="img/product-9.jpg" class="img-product">
-                    <img src="img/product-16.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                    <a class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="price">
-                        <span>2500.00 جنيه</span>
-                        <del>2600.00 جنيه</del>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="box column product-item swiper-slide">
-
-                <div class="product-btn">
-                    <ul class="product-action">
-                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                    </ul>
-                </div>
-                <div class="div-img">
-
-                    <img src="img/product-12.jpg" class="img-product">
-                    <img src="img/product-3.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                    <a class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="price">
-                        <span>2500.00 جنيه</span>
-                        <del>2600.00 جنيه</del>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="box column product-item swiper-slide">
-
-                <div class="product-btn">
-                    <ul class="product-action">
-                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                    </ul>
-                </div>
-                <div class="div-img">
-
-                    <img src="img/product-15.jpg" class="img-product">
-                    <img src="img/product-1.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                    <a class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="price">
-                        <span>2500.00 جنيه</span>
-                        <del>2600.00 جنيه</del>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="box column product-item swiper-slide">
-
-                <div class="product-btn">
-                    <ul class="product-action">
-                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                    </ul>
-                </div>
-                <div class="div-img">
-
-                    <img src="img/product-14.jpg" class="img-product">
-                    <img src="img/product-6.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                    <a class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="price">
-                        <span>2500.00 جنيه</span>
-                        <del>2600.00 جنيه</del>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="box column product-item swiper-slide">
-
-                <div class="product-btn">
-                    <ul class="product-action">
-                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                    </ul>
-                </div>
-                <div class="div-img">
-
-                    <img src="img/product-7.jpg" class="img-product">
-                    <img src="img/product-11.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                    <a class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="price">
-                        <span>2500.00 جنيه</span>
-                        <del>2600.00 جنيه</del>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="box column product-item swiper-slide">
-
-                <div class="product-btn">
-                    <ul class="product-action">
-                        <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                    </ul>
-                </div>
-                <div class="div-img">
-
-                    <img src="img/product-15.jpg" class="img-product">
-                    <img src="img/product-16.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                    <a class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="price">
-                        <span>2500.00 جنيه</span>
-                        <del>2600.00 جنيه</del>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-         <div class="swiper-button-next swiper-btn"></div>
-         <div class="swiper-button-prev swiper-btn"></div>
-
+        <div class="hero-glow"></div>
     </section>
+
+    <!-- قسم المحتوى الرئيسي -->
+    <section class="favorites-main-section">
+        <div class="favorites-container">
+            <!-- قسم التصفية والفرز -->
+            <div class="favorites-filter-bar">
+                <!-- خيارات التصفية -->
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label for="serviceFilter">تصفية حسب الخدمة</label>
+                        <select id="serviceFilter">
+                            <option value="all">جميع الخدمات</option>
+                            <option value="pharmacy">صيدليات</option>
+                            <option value="hypermarket">هايبر ماركت</option>
+                            <option value="restaurant">مطاعم</option>
+                            <option value="car">صيانة سيارات</option>
+                            <option value="hospital">مستشفيات</option>
+                            <option value="lab">معامل تحاليل</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sortFilter">ترتيب حسب</label>
+                        <select id="sortFilter">
+                            <option value="newest">الأحدث</option>
+                            <option value="oldest">الأقدم</option>
+                            <option value="priceAsc">السعر: من الأقل للأعلى</option>
+                            <option value="priceDesc">السعر: من الأعلى للأقل</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group search-group">
+                        <label for="searchFilter">البحث في المفضلة</label>
+                        <input type="text" id="searchFilter" placeholder="ابحث عن منتج معين...">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- أزرار الإجراءات السريعة -->
+                <div class="action-group">
+                    <button id="deleteAllButton" class="action-btn delete-all-btn">
+                        <i class="fas fa-trash-alt"></i> حذف جميع المنتجات
+                    </button>
+                    <button id="addAllToCartButton" class="action-btn add-all-btn">
+                        <i class="fas fa-cart-plus"></i> إضافة الكل للسلة
+                    </button>
+                </div>
+            </div>
+
+            <!-- قسم عرض المنتجات المفضلة -->
+            <div class="favorites-content">
+                <!-- علامات تبويب العرض -->
+                <div class="view-tabs">
+                    <button class="view-tab active" data-view="grid"><i class="fas fa-th"></i></button>
+                    <button class="view-tab" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+
+                <!-- حاوية المنتجات -->
+                <div class="favorites-products-container">
+                    <div class="favorites-products grid-view" id="favoritesContainer">
+                        <!-- سيتم ملؤها بواسطة JavaScript -->
+                    </div>
+                </div>
+
+                <!-- رسالة فارغة -->
+                <div class="empty-favorites" id="emptyFavorites" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="far fa-heart"></i>
+                    </div>
+                    <h3>لا توجد منتجات في المفضلة</h3>
+                    <p>يمكنك إضافة المنتجات إلى المفضلة بالضغط على زر القلب في صفحات المنتجات</p>
+                    <a href="Services.html" class="browse-btn">تصفح الخدمات</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <footer>
         <div class="contanier">
@@ -423,14 +221,14 @@
                 <div class="row">
                     <img src="img/alpha.png" alt="">
                     <div class="hotline">
-    
+
                         <div class="hotline-text">
                             <h6>خدمة عملاء 24/7</h6>
                             <span>(+100) 123 456 7890</span>
                         </div>
                         <i class="fa-solid fa-headset"></i>
                     </div>
-    
+
                 </div>
                 <div class="small-row">
                     <h6> اعرف المزيد عنا</h6>
@@ -439,7 +237,7 @@
                         <a href="shipping-delivery.html"><i class="fa-solid fa-angle-left"></i>الشحن و التوصيل </a>
                     </div>
                 </div>
-                
+
                 <div class="small-row">
                     <h6> تسوق معنا</h6>
                     <div class="links-row">
@@ -449,7 +247,7 @@
                         <a href="wishlist.html"><i class="fa-solid fa-angle-left"></i>قوائمك</a>
                     </div>
                 </div>
-                
+
                 <div class="small-row">
                     <h6> دعنا نساعدك</h6>
                     <div class="links-row">
@@ -460,9 +258,9 @@
                     </div>
                 </div>
             </div>
-    
-                
-    
+
+
+
         <div class="bottom-footer">
             <div class="contanier">
                 <p>Copyright &copy; <span>MOHAMED HASHISH</span> Powered by <span>HASHISH</span></p>

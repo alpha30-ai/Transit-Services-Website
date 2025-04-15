@@ -16,10 +16,11 @@
     <!-- Link File CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mycart.css">
+    <link rel="stylesheet" href="css/notifications.css">
 
 </head>
 <body class="menu-side-in-bag">
-    
+
     <header>
 
         <div class="header-top">
@@ -37,7 +38,7 @@
            <div class="header-info">
             <div class="contanier">
                 <img src="img/scan_12580910.png" alt="">
-            
+
             <div class="search-bar">
                 <form action="">
                     <input type="search" placeholder="ابحث عن طلبك...">
@@ -51,7 +52,7 @@
                 </div>
                 <a href="mycart.html"><i class="fa-solid fa-bag-shopping"></i> <span class="count-in-card">2</span></a>
 
-                
+
             </div>
             </div>
         </div>
@@ -60,7 +61,7 @@
            <div class="contanier">
             <i id="open-side" class="fa-solid fa-bars"></i>
             <ul class="nav-links">
-                    
+
                 <li><a href="index.html"> الرئيسية</a>
 
                 </li>
@@ -86,9 +87,9 @@
                             <li><a href="restaurants.html">مطاعم</a></li>
                         </ul>
                         <ul>
-                            <li><a href="car-maintenance.html">صيانة سيارات</a></li>
+                            <ul><li><a href="car-services.html">خدمات السيارات</a></li></ul>
                         </ul>
-                        
+
                     </div>
                 </li>
 
@@ -114,24 +115,24 @@
 
     <section class="slide-sec contanier">
         <div id="side-bar" class="side-bar">
-            <h5><i class="fa-solid fa-bars"></i> SHOP BY DEPARTMENT</h5>
+            <h5><i class="fa-solid fa-bars"></i> التسوق حسب القسم</h5>
             <img class="logo-slide" src="img/scan_12580910.png" alt="">
             <i id="btn-close" class="fa-solid fa-bars fa-times"></i>
             <ul class="side-links">
-                <a href="#"><li>الرئيسية</li></a>
-                <a href="#"><li>الخدمات</li></a>
-                <a href="#"><li>من نحن</li></a>
-                <a href="#"><li>المميزات</li></a>
-                <a href="#"><li>العروض</li></a>
-                <a href="#"><li>المنتجات</li></a>
-                <a href="#"><li>التاجر</li></a>
-                <a href="#"><li>إكسسوارات</li></a>
-                <a href="#"><li>مستحضرات التجميل</li></a>
-                <a href="#"><li>التلفزيونات</li></a>
-
+                <a href="index.html"><li>الرئيسية</li></a>
+                <a href="Services.html"><li>الخدمات</li></a>
+                <a href="labs.html"><li>معامل التحاليل</li></a>
+                <a href="hospitals.html"><li>المستشفيات</li></a>
+                <a href="car-services.html"><li>خدمات السيارات</li></a>
+                <a href="pharmacy.html"><li>الصيدليات</li></a>
+                <a href="hypermarket.html"><li>هايبر ماركت</li></a>
+                <a href="restaurants.html"><li>المطاعم</li></a>
+                <a href="about.html"><li>من نحن</li></a>
+                <a href="contact.html"><li>المميزات</li></a>
+                <a href="offers.html"><li>العروض</li></a>
+                <a href="products.html"><li>المنتجات</li></a>
             </ul>
 
-            
         </div>
 
 
@@ -139,155 +140,288 @@
 
     <div class="container">
         <div class="cart-header">
-            <h1>عربة التسوق</h1>
-            <p>لديك منتج واحد في عربة التسوق</p>
+            <h1>عربة تسوق الخدمات</h1>
+            <p id="cart-count">لديك منتج واحد في عربة تسوق الخدمات</p>
         </div>
+
+        <!-- مؤشر خطوات الدفع -->
+        <div class="checkout-steps">
+            <div class="step active" id="step-cart">
+                <div class="step-number">1</div>
+                <div class="step-title">السلة</div>
+            </div>
+            <div class="step" id="step-shipping">
+                <div class="step-number">2</div>
+                <div class="step-title">الشحن</div>
+            </div>
+            <div class="step" id="step-payment">
+                <div class="step-number">3</div>
+                <div class="step-title">الدفع</div>
+            </div>
+            <div class="step" id="step-confirmation">
+                <div class="step-number">4</div>
+                <div class="step-title">التأكيد</div>
+            </div>
+        </div>
+
         <div class="cart-container">
-            <!-- قسم المنتج -->
-            <div class="cart-details">
-                <div class="cart-item">
-                    <img src="img/nzpef6x_ijpqsrrrjmzlmjzm.webp" alt="قلاية بدون زيت">
-                    <div class="cart-item-info">
-                        <h2>كمبيوتر اتش بي 290 G9 ميكروتاور</h2>
-                        <span>كمبيوتر اتش بي 290 G9 ميكروتاور، انتل كور i3-12100، سعة 1 تيرابايت HDD، سعة 4 جيجا رام DDR4، انتل UHD جرافيكس 730، دوس، اسود - 884W8EA مع شاشة 19.5 انش - P204V</span>
+            <!-- الأقسام المختلفة للخطوات -->
+            <div class="checkout-steps-container">
+                <!-- قسم السلة - الخطوة 1 -->
+                <div class="checkout-step-content" id="cart-step-content" style="display: block;">
+                    <div class="cart-details" id="cart-items-container">
+                        <!-- سيتم إضافة المنتجات هنا ديناميكيًا -->
                     </div>
-    
-                    <!-- شريط التحكم لعدد المنتجات -->
-                    <div class="cart-item-controls">
-                        <button onclick="updateQuantity('decrease')">-</button>
-                        <input type="number" id="product-quantity" value="1" readonly>
-                        <button onclick="updateQuantity('increase')">+</button>
+                </div>
+
+                <!-- قسم الشحن - الخطوة 2 -->
+                <div class="checkout-step-content" id="shipping-step-content" style="display: none;">
+                    <div class="shipping-details">
+                        <h2>معلومات الشحن</h2>
+                        <div class="shipping-form">
+                            <label for="address-select">اختر العنوان:</label>
+                            <select id="address-select" onchange="toggleAddressFields()" class="dropdown">
+                                <option value="current">استخدام العنوان الحالي</option>
+                                <option value="new">إضافة عنوان جديد</option>
+                            </select>
+
+                            <!-- حقول العنوان الجديد -->
+                            <div id="new-address-fields" style="display:none;">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="governorate">المحافظة:</label>
+                                        <select id="governorate" class="dropdown">
+                                            <option value="">اختر المحافظة</option>
+                                            <option value="qalyubia">القليوبية</option>
+                                            <option value="cairo">القاهرة</option>
+                                            <option value="giza">الجيزة</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city">المدينة:</label>
+                                        <select id="city" class="dropdown">
+                                            <option value="">اختر المدينة</option>
+                                            <option value="obour">مدينة العبور</option>
+                                            <option value="nasr">مدينة نصر</option>
+                                            <option value="maadi">المعادي</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <label for="street">العنوان بالتفصيل:</label>
+                                <input type="text" id="street" class="input-field" placeholder="الشارع، رقم المبنى، الدور">
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">رقم الهاتف:</label>
+                                        <input type="tel" id="phone" class="input-field" placeholder="01xxxxxxxxx">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postal-code">الرمز البريدي:</label>
+                                        <input type="text" id="postal-code" class="input-field" placeholder="الرمز البريدي">
+                                    </div>
+                                </div>
+
+                                <label for="details">ملاحظات إضافية:</label>
+                                <textarea id="details" class="textarea" placeholder="أي تفاصيل إضافية للتوصيل"></textarea>
+                            </div>
+                        </div>
                     </div>
-    
-                    <!-- سعر المنتج -->
-                    <div class="cart-item-price">
-                        <span class="original-price"><del>19,500 ج.م</del></span>
-                        <span class="discounted-price">18,300 ج.م</span>
+                </div>
+
+                <!-- قسم الدفع - الخطوة 3 -->
+                <div class="checkout-step-content" id="payment-step-content" style="display: none;">
+                    <div class="payment-details-container">
+                        <h2>طريقة الدفع</h2>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <input type="radio" id="payment-cod" name="payment-method" value="cod" checked onclick="togglePaymentMethod()">
+                                <label for="payment-cod" class="payment-label">
+                                    <img src="img/truck_3232076.png" alt="الدفع عند الاستلام" class="payment-icon">
+                                    <span>الدفع عند الاستلام</span>
+                                </label>
+                            </div>
+
+                            <div class="payment-method">
+                                <input type="radio" id="payment-card" name="payment-method" value="card" onclick="togglePaymentMethod()">
+                                <label for="payment-card" class="payment-label">
+                                    <img src="img/debit-card.png" alt="بطاقة ائتمان" class="payment-icon">
+                                    <span>بطاقة ائتمان</span>
+                                </label>
+                            </div>
+
+                            <div class="payment-method">
+                                <input type="radio" id="payment-wallet" name="payment-method" value="wallet" onclick="togglePaymentMethod()">
+                                <label for="payment-wallet" class="payment-label">
+                                    <img src="img/wallet.png" alt="محفظة إلكترونية" class="payment-icon">
+                                    <span>محفظة إلكترونية</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- حقول بطاقة الائتمان -->
+                        <div id="credit-card-fields" class="payment-details" style="display:none;">
+                            <div class="card-icons">
+                                <img src="img/card_16174583.png" alt="فيزا" class="card-icon">
+                                <img src="img/card_16174534.png" alt="ماستر كارد" class="card-icon">
+                            </div>
+
+                            <label for="card-number">رقم البطاقة:</label>
+                            <input type="text" id="card-number" class="input-field" placeholder="xxxx xxxx xxxx xxxx" maxlength="19">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-expiry">تاريخ الانتهاء:</label>
+                                    <input type="text" id="card-expiry" class="input-field" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvc">رمز الأمان (CVC):</label>
+                                    <input type="text" id="card-cvc" class="input-field" placeholder="xxx" maxlength="3">
+                                </div>
+                            </div>
+
+                            <label for="card-name">الاسم على البطاقة:</label>
+                            <input type="text" id="card-name" class="input-field" placeholder="الاسم كما هو مكتوب على البطاقة">
+                        </div>
+
+                        <!-- حقول المحفظة الإلكترونية -->
+                        <div id="wallet-fields" class="payment-details" style="display:none;">
+                            <div class="wallet-icons">
+                                <img src="img/idTf_g4ZNc_logos.jpeg" alt="فوري" class="wallet-icon">
+                                <img src="img/vodafone.png" alt="فودافون كاش" class="wallet-icon">
+                                <img src="img/etisalat_logo.svg" alt="اتصالات كاش" class="wallet-icon">
+                                <img src="img/orange.png" alt="أورانج كاش" class="wallet-icon">
+                            </div>
+
+                            <label for="wallet-type">اختر نوع المحفظة:</label>
+                            <select id="wallet-type" class="dropdown">
+                                <option value="">اختر المحفظة</option>
+                                <option value="fawry">فوري</option>
+                                <option value="vodafone">فودافون كاش</option>
+                                <option value="etisalat">اتصالات كاش</option>
+                                <option value="orange">أورانج كاش</option>
+                            </select>
+
+                            <label for="wallet-phone">رقم الهاتف المسجل:</label>
+                            <input type="tel" id="wallet-phone" class="input-field" placeholder="01xxxxxxxxx">
+                        </div>
                     </div>
-    
-                    <div class="cart-item-actions">
-                        <i class="fas fa-heart" title="إضافة إلى المفضلة"></i>
-                        <i class="fas fa-trash-alt" title="حذف المنتج"></i>
+                </div>
+
+                <!-- قسم التأكيد - الخطوة 4 -->
+                <div class="checkout-step-content" id="confirmation-step-content" style="display: none;">
+                    <div class="confirmation-details-container">
+                        <h2>تأكيد الطلب</h2>
+                        <div class="order-summary">
+                            <h3>ملخص الطلب</h3>
+                            <div id="order-items-summary">
+                                <!-- سيتم إضافة ملخص المنتجات هنا ديناميكيًا -->
+                            </div>
+                            <div class="address-summary">
+                                <h3>عنوان الشحن</h3>
+                                <p id="shipping-address-summary">سيتم عرض العنوان هنا</p>
+                            </div>
+                            <div class="payment-summary">
+                                <h3>طريقة الدفع</h3>
+                                <p id="payment-method-summary">سيتم عرض طريقة الدفع هنا</p>
+                            </div>
+                        </div>
+                        <div class="terms-agreement">
+                            <input type="checkbox" id="terms-checkbox">
+                            <label for="terms-checkbox">أوافق على <a href="#">الشروط والأحكام</a> وسياسة الخصوصية</label>
+                        </div>
                     </div>
                 </div>
             </div>
-    
-            <!-- قسم تفاصيل الدفع -->
+
+            <!-- قسم تفاصيل الدفع (الجانبي) -->
             <div class="cart-summary">
-                <h2>تفاصيل الدفع</h2>
+                <h2>ملخص الطلب</h2>
+
+                <!-- قسم الكوبون -->
+                <div class="coupon-section">
+                    <label for="coupon-code">هل لديك كوبون خصم؟</label>
+                    <div class="coupon-input">
+                        <input type="text" id="coupon-code" class="input-field" placeholder="أدخل كود الخصم">
+                        <button id="apply-coupon" class="btn-small">تطبيق</button>
+                    </div>
+                    <div id="coupon-message" class="coupon-message"></div>
+                </div>
+
+                <!-- تفاصيل الحساب -->
                 <div class="summary-item">
-                    <span>الإجمالي</span>
-                    <span id="total-amount">19,500 ج.م</span>
+                    <span>إجمالي المنتجات</span>
+                    <span id="subtotal-amount">0 ج.م</span>
                 </div>
                 <div class="summary-item">
-                    <span>الخصومات</span>
-                    <span>-200 ج.م</span>
+                    <span>الخصم</span>
+                    <span id="discount-amount">0 ج.م</span>
+                </div>
+                <div class="summary-item">
+                    <span>رسوم الشحن</span>
+                    <span id="shipping-amount">50 ج.م</span>
+                </div>
+                <div class="summary-item" id="coupon-discount-row" style="display:none;">
+                    <span>خصم الكوبون</span>
+                    <span id="coupon-discount-amount">0 ج.م</span>
                 </div>
                 <div class="summary-total">
-                    <span>الإجمالي العام</span>
-                    <span id="final-amount">18,300 ج.م</span>
+                    <span>الإجمالي</span>
+                    <span id="final-amount">0 ج.م</span>
                 </div>
-    
-<!-- اختيار العنوان -->
-<label for="address-select">اختار العنوان:</label>
-<select id="address-select" onchange="toggleAddressFields()" class="dropdown">
-    <option value="current">اختيار العنوان الحالي</option>
-    <option value="new">اختيار عنوان جديد</option>
-</select>
 
-<!-- حقول العنوان الجديد -->
-<div id="new-address-fields" style="display:none;">
-    <label for="governorate">المحافظة:</label>
-    <select id="governorate" class="dropdown">
-        <option value="">اختر المحافظة</option>
-        <option value="qalyubia">محافظة القليوبية</option>
-    </select>
-    
-    <label for="city">المدينة:</label>
-    <select id="city" class="dropdown">
-        <option value="">اختر المدينة</option>
-        <option value="new">مدينة العبور</option>
-    </select>
+                <!-- أزرار التنقل بين الخطوات -->
+                <div class="checkout-actions">
+                    <button id="next-step-btn" class="btn">متابعة</button>
+                    <button id="prev-step-btn" class="btn btn-secondary" style="display: none;">رجوع</button>
+                    <button id="place-order-btn" class="btn" style="display: none;">تأكيد الطلب</button>
+                    <button id="continue-shopping" class="btn btn-secondary">متابعة التسوق</button>
+                </div>
 
-    <label for="street">العنوان:</label>
-    <input type="text" id="street" class="input-field" placeholder="أدخل العنوان">
-    
-    <label for="phone">رقم الهاتف:</label>
-    <input type="text" id="phone" class="input-field" placeholder="أدخل رقم الهاتف">
+                <!-- ضمان الأمان -->
+                <div class="security-guarantee">
+                    <div class="security-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <p>جميع المعاملات آمنة ومشفرة</p>
+                </div>
 
-    <label for="details">تفاصيل إضافية:</label>
-    <textarea id="details" class="textarea" placeholder="أدخل تفاصيل إضافية هنا"></textarea>
-</div>
+                <!-- وسائل الدفع المقبولة -->
+                <div class="accepted-payment-methods">
+                    <p>وسائل الدفع المقبولة</p>
+                    <div class="payment-icons">
+                        <img src="img/card_16174561.png" alt="فيزا" class="payment-method-icon">
+                        <img src="img/card_16174576.png" alt="ماستر كارد" class="payment-method-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!-- خيارات الدفع -->
-<div id="payment-options">
-    <label for="payment-method">اختر طريقة الدفع:</label>
-    <select id="payment-method" onchange="togglePaymentOptions()" class="dropdown">
-        <option value="cod">الدفع عند الاستلام</option>
-        <option value="online">الدفع الإلكتروني</option>
-    </select>
-</div>
-
-<!-- خيارات الدفع الإلكتروني -->
-<div id="online-payment-options" style="display:none;">
-    <label for="payment-method-online">اختيار الدفع الذي تريده:</label>
-    <select id="payment-method-online" class="dropdown" onchange="toggleCardFields()">
-        <option value="" selected disabled>اختيار الدفع الذي تريده</option>
-        <option value="visa">فيزا</option>
-        <option value="mastercard">ماستر كارد</option>
-    </select>
-
-    <div id="card-icons" style="display:none;">
-        <img src="path/to/visa-icon.png" alt="فيزا" class="payment-icon" id="visa-icon" style="display:none;">
-        <img src="path/to/mastercard-icon.png" alt="ماستر كارد" class="payment-icon" id="mastercard-icon" style="display:none;">
-    </div>
-
-    <!-- حقول الفيزا -->
-    <div id="visa-fields" style="display:none;">
-        <label for="visa-number">رقم الفيزا:</label>
-        <input type="text" id="visa-number" class="input-field" placeholder="أدخل رقم الفيزا">
-        <label for="visa-expiry">تاريخ انتهاء الفيزا:</label>
-        <input type="text" id="visa-expiry" class="input-field" placeholder="أدخل تاريخ انتهاء الفيزا">
-        <label for="visa-cvc">رمز الأمان (CVC):</label>
-        <input type="text" id="visa-cvc" class="input-field" placeholder="أدخل رمز الأمان">
-    </div>
-
-    <!-- حقول الماستر كارد -->
-    <div id="mastercard-fields" style="display:none;">
-        <label for="mastercard-number">رقم الماستر كارد:</label>
-        <input type="text" id="mastercard-number" class="input-field" placeholder="أدخل رقم الماستر كارد">
-        <label for="mastercard-expiry">تاريخ انتهاء الماستر كارد:</label>
-        <input type="text" id="mastercard-expiry" class="input-field" placeholder="أدخل تاريخ انتهاء الماستر كارد">
-        <label for="mastercard-cvc">رمز الأمان (CVC):</label>
-        <input type="text" id="mastercard-cvc" class="input-field" placeholder="أدخل رمز الأمان">
-    </div>
-</div>
-
-<!-- أزرار التأكيد والإلغاء -->
-<button class="btn" onclick="confirmPayment()">تأكيد الدفع</button>
-<button class="btn btn-secondary">إلغاء</button>
-
-<!-- النافذة المنبثقة -->
-<div id="payment-popup" class="popup-container" style="display:none;">
-    <div class="popup-content">
-        <h2>تم تأكيد الدفع بنجاح!</h2>
-        <p>سيتم توجيهك إلى صفحة تأكيد الدفع...</p>
-    </div>
-</div>
-    
-                <!-- الإيقونات أسفل الأزرار -->
-                <div class="icon-container">
-                    <img src="img/card_16174561.png" alt="أيقونة 1" class="small-icon">
-                    <img src="img/card_16174576.png" alt="أيقونة 2" class="small-icon">
+        <!-- نافذة تأكيد الطلب -->
+        <div id="order-confirmation" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="confirmation-header">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>تم تأكيد طلبك بنجاح!</h2>
+                </div>
+                <div class="confirmation-details">
+                    <p>رقم الطلب: <span id="order-number"></span></p>
+                    <p>إجمالي المبلغ: <span id="order-total"></span></p>
+                    <p>سيتم توصيل طلبك خلال 3-5 أيام عمل</p>
+                </div>
+                <div class="confirmation-actions">
+                    <button id="track-order" class="btn">تتبع الطلب</button>
+                    <button id="back-to-shop" class="btn btn-secondary">العودة للتسوق</button>
                 </div>
             </div>
         </div>
     </div>
-    
-    
-    
 
-    
+
+
+    <div id="fawaterkDivId"></div>
+
 
     <footer>
         <div class="contanier">
@@ -295,14 +429,14 @@
                 <div class="row">
                     <img src="img/alpha.png" alt="">
                     <div class="hotline">
-    
+
                         <div class="hotline-text">
                             <h6>خدمة عملاء 24/7</h6>
                             <span>(+100) 123 456 7890</span>
                         </div>
                         <i class="fa-solid fa-headset"></i>
                     </div>
-    
+
                 </div>
                 <div class="small-row">
                     <h6> اعرف المزيد عنا</h6>
@@ -311,7 +445,7 @@
                         <a href="shipping-delivery.html"><i class="fa-solid fa-angle-left"></i>الشحن و التوصيل </a>
                     </div>
                 </div>
-                
+
                 <div class="small-row">
                     <h6> تسوق معنا</h6>
                     <div class="links-row">
@@ -321,7 +455,7 @@
                         <a href="wishlist.html"><i class="fa-solid fa-angle-left"></i>قوائمك</a>
                     </div>
                 </div>
-                
+
                 <div class="small-row">
                     <h6> دعنا نساعدك</h6>
                     <div class="links-row">
@@ -332,9 +466,9 @@
                     </div>
                 </div>
             </div>
-    
-                
-    
+
+
+
         <div class="bottom-footer">
             <div class="contanier">
                 <p>Copyright &copy; <span>MOHAMED HASHISH</span> Powered by <span>HASHISH</span></p>
@@ -350,9 +484,11 @@
 
     <!-- Swiper JS -->
     <script src="swiperJs/swiper-bundle.min.js"></script>
+    <script src="https://app.fawaterk.com/fawaterkPlugin/fawaterkPlugin.min.js"></script>
 
     <!-- Linke File JS -->
     <script src="js/main.js"></script>
+    <script src="js/notifications.js"></script>
     <script src="js/mycart.js"></script>
 
 </body>

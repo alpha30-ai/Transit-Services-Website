@@ -12,13 +12,25 @@
     <!-- Link Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Link File CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Restaurant CSS -->
+    <!-- Restaurants CSS -->
     <link rel="stylesheet" href="css/restaurants.css">
 </head>
 <body class="menu-side-in-bag">
+    <!-- زخارف الجوانب -->
+    <div class="side-decoration left"></div>
+    <div class="side-decoration right"></div>
+
+    <!-- غلاف الصفحة -->
+    <div class="page-wrapper">
+        <div class="page-content">
 
     <header>
         <!-- نفس الهيدر الموجود في الصفحة الرئيسية -->
@@ -68,7 +80,7 @@
                             <ul><li><a href="hypermarket.html">هايبر ماركت</a></li></ul>
                             <ul><li><a href="labs.html">معامل تحاليل</a></li></ul>
                             <ul><li><a href="restaurants.html">مطاعم</a></li></ul>
-                            <ul><li><a href="car-maintenance.html">صيانة سيارات</a></li></ul>
+                            <ul><li><a href="car-services.html">خدمات السيارات</a></li></ul>
                         </div>
                     </li>
                     <li><a href="about.html">من نحن</a></li>
@@ -86,415 +98,392 @@
                 <img class="logo-slide" src="img/scan_12580910.png" alt="">
                 <i id="btn-close" class="fa-solid fa-bars fa-times"></i>
                 <ul class="side-links">
-                    <a href="#"><li>الرئيسية</li></a>
-                    <a href="#"><li>الخدمات</li></a>
-                    <a href="#"><li>من نحن</li></a>
-                    <a href="#"><li>المميزات</li></a>
-                    <a href="#"><li>العروض</li></a>
-                    <a href="#"><li>المنتجات</li></a>
-                    <a href="#"><li>التاجر</li></a>
-                    <a href="#"><li>إكسسوارات</li></a>
-                    <a href="#"><li>مستحضرات التجميل</li></a>
-                    <a href="#"><li>التلفزيونات</li></a>
-
+                    <a href="index.html"><li>الرئيسية</li></a>
+                    <a href="Services.html"><li>الخدمات</li></a>
+                    <a href="labs.html"><li>معامل التحاليل</li></a>
+                    <a href="hospitals.html"><li>المستشفيات</li></a>
+                    <a href="car-services.html"><li>خدمات السيارات</li></a>
+                    <a href="pharmacy.html"><li>الصيدليات</li></a>
+                    <a href="hypermarket.html"><li>هايبر ماركت</li></a>
+                    <a href="restaurants.html"><li>المطاعم</li></a>
+                    <a href="about.html"><li>من نحن</li></a>
+                    <a href="contact.html"><li>المميزات</li></a>
+                    <a href="offers.html"><li>العروض</li></a>
+                    <a href="products.html"><li>المنتجات</li></a>
                 </ul>
-
+    
             </div>
-            <div class="slide">
-                <div class="slide-swp swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide swiper-slide1">
-                            <img src="img/Foods1.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide swiper-slide2">
-                            <img src="img/Foods2.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide swiper-slide3">
-                            <img src="img/Foods3.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide swiper-slide3">
-                            <img src="img/Foods4.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide swiper-slide3">
-                            <img src="img/Foods5.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                  </div>
-            </div>
+    
+    
         </section>
     </header>
-    <div class="banner contanier">
-        <div class="boxs">
-            <div class="box">
-                <a href="#"><img src="img/banner-6.jpg" alt="">
-                <span class="glass-hover"></span></a>
-            </div>
-            <div class="box">
-                <a href="#"><img src="img/banner-7.jpg" alt="">
-                <span class="glass-hover"></span></a>
-            </div>
-            <div class="box">
-                <a href="#"><img src="img/banner-8.jpg" alt="">
-                <span class="glass-hover"></span></a>
-            </div>
-        </div>
-    </div>
-    <section class="top-banner">
-        <h3>ابحث عن مطعمك المفضل</h3>
-        <p>اختر من بين مجموعة من المطاعم القريبة لك وتمتع بأفضل العروض.</p>
 
-        <div class="info-box">
-            <p>حدد المطعم من القائمة لعرض المنتجات والعروض المتاحة</p>
-        </div>
-    </section>
-
-    <section class="restaurant-section">
-        <!-- المنطقة اليمنى - معلومات المطعم وفوقها الفلتر -->
-        <aside class="right-sidebar">
-            <div class="restaurant-details">
-                <div class="restaurant-image">
-                    <img id="restaurantImg" src="img/2a3b2788-897e-434c-9c39-cccd4c3a9c69.jpg" alt="صورة المطعم">
+    <!-- قسم البانر الرئيسي -->
+    <section class="restaurant-hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-title-container">
+                <div class="hero-icon">
+                    <i class="fas fa-utensils"></i>
                 </div>
-                <h2 id="restaurantName">اسم المطعم</h2>
-                <p id="restaurantDescription">وصف المطعم يظهر هنا عند اختيار مطعم معين.</p>
+                <h1>مطاعم مدينة العبور</h1>
             </div>
+            <p>اطلب وجباتك المفضلة من أفضل المطاعم في مدينة العبور واستلمها في منزلك بأسرع وقت</p>
 
-            <!-- فلتر التصفية -->
-            <div class="filter-sidebar">
-                <h3>تصفية النتائج</h3>
-                <div class="filter-group">
-                    <label for="priceRange">نطاق السعر:</label>
-                    <input type="range" id="priceRange" min="0" max="10000" value="100">
-                    <div class="price-display" id="priceDisplay">السعر: 100</div>
+            <div class="hero-search-container">
+                <div class="hero-search-box">
+                    <input type="text" placeholder="ابحث عن المطاعم..." id="heroSearch">
+                    <button class="search-btn"><i class="fas fa-search"></i> بحث</button>
                 </div>
-                <div class="filter-group">
-                    <label for="category">الفئة:</label>
-                    <select id="category">
-                        <option value="all">الكل</option>
-                        <option value="fast-food">وجبات سريعة</option>
-                        <option value="oriental">مأكولات شرقية</option>
-                        <option value="western">مأكولات غربية</option>
+                <div class="restaurant-selector">
+                    <select id="heroRestaurantFilter">
+                        <option value="0">جميع المطاعم</option>
+                        <option value="1">طعم الماحي</option>
+                        <option value="2">مطعم كشري الخديوي</option>
+                        <option value="3">مطعم الفلافل المصري</option>
+                        <option value="4">مطعم دلعين السوري</option>
                     </select>
                 </div>
-                <div class="filter-group">
-                    <label for="availability">التوفر:</label>
-                    <select id="availability">
-                        <option value="all">الكل</option>
-                        <option value="available">متاح</option>
-                        <option value="unavailable">غير متاح</option>
-                    </select>
-                </div>
-                <div class="filter-group search-bar">
-                    <label for="search">بحث عن وجبة:</label>
-                    <input type="text" id="search" placeholder="أدخل اسم الوجبة...">
-                </div>
-            </div>
-        </aside>
-
-        <!-- المنطقة اليسرى - اختيار المطعم والوجبات -->
-        <div class="main-content">
-            <div class="restaurant-filter">
-                <h3>اختر مطعمك</h3>
-                <select id="restaurantFilter">
-                    <option value="0">اختر مطعم</option>
-                    <option value="1">مطعم الماحي</option>
-                    <option value="2">مطعم كشري الخديوي</option>
-                    <option value="3">مطعم الفلافل المصري</option>
-                    <option value="4">مطعم دلعين السوري</option>
-                </select>
             </div>
 
-            <!-- كروت الوجبات -->
-            <div class="restaurant-products" id="restaurantProducts">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="img/product1.jpg" alt="وجبة 1">
-                        <span class="discount">خصم 10%</span>
+            <div class="hero-features">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
                     </div>
-                    <div class="product-info">
-                        <h3>وجبة 1</h3>
-                        <p class="product-description">وصف الوجبة.</p>
-                        <div class="price">
-                            <span class="original-price">25 جنيه</span>
-                            <span class="discounted-price">22.5 جنيه</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="add-to-favorite"><i class="fa-regular fa-heart"></i></button>
-                            <button class="add-to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                            <button class="buy-now"><i class="fa-solid fa-bag-shopping"></i></button>
-                        </div>
+                    <div class="feature-text">
+                        <h3>توصيل سريع</h3>
+                        <p>خلال ساعتين</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>وجبات فاخرة</h3>
+                        <p>ضمان الجودة</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>دعم فني 24/7</h3>
+                        <p>مساعدة على مدار الساعة</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>تنوع الوجبات</h3>
+                        <p>أكثر من 100 وجبة</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="slider-container-custom">
-        <!-- النسخة الأولى من السلايدر -->
-        <div class="slide">
-            <div class="slide-swp swiper mySwiper1">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="img/slide1.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/slide2.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/slide3.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/slide4.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/99.png" alt="">
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-
-        <!-- النسخة الثانية من السلايدر -->
-        <div class="slide">
-            <div class="slide-swp swiper mySwiper2">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="img/slide1.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/slide2.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/slide3.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/slide4.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/99.png" alt="">
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-
-        <!-- النسخة الثالثة من السلايدر -->
-        <div class="slide">
-            <div class="slide-swp swiper mySwiper3">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="img/slide1.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/slide2.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/slide3.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/slide4.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/99.png" alt="">
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </div>
-
-    <section class="deals contanier swiper mySwiper">
-
-        <div class="section-head">
-            <h4>عروض <span> ومنتجات </span> </h4>
-        </div>
-        <div class="boxs swiper-wrapper">
-
-            <div class="box product-item swiper-slide">
-              <a href="#">
-                <div class="product-btn">
-                <ul class="product-action">
-                    <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
+    <!-- قسم المحتوى الرئيسي -->
+    <div class="content-section">
+        <div class="restaurant-breadcrumb">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><i class="fas fa-angle-left"></i></li>
+                    <li>مطاعم</li>
                 </ul>
-                </div>
-                <div class="div-img">
-                <span class="discount">34%</span>
-                <img src="img/product-14.jpg" class="img-product">
-                <img src="img/product-2.jpg" class="hover-img">
-                </div>
-                <div class="content">
-                <a href="buy product.html" class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <div class="price">
-                    <span>2500.00 جنيه</span>
-                    <del>2600.00 جنيه</del>
-                </div>
-                <p class="product-parg">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
-                <h4>إسرع! العرض ينتهي في:</h4>
-
-                <ul class="countdown">
-                    <li><span>0</span> أيام</li>
-                    <li><span>19</span> ساعات</li>
-                    <li><span>54</span> دقائق</li>
-                    <li><span>39</span> ثواني</li>
-                </ul>
-
-                </div>
-              </a>
-            </div>
-            <div class="box product-item swiper-slide">
-                <a href="#">
-                  <div class="product-btn">
-                  <ul class="product-action">
-                      <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                      <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                  </ul>
-              </div>
-              <div class="div-img">
-                  <span class="discount">34%</span>
-                  <img src="img/product-13.jpg" class="img-product">
-                  <img src="img/product-2.jpg" class="hover-img">
-              </div>
-              <div class="content">
-                  <a href="buy product.html" class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                  <div class="stars">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star-half-stroke"></i>
-                  </div>
-                  <div class="price">
-                      <span>2500.00 جنيه</span>
-                      <del>2600.00 جنيه</del>
-                  </div>
-                  <p class="product-parg">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
-                  <h4>إسرع! العرض ينتهي في:</h4>
-
-                  <ul class="countdown">
-                      <li><span>0</span> أيام</li>
-                      <li><span>19</span> ساعات</li>
-                      <li><span>54</span> دقائق</li>
-                      <li><span>39</span> ثواني</li>
-                  </ul>
-
-              </div>
-                </a>
-              </div>
-
-              <div class="box product-item swiper-slide">
-                <a href="#">
-                  <div class="product-btn">
-                  <ul class="product-action">
-                      <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                      <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                  </ul>
-              </div>
-              <div class="div-img">
-                  <span class="discount">34%</span>
-                  <img src="img/product-9.jpg" class="img-product">
-                  <img src="img/product-2.jpg" class="hover-img">
-              </div>
-              <div class="content">
-                  <a href="buy product.html" class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                  <div class="stars">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star-half-stroke"></i>
-                  </div>
-                  <div class="price">
-                      <span>2500.00 جنيه</span>
-                      <del>2600.00 جنيه</del>
-                  </div>
-                  <p class="product-parg">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
-                  <h4>إسرع! العرض ينتهي في:</h4>
-
-                  <ul class="countdown">
-                      <li><span>0</span> أيام</li>
-                      <li><span>19</span> ساعات</li>
-                      <li><span>54</span> دقائق</li>
-                      <li><span>39</span> ثواني</li>
-                  </ul>
-
-              </div>
-                </a>
-              </div>
-
-              <div class="box product-item swiper-slide">
-                <a href="#">
-                  <div class="product-btn">
-                  <ul class="product-action">
-                      <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
-                      <li><a href="#"><i class="fa-solid fa-print"></i></a></li>
-                  </ul>
-              </div>
-              <div class="div-img">
-                  <span class="discount">34%</span>
-                  <img src="img/product-8.jpg" class="img-product">
-                  <img src="img/product-2.jpg" class="hover-img">
-              </div>
-              <div class="content">
-                  <a href="buy product.html" class="product-item-link"> هاتف محمول أندرويد ذو شريحتين </a>
-                  <div class="stars">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star-half-stroke"></i>
-                  </div>
-                  <div class="price">
-                      <span>2500.00 جنيه</span>
-                      <del>2600.00 جنيه</del>
-                  </div>
-                  <p class="product-parg">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
-                  <h4>إسرع! العرض ينتهي في:</h4>
-
-                  <ul class="countdown">
-                      <li><span>0</span> أيام</li>
-                      <li><span>19</span> ساعات</li>
-                      <li><span>54</span> دقائق</li>
-                      <li><span>39</span> ثواني</li>
-                  </ul>
-
-              </div>
-                </a>
-              </div>
-
-        </div>
-
-        <div class="swiper-button-next swiper-btn"></div>
-        <div class="swiper-button-prev swiper-btn"></div>
-    </section>
-
-    <div class="newsletter">
-        <div class="container">
-            <div class="subscribe-content">
-                <div class="text">
-                    <h4>سجل للحصول علي آخر الأخبار</h4>
-                    <p>سجل بالبريد الإلكتروني للحصول علي آخر الأخبار والمنتجات الجديدة</p>
-                </div>
-            </div>
-            <div class="subscribe-form">
-                <form action="">
-                    <input type="email" placeholder="أدخل البريد الإلكتروني هنا للتسجيل" required>
-                    <button class="btn-srch" type="submit">سجل</button>
-                </form>
             </div>
         </div>
+
+        <section class="restaurant-section">
+            <div class="container">
+                <!-- الشريط الجانبي للفلترة -->
+                <aside class="restaurant-sidebar">
+                    <!-- معلومات المطعم -->
+                    <div class="restaurant-details">
+                        <span class="restaurant-status">مفتوحة الآن</span>
+                        <div class="restaurant-image">
+                            <img id="restaurantImg" src="img/restaurants1.jpg" alt="صورة المطعم">
+                        </div>
+                        <h2 id="restaurantName">اسم المطعم</h2>
+                        <p id="restaurantDescription">وصف المطعم يظهر هنا عند اختيار مطعم معين.</p>
+                        <div class="restaurant-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(32 تقييم)</span>
+                        </div>
+                        <div class="restaurant-contact">
+                            <a href="tel:+201234567890" class="contact-btn"><i class="fas fa-phone-alt"></i> اتصل بالمطعم</a>
+                            <a href="#" class="contact-btn secondary"><i class="fas fa-map-marker-alt"></i> الموقع</a>
+                        </div>
+                    </div>
+
+                    <!-- فلتر التصفية -->
+                    <div class="filter-sidebar">
+                        <h3>تصفية الوجبات</h3>
+                        <div class="filter-group search-bar">
+                            <label for="search">بحث عن وجبة:</label>
+                            <input type="text" id="search" placeholder="أدخل اسم الوجبة...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="filter-group">
+                            <label for="category">الفئة:</label>
+                            <select id="category">
+                                <option value="all">جميع الفئات</option>
+                                <option value="fast-food">وجبات سريعة</option>
+                                <option value="italian">إيطالي</option>
+                                <option value="chinese">صيني</option>
+                                <option value="seafood">فطور</option>
+                                <option value="desserts">حلويات</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="priceRange">نطاق السعر:</label>
+                            <input type="range" id="priceRange" min="0" max="10000" value="10000">
+                            <div class="price-display" id="priceDisplay">
+                                <span>السعر: </span>
+                                <span>10000 جنيه</span>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label for="availability">التوفر:</label>
+                            <select id="availability">
+                                <option value="all">الكل</option>
+                                <option value="in-stock">متوفر</option>
+                                <option value="out-of-stock">غير متوفر</option>
+                            </select>
+                        </div>
+                        <div class="filter-actions">
+                            <button class="reset-filters-btn"><i class="fas fa-undo"></i> إعادة ضبط</button>
+                            <button class="apply-filters-btn"><i class="fas fa-filter"></i> تطبيق الفلتر</button>
+                        </div>
+                    </div>
+
+                    <!-- المساعدة -->
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>بحاجة للمساعدة؟</h3>
+                        <p>يمكنك التواصل مع فريق خدمة العملاء على مدار الساعة</p>
+                        <a href="contact.html" class="help-btn">تواصل معنا</a>
+                    </div>
+                </aside>
+
+                <!-- المحتوى الرئيسي -->
+                <div class="restaurant-main-content">
+                    <!-- اختيار المطعم -->
+                    <div class="restaurant-filter">
+                        <div class="restaurant-filter-header">
+                            <h3>اختر مطعمك</h3>
+                            <div class="restaurant-filter-info">
+                                <i class="fas fa-info-circle"></i>
+                                <span>يمكنك اختيار مطعم محدد لعرض وجباته</span>
+                            </div>
+                        </div>
+                        <select id="restaurantFilter">
+                            <option value="0">اختر مطعم</option>
+                            <option value="1">طعم الماحي</option>
+                            <option value="2">مطعم كشري الخديوي</option>
+                            <option value="3">مطعم الفلافل المصري</option>
+                            <option value="4">مطعم دلعين السوري</option>
+                        </select>
+                        <div class="restaurant-filter-tags">
+                            <div class="restaurant-filter-tag">
+                                <span>وجبات سريعة</span>
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="restaurant-filter-tag">
+                                <span>إيطالي</span>
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="restaurant-filter-tag">
+                                <span>صيني</span>
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- عنوان الوجبات والترتيب -->
+                    <div class="products-header">
+                        <h2 class="products-title">وجبات المطعم</h2>
+                        <div class="products-sorting">
+                            <label for="sortProducts">ترتيب حسب:</label>
+                            <select id="sortProducts">
+                                <option value="popular">الأكثر شعبية</option>
+                                <option value="price-asc">السعر: من الأقل للأعلى</option>
+                                <option value="price-desc">السعر: من الأعلى للأقل</option>
+                                <option value="newest">الأحدث</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- كروت الوجبات -->
+                    <div class="restaurant-products" id="restaurantProducts">
+                        <!-- سيتم ملئ هذا القسم ديناميكياً بواسطة JavaScript -->
+                        <!-- نموذج لكرت وجبة -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="img/Foods1.jpg" alt="وجبات سريعة">
+                                <span class="discount">خصم 10%</span>
+                                <span class="product-tag new">جديد</span>
+                                <div class="product-actions-overlay">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-favorite-btn"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">وجبات سريعة</div>
+                                <h3>وجبات سريعة</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(42)</span>
+                                </div>
+                                <p class="product-description">وجبات سريعة عالية الجودة لاحتياجاتك اليومية.</p>
+                                <div class="price">
+                                    <div class="price-info">
+                                        <span class="original-price">25 جنيه</span>
+                                        <span class="discounted-price">22.5 جنيه</span>
+                                    </div>
+                                    <span class="product-badge in-stock"><i class="fas fa-check-circle"></i> متوفر</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> إضافة للسلة</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="img/Foods2.jpg" alt="إيطالي">
+                                <span class="discount">خصم 5%</span>
+                                <span class="product-tag bestseller">الأكثر مبيعاً</span>
+                                <div class="product-actions-overlay">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-favorite-btn"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">إيطالي</div>
+                                <h3>إيطالي</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(28)</span>
+                                </div>
+                                <p class="product-description">إيطالي عالية الجودة لاحتياجاتك اليومية.</p>
+                                <div class="price">
+                                    <div class="price-info">
+                                        <span class="original-price">15 جنيه</span>
+                                        <span class="discounted-price">13.5 جنيه</span>
+                                    </div>
+                                    <span class="product-badge out-of-stock"><i class="fas fa-times-circle"></i> غير متوفر</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="add-to-cart" disabled><i class="fas fa-cart-plus"></i> إضافة للسلة</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="img/Foods3.jpg" alt="صيني">
+                                <span class="discount">خصم 10%</span>
+                                <span class="product-tag featured">مميز</span>
+                                <div class="product-actions-overlay">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-favorite-btn"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">صيني</div>
+                                <h3>صيني</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(56)</span>
+                                </div>
+                                <p class="product-description">صيني عالية الجودة لاحتياجاتك اليومية.</p>
+                                <div class="price">
+                                    <div class="price-info">
+                                        <span class="original-price">50 جنيه</span>
+                                        <span class="discounted-price">45 جنيه</span>
+                                    </div>
+                                    <span class="product-badge in-stock"><i class="fas fa-check-circle"></i> متوفر</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> إضافة للسلة</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="img/Foods4.jpg" alt="فطور">
+                                <span class="discount">خصم 15%</span>
+                                <div class="product-actions-overlay">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-favorite-btn"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">فطور</div>
+                                <h3>فطور</h3>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(19)</span>
+                                </div>
+                                <p class="product-description">فطور عالية الجودة لاحتياجاتك اليومية.</p>
+                                <div class="price">
+                                    <div class="price-info">
+                                        <span class="original-price">30 جنيه</span>
+                                        <span class="discounted-price">25.5 جنيه</span>
+                                    </div>
+                                    <span class="product-badge in-stock"><i class="fas fa-check-circle"></i> متوفر</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> إضافة للسلة</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الترقيم -->
+                    <div class="pagination">
+                        <button class="pagination-btn prev"><i class="fas fa-chevron-right"></i></button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <span class="pagination-dots">...</span>
+                        <button class="pagination-btn">10</button>
+                        <button class="pagination-btn next"><i class="fas fa-chevron-left"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer>
@@ -503,14 +492,14 @@
                 <div class="row">
                     <img src="img/alpha.png" alt="">
                     <div class="hotline">
-    
+
                         <div class="hotline-text">
                             <h6>خدمة عملاء 24/7</h6>
                             <span>(+100) 123 456 7890</span>
                         </div>
                         <i class="fa-solid fa-headset"></i>
                     </div>
-    
+
                 </div>
                 <div class="small-row">
                     <h6> اعرف المزيد عنا</h6>
@@ -519,7 +508,7 @@
                         <a href="shipping-delivery.html"><i class="fa-solid fa-angle-left"></i>الشحن و التوصيل </a>
                     </div>
                 </div>
-                
+
                 <div class="small-row">
                     <h6> تسوق معنا</h6>
                     <div class="links-row">
@@ -529,7 +518,7 @@
                         <a href="wishlist.html"><i class="fa-solid fa-angle-left"></i>قوائمك</a>
                     </div>
                 </div>
-                
+
                 <div class="small-row">
                     <h6> دعنا نساعدك</h6>
                     <div class="links-row">
@@ -540,21 +529,35 @@
                     </div>
                 </div>
             </div>
-    
-                
-    
-        <div class="bottom-footer">
-            <div class="contanier">
-                <p>Copyright &copy; <span>MOHAMED HASHISH</span> Powered by <span>HASHISH</span></p>
-                <div class="payment">
-                <img src="img/payment-1.png" alt="">
-                <img src="img/payment-2.png" alt="">
-                <img src="img/payment-3.png" alt="">
-                <img src="img/payment-4.png" alt="">
-            </div>
-            </div>
         </div>
     </footer>
+
+    <!-- زر العودة للأعلى -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- الرسائل المنبثقة -->
+    <div class="toast-notification success" id="successToast">
+        <i class="fas fa-check-circle"></i>
+        <span>تمت العملية بنجاح! تم إضافة المنتج إلى سلة التسوق</span>
+    </div>
+
+    <div class="toast-notification error" id="errorToast">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>حدث خطأ ما، يرجى المحاولة مرة أخرى أو التواصل مع خدمة العملاء</span>
+    </div>
+
+    <div class="toast-notification warning" id="warningToast">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>تنبيه: يرجى التحقق من المعلومات قبل المتابعة لإتمام عملية الشراء</span>
+    </div>
+
+    <!-- مؤشر التحميل -->
+    <div class="loading-indicator" id="loadingIndicator">
+        <div class="spinner"></div>
+        <div class="loading-text">جاري التحميل...</div>
+    </div>
 
     <!-- Swiper JS -->
     <script src="swiperJs/swiper-bundle.min.js"></script>
@@ -563,5 +566,7 @@
     <script src="js/restaurants.js"></script>
     <script src="js/main.js"></script>
 
+        </div> <!-- نهاية page-content -->
+    </div> <!-- نهاية page-wrapper -->
 </body>
 </html>

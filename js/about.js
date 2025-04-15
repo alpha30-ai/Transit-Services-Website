@@ -1,3 +1,8 @@
+/**
+ * ملف JavaScript الرئيسي لصفحة من نحن
+ * يحتوي على جميع الوظائف والتفاعلات اللازمة للصفحة
+ */
+
 // بيانات الفريق
 const teamMembers = [
     {
@@ -5,7 +10,7 @@ const teamMembers = [
         image: "img/t.m/hero-banner.jpg",
         description: "قائد الفريق، مطور ويب بخبرة 5 سنوات في تصميم وتطوير المواقع.",
         age: 21,
-        role: "القائد والمطور الرئيسي",
+        role: " المطور الرئيسي",
         isLeader: true
     },
     {
@@ -47,7 +52,6 @@ const teamMembers = [
         age: 22,
         role: "مهندس DevOps",
         isLeader: false
-
     },
     {
         name: "عبد الرحمن علاء محمد عثمان",
@@ -83,49 +87,327 @@ const teamMembers = [
     }
 ];
 
-// عرض بيانات الفريق
-const teamGrid = document.getElementById("team-grid");
+// تصنيف أعضاء الفريق حسب الأدوار
+const teamCategories = {
+    all: teamMembers,
+    development: teamMembers.filter(member =>
+        member.role.includes('مطور') ||
+        member.role.includes('مهندس') ||
+        member.role.includes('DevOps')
+    ),
+    design: teamMembers.filter(member =>
+        member.role.includes('مصمم') ||
+        member.role.includes('تصميم') ||
+        member.role.includes('جرافيك') ||
+        member.name === "محمد هاني احمد حشيش" // إضافة العضو إلى فريق التصميم
+    ),
+    management: teamMembers.filter(member =>
+        member.role.includes('قائد') ||
+        member.role.includes('تحليل') ||
+        member.role.includes('خبير') ||
+        member.role.includes('إدارة')
+    )
+};
 
-teamMembers.forEach(member => {
-    const memberCard = document.createElement("div");
-    memberCard.classList.add("team-member");
+// سنحدد عناصر DOM عند تحميل الصفحة
+let teamGrid;
+let teamTabs;
 
-    if (member.isLeader) {
-        memberCard.classList.add("leader");
-    } else {
-        memberCard.classList.add("leader");
+// دالة لعرض أعضاء الفريق
+function displayTeamMembers(category = 'all') {
+    // تفريغ الشبكة
+    teamGrid.innerHTML = '';
+
+    // الحصول على الأعضاء حسب التصنيف
+    const members = teamCategories[category];
+
+    // إذا لم يوجد أعضاء في هذا التصنيف
+    if (members.length === 0) {
+        teamGrid.innerHTML = '<div class="no-members">لا يوجد أعضاء في هذا القسم حالياً</div>';
+        return;
     }
 
-    // Determine the star rating
-    const starRating = member.isLeader ? 5 : Math.floor(Math.random() * 5) + 1;
-    const stars = Array.from({ length: 5 }, (_, i) => `<span class="star ${i < starRating ? 'filled' : 'empty'}">★</span>`).join('');
+    // إضافة الأعضاء إلى الشبكة
+    members.forEach(member => {
+        const memberCard = document.createElement("div");
+        memberCard.classList.add("team-member");
+        memberCard.dataset.category = category;
 
-    memberCard.innerHTML = `
-        ${member.isLeader ? '<div class="leader-badge">المطور</div>' : ''}
-        <img src="${member.image}" alt="${member.name}">
-        <h3>${member.name}</h3>
-        <p>${member.description}</p>
-        <p>العمر: ${member.age}</p>
-        <p class="role">${member.role}</p>
-        <div class="rating">${stars}</div>
-    `;
+        // إضافة فئة للقائد
+        if (member.isLeader) {
+            memberCard.classList.add("leader");
+        }
 
-    teamGrid.appendChild(memberCard);
-});
-document.querySelectorAll('.team-member').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left; // موقع الماوس الأفقي داخل الكارت
-        const y = e.clientY - rect.top; // موقع الماوس العمودي داخل الكارت
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 10; // حساب الانحناء العمودي
-        const rotateY = (centerX - x) / 10; // حساب الانحناء الأفقي
+        // تحديد التقييم بالنجوم (جميع الأعضاء يحصلون على 5 نجوم)
+        const stars = Array.from({ length: 5 }, () => `<span class="star filled">★</span>`).join('');
 
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+        // إنشاء محتوى البطاقة
+        memberCard.innerHTML = `
+            <div class="team-member-image-container">
+                <img src="${member.image}" alt="${member.name}">
+                ${member.isLeader ? '<div class="leader-badge">قائد الفريق</div>' : ''}
+            </div>
+            <div class="team-member-content">
+                <h3>${member.name}</h3>
+                <span class="role">${member.role}</span>
+                <p>${member.description}</p>
+                <div class="rating">${stars}</div>
+            </div>
+        `;
+
+        teamGrid.appendChild(memberCard);
     });
 
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+    // تفعيل تأثير الحركة ثلاثية الأبعاد
+    activateCardEffects();
+}
+
+// تفعيل تأثير الحركة ثلاثية الأبعاد للبطاقات
+function activateCardEffects() {
+    document.querySelectorAll('.team-member').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // موقع الماوس الأفقي داخل الكارت
+            const y = e.clientY - rect.top; // موقع الماوس العمودي داخل الكارت
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / 20; // حساب الانحناء العمودي
+            const rotateY = (centerX - x) / 20; // حساب الانحناء الأفقي
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
     });
+}
+
+// تفعيل أزرار التبويب
+function activateTabs() {
+    teamTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // إزالة الفئة النشطة من جميع الأزرار
+            teamTabs.forEach(t => t.classList.remove('active'));
+
+            // إضافة الفئة النشطة للزر المضغوط
+            tab.classList.add('active');
+
+            // عرض الأعضاء حسب التصنيف
+            const category = tab.dataset.teamTab;
+            displayTeamMembers(category);
+        });
+    });
+}
+
+// دالة لتحريك أرقام الإحصائيات
+function animateStatNumbers() {
+    console.log('جاري تفعيل عداد الإحصائيات');
+
+    // تحديد جميع عناصر الأرقام في الصفحة
+    const statNumbers = document.querySelectorAll('.stat-number, .achievement-number, .impact-number, .counter-number, [data-count]');
+
+    // التأكد من أن الأرقام مرئية
+    statNumbers.forEach(number => {
+        number.style.visibility = 'visible';
+        number.style.opacity = '1';
+    });
+    console.log('عدد عناصر الإحصائيات:', statNumbers.length);
+
+    if (statNumbers.length === 0) {
+        console.warn('لم يتم العثور على عناصر الإحصائيات');
+        return;
+    }
+
+    // استخدام Intersection Observer لتفعيل العدادات عند الوصول إليها
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // إعادة تشغيل العداد عند الوصول إليه
+                    const number = entry.target;
+                    const targetValue = parseFloat(number.dataset.count);
+                    if (!isNaN(targetValue)) {
+                        number.textContent = '0';
+                        const duration = 2000;
+                        const startTime = Date.now();
+
+                        function updateNumber() {
+                            const currentTime = Date.now();
+                            const elapsedTime = currentTime - startTime;
+
+                            if (elapsedTime < duration) {
+                                const progress = elapsedTime / duration;
+                                // التعامل مع الأرقام العشرية مثل 4.8
+                                const isDecimal = targetValue % 1 !== 0;
+                                const currentValue = isDecimal ?
+                                    (targetValue * progress).toFixed(1) :
+                                    Math.floor(targetValue * progress);
+                                number.textContent = currentValue;
+                                requestAnimationFrame(updateNumber);
+                            } else {
+                                number.textContent = targetValue;
+                            }
+                        }
+
+                        updateNumber();
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 }); // تقليل قيمة threshold لتفعيل العداد مبكرًا
+
+        // مراقبة جميع العدادات
+        statNumbers.forEach(number => {
+            observer.observe(number);
+        });
+    } else {
+        // في حالة عدم دعم Intersection Observer
+        statNumbers.forEach(number => {
+            try {
+                const targetValue = parseFloat(number.dataset.count);
+                if (isNaN(targetValue)) {
+                    console.warn('قيمة غير صالحة للعداد:', number.dataset.count);
+                    return;
+                }
+
+                console.log('تحريك العداد إلى:', targetValue);
+                const duration = 2000; // مدة التحريك بالمللي ثانية
+                const startTime = Date.now();
+
+                function updateNumber() {
+                    const currentTime = Date.now();
+                    const elapsedTime = currentTime - startTime;
+
+                    if (elapsedTime < duration) {
+                        const progress = elapsedTime / duration;
+                        // التعامل مع الأرقام العشرية مثل 4.8
+                        const isDecimal = targetValue % 1 !== 0;
+                        const currentValue = isDecimal ?
+                            (targetValue * progress).toFixed(1) :
+                            Math.floor(targetValue * progress);
+                        number.textContent = currentValue;
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        number.textContent = targetValue;
+                    }
+                }
+
+                updateNumber();
+            } catch (error) {
+                console.error('خطأ في تحريك العداد:', error);
+            }
+        });
+    }
+}
+
+// عرض جميع الأعضاء عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('تم تحميل صفحة من نحن');
+
+    // تحديد عناصر DOM
+    teamGrid = document.getElementById("team-grid");
+    teamTabs = document.querySelectorAll('.team-tab');
+
+    console.log('عناصر التبويب:', teamTabs);
+    console.log('شبكة الفريق:', teamGrid);
+
+    // التحقق من وجود عناصر DOM
+    if (teamGrid) {
+        // تفعيل أزرار التبويب
+        if (teamTabs && teamTabs.length > 0) {
+            activateTabs();
+        }
+
+        // عرض جميع الأعضاء افتراضيًا
+        displayTeamMembers('all');
+        console.log('تم عرض أعضاء الفريق');
+    } else {
+        console.error('لم يتم العثور على عنصر شبكة الفريق (team-grid)');
+    }
+
+    // تفعيل عداد الإحصائيات
+    animateStatNumbers();
+
+    // تفعيل مكتبة AOS للتحريكات
+    if (typeof AOS !== 'undefined') {
+        // إعادة تهيئة AOS لضمان عمل التحريكات
+        // إضافة خيارات لتخفيف الأنيميشن ومنع التمرير التلقائي
+        AOS.init({
+            duration: 600, // تقليل مدة الأنيميشن
+            once: true, // تشغيل الأنيميشن مرة واحدة فقط
+            mirror: false, // إيقاف تأثير المرآة
+            offset: 50, // تقليل المسافة اللازمة لتفعيل الأنيميشن
+            easing: 'ease', // تبسيط التأثير الحركي
+            throttleDelay: 99, // تحسين الأداء
+            disableMutationObserver: true, // لمنع التمرير التلقائي
+            startEvent: 'manualStart' // استخدام حدث مخصص بدلاً من DOMContentLoaded
+        });
+
+        // تفعيل AOS بعد ثانية واحدة لضمان عدم التمرير التلقائي
+        setTimeout(() => {
+            // إرسال حدث مخصص لتفعيل AOS بدون تمرير
+            document.dispatchEvent(new Event('manualStart'));
+            AOS.refresh();
+        }, 1000);
+    }
+
+    // تفعيل تحريكات الأقسام عند التمرير
+    initSectionAnimations();
 });
+
+// دالة لتفعيل تحريكات الأقسام عند التمرير - أنيميشن بسيط واحترافي
+function initSectionAnimations() {
+    console.log('تفعيل تحريكات الأقسام البسيطة');
+
+    // تحديد جميع الأقسام في الصفحة
+    const sections = document.querySelectorAll('section');
+    console.log('عدد الأقسام:', sections.length);
+
+    // تفعيل قسم الإنجازات والمسؤولية المجتمعية
+    const achievementsSection = document.querySelector('.achievements-section');
+    if (achievementsSection) {
+        achievementsSection.classList.add('animate-section');
+    }
+
+    const csrSection = document.querySelector('.csr-section');
+    if (csrSection) {
+        csrSection.classList.add('animate-section');
+    }
+
+    // إنشاء Intersection Observer بسيط لمراقبة الأقسام
+    if ('IntersectionObserver' in window) {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // إضافة فئة للقسم عند ظهوره في نطاق الرؤية
+                    entry.target.classList.add('section-visible');
+
+                    // عرض الأرقام بشكل بسيط
+                    const counters = entry.target.querySelectorAll('.stat-number, .achievement-number, .impact-number, .counter-number, [data-count]');
+                    if (counters.length > 0) {
+                        counters.forEach(counter => {
+                            const targetValue = parseFloat(counter.dataset.count);
+                            if (!isNaN(targetValue)) {
+                                // عرض القيمة مباشرة بدون أنيميشن
+                                counter.textContent = targetValue;
+                            }
+                        });
+                    }
+
+                    sectionObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // مراقبة جميع الأقسام
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
+    // تفعيل تحريكات التمرير بشكل بسيط
+    window.addEventListener('scroll', function() {
+        // لا نفعل أي شيء عند التمرير لتبسيط الأنيميشن
+    }, { passive: true });
+}
