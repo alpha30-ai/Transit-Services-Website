@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مدينة العبور |تفاصيل المنتج والشراء السريع</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiperJs/swiper-bundle.min.css" />
+
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Link File CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product_details.css">
+    <link rel="stylesheet" href="css/home _page/index.css">
+
+
+</head>
+<body class="buy-product-bag menu-side-in-bag">
+    <header>
+
+        <div class="header-top">
+            <div class="contanier">
+                <p>عبور لخدمتك | خدمات متكاملة بضغطة زر</p>
+                <div class="link-top-heder">
+                    <a href="my-account.html">حسابي</a>
+                    <a href="favorites.html">قائمه المفضله</a>
+                    <a href="Login.html">تسجيل الدخول</a>
+                    <a href="bookings-and-follow-up.html">الحجوزات والمتابعة</a>
+             </div>
+         </div>
+           </div>
+
+           <div class="header-info">
+            <div class="contanier">
+                <img src="img/scan_12580910.png" alt="">
+
+            <div class="search-bar">
+                <form action="">
+                    <input type="search" placeholder="ابحث عن طلبك...">
+                    <button class="btn-srch">بحث</button>
+                </form>
+            </div>
+            <div class="card">
+                <div class="price">
+                    <p>السلة :</p>
+                    <span>255.00 جنيه</span>
+                </div>
+                <a href="mycart.html"><i class="fa-solid fa-bag-shopping"></i> <span class="count-in-card">2</span></a>
+
+
+            </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+           <div class="contanier">
+            <i id="open-side" class="fa-solid fa-bars"></i>
+            <ul class="nav-links">
+
+                <li><a href="index.html"> الرئيسة</a>
+
+                </li>
+
+                <li>
+                    <a href="features.html">الخدمات </a>
+
+                    <div class="drobdwon">
+                        <a href="Services.html">الخدمات </a>
+
+                        <div class="drobdwon">
+                            <ul><li><a href="Services.html">الخدمات</a></li></ul>
+                            <ul>
+                                <li><a href="pharmacy.html">صيدليات</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="hospitals.html">مستشفيات</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="hypermarket.html">هايبر ماركت</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="labs.html">معامل تحاليل</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="restaurants.html">مطاعم</a></li>
+                            </ul>
+                            <ul>
+                                <ul><li><a href="car-services.html">خدمات السيارات</a></li></ul>
+                            </ul>
+
+                        </div>
+                </li>
+
+                <li>
+                    <a href="about.html">من نحن</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">المميزات</a>
+                </li>
+                <li><a href="Offers.html">العروض</a></li>
+
+                <li><a href="Products.html">المنتجات</a></li>
+                <li><a href="index.html"> التاجر</a></li>
+
+
+
+
+            </ul>
+            <a href="Register.html" class="sign-in-btn"><i class="fa-solid fa-user-plus"></i> إنشاء حساب </a>
+            <a href="control/Trader Control Panel/admin.html" class="merchant-btn"><i class="fa-solid fa-store"></i> لوحة صاحب الخدمة </a>
+           </div>
+        </div>
+
+
+    </header>
+
+
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="contanier">
+            <ul class="breadcrumb">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="Products.html">المنتجات</a></li>
+                <li><span id="breadcrumb-product-name">تفاصيل المنتج</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section class="product-details">
+        <div class="contanier">
+            <div class="product-buy">
+                <!-- Product Gallery -->
+                <div class="img-product">
+                    <div class="main-image">
+                        <img id="big-img" src="" alt="Product Image">
+                        <span class="discount-badge">خصم</span>
+                    </div>
+                    <div class="small-img">
+                        <div class="small-img-col">
+                            <img src="" class="small-img-1" alt="Product Thumbnail 1">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="" class="small-img-2" alt="Product Thumbnail 2">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="" class="small-img-3" alt="Product Thumbnail 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Information -->
+                <div class="product-name-price">
+                    <a class="product-item-link" id="product-name"></a>
+                    <div class="product-meta">
+                        <div class="stars" id="product-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span class="rating-count">(25 تقييم)</span>
+                        </div>
+                        <div class="product-sku">
+                            <span>رمز المنتج: </span>
+                            <span id="product-sku">SKU12345</span>
+                        </div>
+                    </div>
+
+                    <div class="price">
+                        <span id="discounted-price"></span>
+                        <del id="original-price"></del>
+                        <span class="save-amount">توفير 20%</span>
+                    </div>
+
+                    <div class="stock-progress">
+                        <p>أسرع - بقي <span id="stock-count">15</span> منتجًا فقط في المخزن</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 25%"></div>
+                        </div>
+                    </div>
+
+                    <p class="product-text" id="product-description"></p>
+
+
+
+                    <form class="product-actions">
+                        <div class="quantity">
+                            <span>الكمية: </span>
+                            <div class="quantity-selector">
+                                <button type="button" class="quantity-btn minus">-</button>
+                                <input type="number" value="1" min="1" max="15">
+                                <button type="button" class="quantity-btn plus">+</button>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button type="button" class="addtcart"><i class="fa-solid fa-cart-shopping"></i> اضف للسلة</button>
+                            <button type="button" class="buyNow btn"><i class="fa-solid fa-bolt"></i> اشتري الأن</button>
+                            <button type="button" class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                    </form>
+
+                    <div class="product-delivery">
+                        <div class="delivery-option">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <span>توصيل سريع</span>
+                        </div>
+                        <div class="delivery-option">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            <span>إرجاع مجاني خلال 30 يوم</span>
+                        </div>
+                        <div class="delivery-option">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>ضمان الجودة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Information Tabs -->
+            <div class="product-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">وصف المنتج</button>
+                    <button class="tab-btn" data-tab="specifications">المواصفات</button>
+                    <button class="tab-btn" data-tab="reviews">التقييمات</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-panel active" id="description-panel">
+                        <p id="full-description">وصف تفصيلي للمنتج سيظهر هنا. يتضمن هذا الوصف جميع المعلومات المهمة عن المنتج وخصائصه ومميزاته.</p>
+                    </div>
+                    <div class="tab-panel" id="specifications-panel">
+                        <table class="specs-table">
+                            <tr>
+                                <th>الخاصية</th>
+                                <th>القيمة</th>
+                            </tr>
+                            <tr>
+                                <td>المادة</td>
+                                <td>قطن 100%</td>
+                            </tr>
+                            <tr>
+                                <td>الوزن</td>
+                                <td>250 جرام</td>
+                            </tr>
+                            <tr>
+                                <td>الأبعاد</td>
+                                <td>30 × 40 سم</td>
+                            </tr>
+                            <tr>
+                                <td>بلد المنشأ</td>
+                                <td>مصر</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-panel" id="reviews-panel">
+                        <div class="reviews-summary">
+                            <div class="average-rating">
+                                <span class="rating-number">4.5</span>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="total-reviews">25 تقييم</span>
+                            </div>
+                            <div class="rating-bars">
+                                <div class="rating-bar-item">
+                                    <span>5 نجوم</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 70%"></div>
+                                    </div>
+                                    <span>70%</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span>4 نجوم</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 20%"></div>
+                                    </div>
+                                    <span>20%</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span>3 نجوم</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 5%"></div>
+                                    </div>
+                                    <span>5%</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span>2 نجوم</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 3%"></div>
+                                    </div>
+                                    <span>3%</span>
+                                </div>
+                                <div class="rating-bar-item">
+                                    <span>1 نجمة</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 2%"></div>
+                                    </div>
+                                    <span>2%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-reviews">
+                            <div class="review-item">
+                                <div class="reviewer-info">
+                                    <img src="img/avatar.png" alt="User Avatar">
+                                    <div>
+                                        <h5>أحمد محمد</h5>
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="review-date">15 مايو 2023</span>
+                                    </div>
+                                </div>
+                                <p class="review-text">منتج رائع جداً، الجودة ممتازة والتوصيل كان سريع. أنصح به بشدة.</p>
+                            </div>
+                            <div class="review-item">
+                                <div class="reviewer-info">
+                                    <img src="img/avatar.png" alt="User Avatar">
+                                    <div>
+                                        <h5>سارة أحمد</h5>
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <span class="review-date">10 مايو 2023</span>
+                                    </div>
+                                </div>
+                                <p class="review-text">المنتج جيد ولكن كنت أتوقع جودة أفضل قليلاً. التوصيل كان سريع والتغليف ممتاز.</p>
+                            </div>
+                        </div>
+                        <div class="write-review">
+                            <h4>أضف تقييمك</h4>
+                            <div class="rating-select">
+                                <span>تقييمك:</span>
+                                <div class="stars-select">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <form>
+                                <textarea placeholder="اكتب تقييمك هنا..."></textarea>
+                                <button type="submit">إرسال التقييم</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- قسم العروض المميزة -->
+        <section class="special-offers-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>العروض المميزة</h2>
+                    <p>استمتع بأفضل العروض والخصومات الحصرية</p>
+                    <div class="section-header-line"></div>
+                </div>
+
+                <div class="offers-section-wrapper">
+                    <!-- كارت العروض المميزة -->
+                    <div class="featured-section-card offers-card">
+                        <div class="featured-card-image">
+                            <img src="img/golden-christmas-sale-with-wrapped-gift-box_23-2148363321.jpg" alt="عروض مميزة">
+                            <div class="featured-card-overlay"></div>
+                        </div>
+                        <div class="featured-card-content">
+                            <h3>عروض حصرية</h3>
+                            <p>استمتع بأفضل العروض والخصومات الحصرية على مختلف المنتجات والخدمات</p>
+                            <a href="Offers.html" class="featured-card-btn">عرض جميع العروض</a>
+                        </div>
+                    </div>
+
+                    <!-- سلايدر العروض -->
+                    <div class="offers-slider-container">
+                        <div class="special-offers-slider swiper">
+                            <div class="swiper-wrapper">
+                                <!-- عرض 1 -->
+                                <div class="swiper-slide">
+                                    <div class="product-card">
+                                        <div class="product-image">
+                                            <img src="img/dd71ba1525e0.jpg" alt="عرض 1">
+                                            <span class="discount">خصم 30%</span>
+                                            <span class="product-tag featured">مميز</span>
+                                            <div class="product-actions-overlay">
+                                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                                <button class="add-to-favorite-btn"><i class="far fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="product-category">صيدليات</div>
+                                            <h3>عرض الأدوية الأساسية</h3>
+                                            <div class="product-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                                <span>(4.5)</span>
+                                            </div>
+                                            <div class="product-description">
+                                                خصم 30% على جميع الأدوية الأساسية والفيتامينات - ينتهي في: 30 أكتوبر 2023
+                                            </div>
+                                            <div class="price">
+                                                <div class="price-info">
+                                                    <span class="original-price">150 جنيه</span>
+                                                    <span class="discounted-price">105 جنيه</span>
+                                                </div>
+                                                <span class="product-badge in-stock">متوفر</span>
+                                            </div>
+                                            <div class="product-actions">
+                                                <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i> إضافة للسلة</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- عرض 2 -->
+                                <div class="swiper-slide">
+                                    <div class="product-card">
+                                        <div class="product-image">
+                                            <img src="img/dd71ba1525e0.jpg" alt="عرض 2">
+                                            <span class="discount">خصم 20%</span>
+                                            <span class="product-tag bestseller">الأكثر مبيعاً</span>
+                                            <div class="product-actions-overlay">
+                                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                                <button class="add-to-favorite-btn"><i class="far fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="product-category">مطاعم</div>
+                                            <h3>عرض الوجبات العائلية</h3>
+                                            <div class="product-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <span>(5.0)</span>
+                                            </div>
+                                            <div class="product-description">
+                                                خصم 20% على جميع الوجبات العائلية من أشهر المطاعم - ينتهي في: 15 نوفمبر 2023
+                                            </div>
+                                            <div class="price">
+                                                <div class="price-info">
+                                                    <span class="original-price">250 جنيه</span>
+                                                    <span class="discounted-price">200 جنيه</span>
+                                                </div>
+                                                <span class="product-badge in-stock">متوفر</span>
+                                            </div>
+                                            <div class="product-actions">
+                                                <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i> إضافة للسلة</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- عرض 3 -->
+                                <div class="swiper-slide">
+                                    <div class="product-card">
+                                        <div class="product-image">
+                                            <img src="img/dd71ba1525e0.jpg" alt="عرض 3">
+                                            <span class="discount">خصم 15%</span>
+                                            <span class="product-tag new">جديد</span>
+                                            <div class="product-actions-overlay">
+                                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                                <button class="add-to-favorite-btn"><i class="far fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="product-category">هايبر ماركت</div>
+                                            <h3>عرض المنتجات الغذائية</h3>
+                                            <div class="product-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                                <i class="far fa-star"></i>
+                                                <span>(3.5)</span>
+                                            </div>
+                                            <div class="product-description">
+                                                خصم 15% على جميع المنتجات الغذائية والمشروبات - ينتهي في: 5 ديسمبر 2023
+                                            </div>
+                                            <div class="price">
+                                                <div class="price-info">
+                                                    <span class="original-price">180 جنيه</span>
+                                                    <span class="discounted-price">153 جنيه</span>
+                                                </div>
+                                                <span class="product-badge in-stock">متوفر</span>
+                                            </div>
+                                            <div class="product-actions">
+                                                <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i> إضافة للسلة</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- عرض 4 -->
+                                <div class="swiper-slide">
+                                    <div class="product-card">
+                                        <div class="product-image">
+                                            <img src="img/dd71ba1525e0.jpg" alt="عرض 4">
+                                            <span class="discount">خصم 25%</span>
+                                            <span class="product-tag featured">مميز</span>
+                                            <div class="product-actions-overlay">
+                                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                                <button class="add-to-favorite-btn"><i class="far fa-heart"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="product-category">معامل تحاليل</div>
+                                            <h3>عرض الفحص الشامل</h3>
+                                            <div class="product-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <span>(4.0)</span>
+                                            </div>
+                                            <div class="product-description">
+                                                خصم 25% على باقة الفحص الشامل والتحاليل الأساسية - ينتهي في: 20 نوفمبر 2023
+                                            </div>
+                                            <div class="price">
+                                                <div class="price-info">
+                                                    <span class="original-price">400 جنيه</span>
+                                                    <span class="discounted-price">300 جنيه</span>
+                                                </div>
+                                                <span class="product-badge in-stock">متوفر</span>
+                                            </div>
+                                            <div class="product-actions">
+                                                <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i> إضافة للسلة</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- أزرار التنقل -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <!-- نقاط التنقل -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <footer>
+        <div class="contanier">
+            <div class="top-footer">
+                <div class="row">
+                    <img src="img/alpha.png" alt="">
+                    <div class="hotline">
+
+                        <div class="hotline-text">
+                            <h6>خدمة عملاء 24/7</h6>
+                            <span>(+100) 123 456 7890</span>
+                        </div>
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                </div>
+                <div class="small-row">
+                    <h6> اعرف المزيد عنا</h6>
+                    <div class="links-row">
+                        <a href="about-ecommerce.html"> <i class="fa-solid fa-angle-left"></i>معلومات عن التسوق الإلكتروني </a>
+                        <a href="shipping-delivery.html"><i class="fa-solid fa-angle-left"></i>الشحن و التوصيل </a>
+                    </div>
+                </div>
+
+                <div class="small-row">
+                    <h6> تسوق معنا</h6>
+                    <div class="links-row">
+                        <a href="account.html"><i class="fa-solid fa-angle-left"></i>حسابك</a>
+                        <a href="orders.html"><i class="fa-solid fa-angle-left"></i>مشترياتك</a>
+                        <a href="addresses.html"><i class="fa-solid fa-angle-left"></i>عناوينك</a>
+                        <a href="wishlist.html"><i class="fa-solid fa-angle-left"></i>قوائمك</a>
+                    </div>
+                </div>
+
+                <div class="small-row">
+                    <h6> دعنا نساعدك</h6>
+                    <div class="links-row">
+                        <a href="support.html"><i class="fa-solid fa-angle-left"></i>المساعدة و الدعم</a>
+                        <a href="order-tracking.html"><i class="fa-solid fa-angle-left"></i>تتبع الطلب</a>
+                        <a href="return-policy.html"><i class="fa-solid fa-angle-left"></i>سياسة الاسترجاع</a>
+                        <a href="terms.html"><i class="fa-solid fa-angle-left"></i>الشروط و الأحكام </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <div class="bottom-footer">
+            <div class="contanier">
+                <p>Copyright &copy; <span>MOHAMED HASHISH</span> Powered by <span>HASHISH</span></p>
+                <div class="payment">
+                <img src="img/payment-1.png" alt="">
+                <img src="img/payment-2.png" alt="">
+                <img src="img/payment-3.png" alt="">
+                <img src="img/payment-4.png" alt="">
+            </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="swiperJs/swiper-bundle.min.js"></script>
+
+    <!-- Linke File JS -->
+    <script src="js/main.js"></script>
+    <script src="js/product_details.js"></script>
+    <script src="js/sliders-init.js"></script>
+    <script src="js/footer-particles.js"></script>
+    <script src="js/footer-effects.js"></script>
+
+
+</body>
+</html>

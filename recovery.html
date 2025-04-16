@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استعادة كلمة المرور - مدينة العبور</title>
+
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Link Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Link CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login-new.css">
+    <link rel="stylesheet" href="css/recovery.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="contanier">
+                <p>عبور لخدمتك | خدمات متكاملة بضغطة زر</p>
+                <div class="link-top-heder">
+                    <a href="my-account.html">حسابي</a>
+                    <a href="favorites.html">قائمه المفضله</a>
+                    <a href="Login.html">تسجيل الدخول</a>
+                    <a href="bookings-and-follow-up.html">الحجوزات والمتابعة</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-info">
+            <div class="contanier">
+                <a href="index.html"><img src="img/scan_12580910.png" alt="شعار مدينة العبور"></a>
+
+                <div class="search-bar">
+                    <form action="">
+                        <input type="search" placeholder="ابحث عن طلبك...">
+                        <button class="btn-srch">بحث</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="price">
+                        <p>السلة :</p>
+                        <span>255.00 جنيه</span>
+                    </div>
+                    <a href="mycart.html"><i class="fa-solid fa-bag-shopping"></i> <span class="count-in-card">2</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="contanier">
+                <i id="open-side" class="fa-solid fa-bars"></i>
+                <ul class="nav-links">
+                    <li><a href="index.html"> الرئيسية</a></li>
+                    <li>
+                        <a href="Services.html">الخدمات </a>
+                        <div class="drobdwon">
+                            <ul><li><a href="Services.html">الخدمات</a></li></ul>
+                            <ul><li><a href="pharmacy.html">صيدليات</a></li></ul>
+                            <ul><li><a href="hospitals.html">مستشفيات</a></li></ul>
+                            <ul><li><a href="hypermarket.html">هايبر ماركت</a></li></ul>
+                            <ul><li><a href="labs.html">معامل تحاليل</a></li></ul>
+                            <ul><li><a href="restaurants.html">مطاعم</a></li></ul>
+                            <ul><li><a href="car-services.html">خدمات السيارات</a></li></ul>
+                        </div>
+                    </li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html">المميزات</a></li>
+                    <li><a href="Offers.html">العروض</a></li>
+                    <li><a href="Products.html">المنتجات</a></li>
+                </ul>
+                <!-- تم إزالة زر إنشاء الحساب من الهيدر -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Recovery Section -->
+    <section class="login-section recovery-section">
+        <div class="login-container">
+            <div class="login-card">
+                <!-- Left Side: Form -->
+                <div class="login-form-side">
+                    <div class="login-header">
+                        <div class="icon-container">
+                            <div class="animated-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                        </div>
+                        <h2>استعادة كلمة المرور</h2>
+                        <p>أدخل بريدك الإلكتروني أو رقم هاتفك المسجل وسنرسل لك رابطًا لإعادة تعيين كلمة المرور.</p>
+                    </div>
+
+                    <form id="recoveryForm" action="#" method="POST" class="login-form">
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني أو رقم الهاتف</label>
+                            <div class="input-container">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="text" id="email" name="email" placeholder="أدخل البريد الإلكتروني أو رقم الهاتف" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="login-btn recovery-btn">إرسال رابط الاستعادة <i class="fas fa-paper-plane"></i></button>
+
+                        <div class="recovery-options">
+                            <a href="Login.html" class="back-to-login"><i class="fas fa-arrow-right"></i> العودة إلى تسجيل الدخول</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Side: Image -->
+                <div class="login-image-side">
+                    <div class="image-container">
+                        <img src="img/2149595835.jpg" alt="صورة استعادة كلمة المرور">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h2>استعادة الوصول إلى حسابك</h2>
+                                <p>لا تقلق، سنساعدك في استعادة كلمة المرور الخاصة بك بخطوات بسيطة وآمنة.</p>
+                                <a href="index.html" class="home-btn">الصفحة الرئيسية <i class="fas fa-home"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="close-menu">
+            <i class="fas fa-times" id="close-side"></i>
+        </div>
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html"> الرئيسية</a></li>
+                <li class="has-dropdown">
+                    <a href="Services.html">الخدمات <i class="fas fa-chevron-down"></i></a>
+                    <ul class="mobile-dropdown">
+                        <li><a href="Services.html">الخدمات</a></li>
+                        <li><a href="pharmacy.html">صيدليات</a></li>
+                        <li><a href="hospitals.html">مستشفيات</a></li>
+                        <li><a href="hypermarket.html">هايبر ماركت</a></li>
+                        <li><a href="labs.html">معامل تحاليل</a></li>
+                        <li><a href="restaurants.html">مطاعم</a></li>
+                        <li><a href="car-services.html">خدمات السيارات</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">المميزات</a></li>
+                <li><a href="Offers.html">العروض</a></li>
+                <li><a href="Products.html">المنتجات</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/recovery.js"></script>
+
+</body>
+</html>
