@@ -1,0 +1,249 @@
+/* قسم المزايا التنافسية */
+.competitive-advantages-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.competitive-advantages-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(107, 115, 255, 0.03) 0%, rgba(122, 28, 172, 0.03) 100%);
+    z-index: 0;
+}
+
+.competitive-advantages-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/city-pattern.png');
+    background-size: 300px;
+    background-repeat: repeat;
+    opacity: 0.03;
+    z-index: 0;
+    animation: patternMove 30s linear infinite;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+}
+
+.advantage-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--primary-color);
+}
+
+.advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(122, 28, 172, 0.03) 0%, rgba(107, 115, 255, 0.03) 100%);
+    z-index: -1;
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--box-shadow-lg);
+}
+
+.advantage-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-primary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 0 10px 20px rgba(122, 28, 172, 0.2);
+    transition: var(--transition-medium);
+}
+
+.advantage-card:hover .advantage-icon {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.advantage-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-color);
+    transition: var(--transition-fast);
+}
+
+.advantage-card:hover .advantage-title {
+    color: var(--primary-color);
+}
+
+.advantage-description {
+    color: var(--text-color-light);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-md);
+}
+
+.advantage-stats {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.advantage-stat {
+    flex: 1;
+    background-color: rgba(122, 28, 172, 0.05);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    transition: var(--transition-fast);
+}
+
+.advantage-card:hover .advantage-stat {
+    background-color: rgba(122, 28, 172, 0.1);
+}
+
+.stat-value {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-color-light);
+    font-weight: 500;
+}
+
+.advantages-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xxl);
+}
+
+.advantages-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: var(--border-radius-lg);
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition-fast);
+    box-shadow: 0 10px 20px rgba(122, 28, 172, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.advantages-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.advantages-btn:hover::before {
+    left: 100%;
+}
+
+.advantages-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(122, 28, 172, 0.3);
+}
+
+.advantages-btn i {
+    font-size: var(--font-size-md);
+    transition: transform 0.3s ease;
+}
+
+.advantages-btn:hover i {
+    transform: translateX(-5px);
+}
+
+/* توافقية قسم المزايا التنافسية */
+@media (max-width: 992px) {
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .advantage-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .advantage-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .advantage-title {
+        font-size: var(--font-size-md);
+    }
+    
+    .advantage-description {
+        font-size: var(--font-size-sm);
+    }
+    
+    .stat-value {
+        font-size: var(--font-size-lg);
+    }
+    
+    .stat-label {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 576px) {
+    .advantage-stats {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .advantage-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .advantage-title {
+        font-size: var(--font-size-md);
+    }
+    
+    .advantage-description {
+        font-size: var(--font-size-xs);
+    }
+    
+    .advantages-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
