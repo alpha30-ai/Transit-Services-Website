@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <title>المنتجات</title>
+</head>
+
+<body>
+<!-- الشريط الجانبي -->
+<div class="sidebar">
+    <a href="dashboard.html" class="logo">
+        <i class='bx bx-code-alt'></i>
+        <div class="logo-name"><span>مدينة</span>العبور</div>
+    </a>
+    <ul class="side-menu">
+        <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i>لوحة التحكم</a></li>
+        <li><a href="products.html"><i class='bx bx-store-alt'></i>المنتجات</a></li>
+        <li><a href="sellers.html"><i class='bx bx-group'></i>البائعون</a></li>
+        <li><a href="orders.html"><i class='bx bx-receipt'></i>الطلبات</a></li>
+        <li><a href="services.html"><i class='bx bx-message-square-dots'></i>الخدمات</a></li>
+        <li><a href="offers.html"><i class='bx bx-gift'></i>العروض</a></li>
+        <li><a href="settings.html"><i class='bx bx-cog'></i>الإعدادات</a></li>
+        <li><a href="#" id="language-toggle"><i class='bx bx-globe'></i>اللغة</a></li>
+    </ul>
+    <ul class="side-menu">
+        <li>
+            <a href="admin.html" class="logout">
+                <i class='bx bx-log-out-circle'></i>
+                تسجيل الخروج
+            </a>
+        </li>
+    </ul>
+
+    <!-- التأثير تحت زر تسجيل الخروج -->
+    <div class="ekosh-container">
+        <h3 class="animate-charcter">HASHISH</h3>
+    </div>
+</div>
+<!-- نهاية الشريط الجانبي -->
+
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <!-- الشريط العلوي -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input" style="direction: rtl; display: flex; align-items: center;">
+                    <button class="search-btn" type="submit" style="margin-right: 5px;"><i class='bx bx-search'></i></button>
+                    <input type="search" placeholder="بحث..." style="text-align: right;">
+                </div>
+            </form>
+            <!-- زر وضع الظلام -->
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+<!-- زر الإشعارات الجديد -->
+<a href="notifications.html">
+    <button class="button">
+        <svg viewBox="0 0 448 512" class="bell">
+            <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path>
+        </svg>
+        الاشعارات
+    </button>
+</a>
+ 
+            <!-- أيقونة الملف الشخصي -->
+            <a href="settings.html" class="profile">
+                <img src="images/logo.png" alt="الملف الشخصي">
+            </a>
+        </nav>
+        <!-- نهاية الشريط العلوي -->
+
+        <main class="products-page">
+            <div class="header">
+                <div class="title-box">
+                    <h2>قائمة المنتجات</h2>
+                </div>
+            </div>
+
+            <!-- جدول المنتجات -->
+            <div class="recent-products">
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>معرف المنتج</th>
+                            <th>معرف البائع</th>
+                            <th>الاسم</th>
+                            <th>الوصف</th>
+                            <th>السعر</th>
+                            <th>كمية المخزون</th>
+                            <th>معرف الفئة</th>
+                            <th>رابط الصورة</th>
+                            <th>الحالة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- الصف 1 -->
+                        <tr>
+                            <td>101</td>
+                            <td>V001</td>
+                            <td>منتج A</td>
+                            <td>منتج عالي الجودة A.</td>
+                            <td>25.00$</td>
+                            <td>150</td>
+                            <td>10</td>
+                            <td><a href="#">عرض الصورة</a></td>
+                            <td><span class="status active">نشط</span></td>
+                        </tr>
+                        <!-- الصف 2 -->
+                        <tr>
+                            <td>102</td>
+                            <td>V002</td>
+                            <td>منتج B</td>
+                            <td>منتج موثوق ودائم B.</td>
+                            <td>35.00$</td>
+                            <td>120</td>
+                            <td>11</td>
+                            <td><a href="#">عرض الصورة</a></td>
+                            <td><span class="status inactive">غير نشط</span></td>
+                        </tr>
+                        <!-- الصف 3 -->
+                        <tr>
+                            <td>103</td>
+                            <td>V003</td>
+                            <td>منتج C</td>
+                            <td>منتج صديق للبيئة C.</td>
+                            <td>20.00$</td>
+                            <td>80</td>
+                            <td>12</td>
+                            <td><a href="#">عرض الصورة</a></td>
+                            <td><span class="status active">نشط</span></td>
+                        </tr>
+                        <!-- الصف 4 -->
+                        <tr>
+                            <td>104</td>
+                            <td>V004</td>
+                            <td>منتج D</td>
+                            <td>منتج شائع D بميزات خاصة.</td>
+                            <td>45.00$</td>
+                            <td>90</td>
+                            <td>13</td>
+                            <td><a href="#">عرض الصورة</a></td>
+                            <td><span class="status active">نشط</span></td>
+                        </tr>
+                        <!-- الصف 5 -->
+                        <tr>
+                            <td>105</td>
+                            <td>V005</td>
+                            <td>منتج E</td>
+                            <td>منتج ذو تكلفة فعالة E.</td>
+                            <td>15.00$</td>
+                            <td>200</td>
+                            <td>14</td>
+                            <td><a href="#">عرض الصورة</a></td>
+                            <td><span class="status inactive">غير نشط</span></td>
+                        </tr>
+                        <!-- الصف 6 -->
+                        <tr>
+                            <td>106</td>
+                            <td>V006</td>
+                            <td>منتج F</td>
+                            <td>منتج إصدار محدود F.</td>
+                            <td>55.00$</td>
+                            <td>40</td>
+                            <td>15</td>
+                            <td><a href="#">عرض الصورة</a></td>
+                            <td><span class="status active">نشط</span></td>
+                        </tr>
+                        <!-- الصف 7 -->
+                        <tr>
+                            <td>107</td>
+                            <td>V007</td>
+                            <td>منتج G</td>
+                            <td>منتج عضوي G.</td>
+                            <td>30.00$</td>
+                            <td>95</td>
+                            <td>16</td>
+                            <td><a href="#">عرض الصورة</a></td>
+                            <td><span class="status inactive">غير نشط</span></td>
+                        </tr>
+                        <!-- الصف 8 -->
+                        <tr>
+                            <td>108</td>
+                            <td>V008</td>
+                            <td>منتج H</td>
+                            <td>منتج يباع بسرعة H.</td>
+                            <td>40.00$</td>
+                            <td>60</td>
+                            <td>17</td>
+                            <td><a href="#">عرض الصورة</a></td>
+                            <td><span class="status active">نشط</span></td>
+                        </tr>
+                        <!-- الصف 9 -->
+                        <tr>
+                            <td>109</td>
+                            <td>V009</td>
+                            <td>منتج I</td>
+                            <td>منتج مبتكر I.</td>
+                            <td>75.00$</td>
+                            <td>30</td>
+                            <td>18</td>
+                            <td><a href="#">عرض الصورة</a></td>
+                            <td><span class="status active">نشط</span></td>
+                        </tr>
+                        <!-- الصف 10 -->
+                        <tr>
+                            <td>110</td>
+                            <td>V010</td>
+                            <td>منتج J</td>
+                            <td>منتج ذو تصنيف عالي J.</td>
+                            <td>50.00$</td>
+                            <td>70</td>
+                            <td>19</td>
+                            <td><a href="#">عرض الصورة</a></td>
+                            <td><span class="status inactive">غير نشط</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>
