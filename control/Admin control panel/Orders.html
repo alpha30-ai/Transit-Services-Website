@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/orders.css">
+    <title>الطلبات</title>
+<body>
+<!-- الشريط الجانبي -->
+<div class="sidebar">
+    <a href="dashboard.html" class="logo">
+        <i class='bx bx-code-alt'></i>
+        <div class="logo-name"><span>مدينة</span>العبور</div>
+    </a>
+    <ul class="side-menu">
+        <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i>لوحة التحكم</a></li>
+        <li><a href="products.html"><i class='bx bx-store-alt'></i>المنتجات</a></li>
+        <li><a href="sellers.html"><i class='bx bx-group'></i>البائعون</a></li>
+        <li><a href="orders.html"><i class='bx bx-receipt'></i>الطلبات</a></li>
+        <li><a href="services.html"><i class='bx bx-message-square-dots'></i>الخدمات</a></li>
+        <li><a href="offers.html"><i class='bx bx-gift'></i>العروض</a></li>
+        <li><a href="settings.html"><i class='bx bx-cog'></i>الإعدادات</a></li>
+        <li><a href="#" id="language-toggle"><i class='bx bx-globe'></i>اللغة</a></li>
+    </ul>
+    <ul class="side-menu">
+        <li>
+            <a href="admin.html" class="logout">
+                <i class='bx bx-log-out-circle'></i>
+                تسجيل الخروج
+            </a>
+        </li>
+    </ul>
+
+    <!-- التأثير تحت زر تسجيل الخروج -->
+    <div class="ekosh-container">
+        <h3 class="animate-charcter">HASHISH</h3>
+    </div>
+</div>
+<!-- نهاية الشريط الجانبي -->
+
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <!-- شريط التنقل -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input" style="direction: rtl; display: flex; align-items: center;">
+                    <button class="search-btn" type="submit" style="margin-right: 5px;"><i class='bx bx-search'></i></button>
+                    <input type="search" placeholder="بحث..." style="text-align: right;">
+                </div>
+            </form>
+            <!-- تبديل الوضع الليلي -->
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+<!-- زر الإشعارات الجديد -->
+<a href="notifications.html">
+    <button class="button">
+        <svg viewBox="0 0 448 512" class="bell">
+            <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path>
+        </svg>
+        الاشعارات
+    </button>
+</a>
+ 
+            <!-- أيقونة الملف الشخصي -->
+            <a href="settings.html" class="profile">
+                <img src="images/logo.png" alt="الملف الشخصي">
+            </a>
+        </nav>
+        <!-- نهاية شريط التنقل -->
+
+        <main class="orders-page">
+            <div class="header">
+                <h2>قائمة الطلبات</h2>
+                
+ <!-- زر الفلترة باستخدام القائمة المنسدلة المحسنة -->
+<div class="dropdown">
+    <button class="dropdown-button">
+        <i class='bx bx-filter'></i> تصفية الطلبات
+    </button>
+    <div class="dropdown-content">
+        <a onclick="filterOrders('all')">
+            <i class='bx bx-list-ul'></i> جميع الطلبات
+        </a>
+        <a onclick="filterOrders('pending')">
+            <i class='bx bx-time-five'></i> طلبات قيد الانتظار
+        </a>
+        <a onclick="filterOrders('completed')">
+            <i class='bx bx-check-circle'></i> طلبات مكتملة
+        </a>
+        <a onclick="filterOrders('failed')">
+            <i class='bx bx-x-circle'></i> طلبات فاشلة
+        </a>
+    </div>
+</div>
+
+            </div>
+
+            <!-- جدول الطلبات -->
+            <div class="product-list-box">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>رقم الطلب</th>
+                            <th>رقم العميل</th>
+                            <th>رقم البائع</th>
+                            <th>تاريخ الطلب</th>
+                            <th>المبلغ الإجمالي</th>
+                            <th>حالة الطلب</th>
+                            <th>نوع الدفع</th>
+                            <th>حالة الدفع</th>
+                            <th>نسبة العمولة</th>
+                            <th>مبلغ العمولة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="order-row" data-status="pending">
+                            <td><a href="order_details.html" class="order-link">001</a></td>
+                            <td>C123</td>
+                            <td>V456</td>
+                            <td>2024-10-27</td>
+                            <td>$500</td>
+                            <td><span class="status pending">قيد الانتظار</span></td>
+                            <td>بطاقة ائتمان</td>
+                            <td><span class="status unpaid">غير مدفوع</span></td>
+                            <td>10%</td>
+                            <td>$50</td>
+                        </tr>
+                        <tr class="order-row" data-status="completed">
+                            <td><a href="order_details.html" class="order-link">002</a></td>
+                            <td>C789</td>
+                            <td>V123</td>
+                            <td>2024-10-28</td>
+                            <td>$750</td>
+                            <td><span class="status completed">مكتمل</span></td>
+                            <td>تحويل بنكي</td>
+                            <td><span class="status paid">مدفوع</span></td>
+                            <td>12%</td>
+                            <td>$90</td>
+                        </tr>
+                        <tr class="order-row" data-status="failed">
+                            <td><a href="order_details.html" class="order-link">003</a></td>
+                            <td>C456</td>
+                            <td>V789</td>
+                            <td>2024-10-29</td>
+                            <td>$300</td>
+                            <td><span class="status failed">فشل</span></td>
+                            <td>بطاقة ائتمان</td>
+                            <td><span class="status unpaid">غير مدفوع</span></td>
+                            <td>15%</td>
+                            <td>$45</td>
+                        </tr>
+                        <tr class="order-row" data-status="completed">
+                            <td><a href="order_details.html" class="order-link">004</a></td>
+                            <td>C852</td>
+                            <td>V654</td>
+                            <td>2024-10-30</td>
+                            <td>$900</td>
+                            <td><span class="status completed">مكتمل</span></td>
+                            <td>باي بال</td>
+                            <td><span class="status paid">مدفوع</span></td>
+                            <td>8%</td>
+                            <td>$72</td>
+                        </tr>
+                        <tr class="order-row" data-status="pending">
+                            <td><a href="order_details.html" class="order-link">005</a></td>
+                            <td>C159</td>
+                            <td>V852</td>
+                            <td>2024-10-31</td>
+                            <td>$600</td>
+                            <td><span class="status pending">قيد الانتظار</span></td>
+                            <td>تحويل بنكي</td>
+                            <td><span class="status unpaid">غير مدفوع</span></td>
+                            <td>10%</td>
+                            <td>$60</td>
+                        </tr>
+                        <tr class="order-row" data-status="failed">
+                            <td><a href="order_details.html" class="order-link">006</a></td>
+                            <td>C753</td>
+                            <td>V321</td>
+                            <td>2024-10-28</td>
+                            <td>$450</td>
+                            <td><span class="status failed">فشل</span></td>
+                            <td>بطاقة ائتمان</td>
+                            <td><span class="status unpaid">غير مدفوع</span></td>
+                            <td>5%</td>
+                            <td>$22.5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="js/orders.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>
