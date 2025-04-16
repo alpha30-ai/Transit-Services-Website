@@ -1,0 +1,316 @@
+.title-box {
+    display: inline-block; /* جعل الصندوق بحجم النص */
+    background-color: #7a1cac00; /* لون خلفية خفيف */
+    border: 1px solid #0096FF; /* إطار حول النص */
+    border-radius: 10px; /* حواف دائرية */
+    padding: 5px 10px; /* مساحة داخلية للصندوق */
+    margin-bottom: 10px; /* تباعد أسفل الصندوق */
+    font-size: 1em; /* تكبير النص قليلاً */
+    color: #0096FF; /* لون النص */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+/* استايل النموذج لإضافة المنتجات */
+.add-product-form {
+    background-color: var(--light); /* خلفية فاتحة */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    width: 97%;
+    max-width: 1400px; /* زيادة العرض */
+    margin: 40px auto; /* مسافة من الأعلى */
+}
+
+/* العنوان */
+.add-product-form h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #0096FF; /* لون النص */
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* تنسيق الصفوف */
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap; /* دعم الجوالات */
+}
+
+/* تنسيق عناصر النموذج */
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #0096FF; /* لون النص */
+    margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%; /* جعل المدخلات تأخذ عرض الحاوية بالكامل */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--dark-grey); /* لون الحدود */
+    border-radius: 5px;
+    transition: border-color 0.3s; /* تأثير الانتقال */
+}
+
+.form-group textarea {
+    min-height: 100px; /* ارتفاع مناسب لحقل النص */
+    resize: vertical; /* تغيير الحجم عموديًا فقط */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary); /* تغيير لون الحدود عند التركيز */
+    outline: none;
+}
+
+/* زر الإرسال */
+.submit-button {
+    padding: 12px 20px;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submit-button:hover {
+    background: var(--dark-primary); /* لون الخلفية عند التحويم */
+}
+
+/* تنسيق الصورة */
+.image-preview {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover; /* تكبير الصورة مع الحفاظ على الأبعاد */
+    border: 1px solid var(--dark-grey);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* تنسيقات عامة */
+.products-page {
+    padding: 36px 24px;
+    background: var(--grey);
+}
+
+.products-page .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* تغيير التبرير إلى اليسار */
+    margin-bottom: 24px;
+}
+
+.products-page .header h1 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #0096FF;
+}
+
+.add-button {
+    margin-left: 20px; /* زيادة المسافة بين العنوان وزر الإضافة */
+}
+
+/* استايل الأجهزة المختلفة */
+@media (max-width: 800px) {
+    .products-page {
+        padding: 20px;
+    }
+
+    .products-page .header h1 {
+        font-size: 20px;
+    }
+
+    .products-page .add-button {
+        margin-left: 10px;
+    }
+
+    .form-row {
+        flex-direction: column; /* جعل العناصر رأسية على الجوال */
+    }
+}
+
+@media (min-width: 1025px) {
+    .products-page {
+        padding: 40px;
+    }
+
+    .products-page .header h1 {
+        font-size: 28px;
+    }
+}
+/* جدول المنتجات */
+.products-page .products-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--light);
+    margin-top: 2rem; /* مسافة أعلى الجدول */
+}
+
+.products-page .products-table th,
+.products-page .products-table td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.products-page .products-table th {
+    background: var(--dark-grey);
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase; /* تحويل النصوص إلى حروف كبيرة */
+}
+
+.products-page .products-table td {
+    border-bottom: 1px solid var(--grey);
+    color: var(--dark);
+    font-size: 13px;
+}
+
+.products-page .products-table tbody tr {
+    transition: background 0.3s ease;
+}
+
+.products-page .products-table tbody tr:hover {
+    background: var(--grey);
+}
+
+/* أزرار التعديل والحذف */
+.products-page .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #0096FF; /* اللون الأساسي */
+    color: white;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+.products-page .btn:hover {
+    background-color: #16ee21; /* لون مختلف عند التحويم */
+}
+
+.products-page .btn-delete {
+    background-color: #ff1900; /* لون الزر للحذف */
+}
+
+.products-page .btn-delete:hover {
+    background-color: #0096FF;
+}
+/* إخفاء نافذة تعديل المنتج بشكل افتراضي */
+#editProductModal {
+    display: none; /* إخفاء النافذة من البداية */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* تغطي كامل عرض الشاشة */
+    height: 100%; /* تغطي كامل ارتفاع الشاشة */
+    background-color: rgba(0, 0, 0, 0.5); /* إضافة خلفية مظللة مع درجة شفافية */
+    z-index: 1000; /* تأكد من أن النافذة فوق المحتوى */
+    justify-content: center;
+    align-items: center;
+}
+
+/* محتوى النافذة المنبثقة */
+#editProductModal .modal-content {
+    background-color: white;
+    padding: 30px;
+    width: 70%; /* عرض النافذة أكبر */
+    max-width: 900px; /* الحد الأقصى للعرض */
+    margin: 0 auto;
+    border-radius: 8px; /* حواف مدورة */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* زيادة الظل لتوضيح النافذة */
+}
+
+/* تنسيق الأيقونة التي تغلق النافذة */
+#editProductModal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px; /* زيادة حجم الأيقونة */
+    color: #333; /* تغيير اللون */
+    cursor: pointer;
+}
+
+/* تنسيق زر الحفظ */
+.submit-button {
+    background-color: #0096FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* جعل الزر يأخذ كامل العرض */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-button:hover {
+    background-color: #0077CC;
+}
+
+/* استايل للأجهزة الصغيرة (الشاشات الصغيرة) */
+@media (max-width: 768px) {
+    #editProductModal .modal-content {
+        width: 90%; /* تقليل عرض النافذة للأجهزة الصغيرة */
+        padding: 20px; /* تقليل الحشو */
+    }
+
+    #editProductModal .close {
+        font-size: 24px; /* تقليل حجم الأيقونة على الأجهزة الصغيرة */
+    }
+
+    .submit-button {
+        padding: 12px 15px; /* تقليل الحشو لزر الحفظ */
+    }
+}
+
+/* استايل للأجهزة المتوسطة (الشاشات المتوسطة) */
+@media (max-width: 1024px) {
+    #editProductModal .modal-content {
+        width: 80%; /* تقليل عرض النافذة للأجهزة المتوسطة */
+    }
+
+    #editProductModal .close {
+        font-size: 26px; /* حجم الأيقونة للأجهزة المتوسطة */
+    }
+
+    .submit-button {
+        padding: 12px 18px; /* تقليل الحشو لزر الحفظ */
+    }
+}
+
+/* استايل للشاشات الكبيرة */
+@media (min-width: 1025px) {
+    #editProductModal .modal-content {
+        width: 60%; /* جعل النافذة أضيق للشاشات الكبيرة */
+        padding: 40px; /* زيادة الحشو */
+    }
+
+    .submit-button {
+        padding: 15px 25px; /* زيادة الحشو لزر الحفظ */
+    }
+}

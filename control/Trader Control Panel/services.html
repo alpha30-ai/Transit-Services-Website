@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/services.css">
+    <title>الخدمات</title>
+</head>
+
+<body>
+<!-- الشريط الجانبي -->
+<div class="sidebar">
+    <a href="dashboard.html" class="logo">
+        <i class='bx bx-code-alt'></i>
+        <div class="logo-name"><span>مدينة</span>العبور</div>
+    </a>
+    <ul class="side-menu">
+        <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i>لوحة التحكم</a></li>
+        <li><a href="products.html"><i class='bx bx-store-alt'></i>إدارة المنتجات</a></li>
+        <li><a href="services.html"><i class='bx bx-store-alt'></i>إدارة الخدمات</a></li>
+        <li><a href="customers.html"><i class='bx bx-group'></i>إدارة العملاء</a></li>
+        <li><a href="orders.html"><i class='bx bx-receipt'></i>إدارة الطلبات</a></li>
+        <li><a href="offers.html"><i class='bx bx-gift'></i>العروض والخصومات</a></li>
+        <li><a href="settings.html"><i class='bx bx-cog'></i>الإعدادات</a></li>
+        <li><a href="#" id="language-toggle"><i class='bx bx-globe'></i>اللغة</a></li>
+    </ul>
+    <ul class="side-menu">
+        <li>
+            <a href="admin.html" class="logout">
+                <i class='bx bx-log-out-circle'></i>
+                تسجيل الخروج
+            </a>
+        </li>
+    </ul>
+
+    <!-- التأثير تحت زر تسجيل الخروج -->
+    <div class="ekosh-container">
+        <h3 class="animate-charcter">HASHISH</h3>
+    </div>
+</div>
+<!-- نهاية الشريط الجانبي -->
+
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <!-- الشريط العلوي -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input" style="direction: rtl; display: flex; align-items: center;">
+                    <button class="search-btn" type="submit" style="margin-right: 5px;"><i class='bx bx-search'></i></button>
+                    <input type="search" placeholder="بحث..." style="text-align: right;">
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="notifications.html">
+                        <button class="button">
+                            <svg viewBox="0 0 448 512" class="bell">
+                                <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path>
+                            </svg>
+                            الاشعارات
+                        </button>
+                    </a>
+            <a href="settings.html" class="profile"><img src="images/logo.png" alt="الملف الشخصي"></a>
+        </nav>
+        <!-- نهاية الشريط العلوي -->
+
+        <!-- نموذج إضافة الخدمة -->
+        <div class="container">
+            <form class="add-service-form">
+                <h2>إضافة خدمة جديدة</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="serviceName"><i class='bx bxs-cog'></i> اسم الخدمة:</label>
+                        <input type="text" id="serviceName" name="serviceName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceDescription"><i class='bx bxs-info-circle'></i> وصف الخدمة:</label>
+                        <input type="text" id="serviceDescription" name="serviceDescription" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category"><i class='bx bxs-category'></i> الفئة:</label>
+                        <select id="category" name="category" required>
+                            <option value="">اختر الفئة</option>
+                            <option value="مستشفيات">مستشفيات</option>
+                            <option value="معامل تحاليل">معامل تحاليل</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cost"><i class='bx bxs-wallet'></i> التكلفة:</label>
+                        <input type="number" id="cost" name="cost" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="serviceImage"><i class='bx bxs-image'></i> صورة الخدمة:</label>
+                        <input type="file" id="serviceImage" name="serviceImage" accept="image/*" required>
+                    </div>
+                </div>
+                <button type="submit" class="submit-button"><i class='bx bx-save'></i> إضافة الخدمة</button>
+            </form>
+        </div>
+
+<!-- جدول الخدمات -->
+<main class="services-page">
+    <div class="header">
+        <div class="title-box">
+            <h1>قائمة الخدمات</h1>
+        </div>
+        <!-- تمت إزالة زر إضافة خدمة هنا -->
+    </div>
+
+    <div class="recent-services">
+        <table class="services-table">
+            <thead>
+                <tr>
+                    <th>اسم الخدمة</th>
+                    <th>وصف الخدمة</th>
+                    <th>الفئة</th>
+                    <th>التكلفة</th>
+                    <th>صورة الخدمة</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody id="servicesTableBody">
+                <tr data-id="1">
+                    <td>خدمة A</td>
+                    <td>وصف خدمة A.</td>
+                    <td>مستشفيات</td>
+                    <td>100.00$</td>
+                    <td><img src="path/to/imageA.jpg" alt="صورة الخدمة" width="50"></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="editService(this)">تعديل</button>
+                        <button class="btn btn-delete" onclick="deleteService(this)">حذف</button>
+                    </td>
+                </tr>
+                <!-- المزيد من الصفوف يمكن إضافتها هنا -->
+            </tbody>
+        </table>
+    </div>
+</main>
+
+    <!-- نافذة تعديل الخدمة -->
+    <div id="editServiceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 class="modal-title">تعديل الخدمة</h2>
+            <form id="editServiceForm" onsubmit="updateService(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editServiceName"><i class='bx bx-cog'></i> اسم الخدمة:</label>
+                        <input type="text" id="editServiceName" name="serviceName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editServiceDescription"><i class='bx bx-info-circle'></i> وصف الخدمة:</label>
+                        <input type="text" id="editServiceDescription" name="serviceDescription" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editCategory"><i class='bx bx-category'></i> الفئة:</label>
+                        <select id="editCategory" name="category" required>
+                            <option value="مستشفيات">مستشفيات</option>
+                            <option value="معامل تحاليل">معامل تحاليل</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCost"><i class='bx bx-wallet'></i> التكلفة:</label>
+                        <input type="number" id="editCost" name="cost" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editServiceImage"><i class='bx bxs-image'></i> صورة الخدمة:</label>
+                        <input type="file" id="editServiceImage" name="serviceImage" accept="image/*" required>
+                    </div>
+                </div>
+                <button type="submit" class="submit-button"><i class='bx bx-save'></i> حفظ التغييرات</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/services.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>

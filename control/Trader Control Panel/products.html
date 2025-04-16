@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <title>لوحة التحكم الإدارية</title>
+</head>
+
+<body>
+<!-- الشريط الجانبي -->
+<div class="sidebar">
+    <a href="dashboard.html" class="logo">
+        <i class='bx bx-code-alt'></i>
+        <div class="logo-name"><span>مدينة</span>العبور</div>
+    </a>
+    <ul class="side-menu">
+        <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i>لوحة التحكم</a></li>
+        <li><a href="products.html"><i class='bx bx-store-alt'></i>إدارة المنتجات</a></li>
+        <li><a href="services.html"><i class='bx bx-store-alt'></i>إدارة الخدمات</a></li>
+        <li><a href="customers.html"><i class='bx bx-group'></i>إدارة العملاء</a></li>
+        <li><a href="orders.html"><i class='bx bx-receipt'></i>إدارة الطلبات</a></li>
+        <li><a href="offers.html"><i class='bx bx-gift'></i>العروض والخصومات</a></li>
+        <li><a href="settings.html"><i class='bx bx-cog'></i>الإعدادات</a></li>
+        <li><a href="#" id="language-toggle"><i class='bx bx-globe'></i>اللغة</a></li>
+    </ul>
+    <ul class="side-menu">
+        <li>
+            <a href="admin.html" class="logout">
+                <i class='bx bx-log-out-circle'></i>
+                تسجيل الخروج
+            </a>
+        </li>
+    </ul>
+    <div class="ekosh-container">
+        <h3 class="animate-charcter">HASHISH</h3>
+    </div>
+</div>
+<!-- نهاية الشريط الجانبي -->
+
+<!-- المحتوى الرئيسي -->
+<div class="content">
+    <!-- شريط التنقل -->
+    <nav>
+        <i class='bx bx-menu'></i>
+        <form action="#">
+            <div class="form-input">
+                <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                <input type="search" placeholder="بحث...">
+            </div>
+        </form>
+        <input type="checkbox" id="theme-toggle" hidden>
+        <label for="theme-toggle" class="theme-toggle"></label>
+        <!-- زر الإشعارات -->
+        <a href="notifications.html">
+            <button class="button">
+                <svg viewBox="0 0 448 512" class="bell">
+                    <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path>
+                </svg>
+                الاشعارات
+            </button>
+        </a>
+        <a href="settings.html" class="profile">
+            <img src="images/logo.png" alt="الملف الشخصي">
+        </a>
+    </nav>
+    <!-- نهاية شريط التنقل -->
+
+    <!-- قسم إدارة المنتجات -->
+    <div class="product-management">
+
+<!-- رابط مكتبة Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- نموذج إضافة منتج -->
+<div class="container">
+    <form class="add-product-form">
+        <h2>إضافة منتج جديد</h2>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="productName"><i class='bx bx-package'></i> اسم المنتج:</label>
+                <input type="text" id="productName" name="productName" required>
+            </div>
+            <div class="form-group">
+                <label for="productDescription"><i class='bx bx-info-circle'></i> وصف المنتج:</label>
+                <textarea id="productDescription" name="productDescription" required></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="category"><i class='bx bx-category'></i> التصنيف:</label>
+                <select id="category" name="category" required>
+                    <option value="">اختر التصنيف</option>
+                    <!-- هايبر ماركت -->
+                    <option value="منتجات غذائية">منتجات غذائية (أغذية، مشروبات، وجبات سريعة)</option>
+                    <option value="منتجات منزلية">منتجات منزلية (أدوات تنظيف، مستلزمات المطبخ، مفروشات)</option>
+                    <option value="ملابس وأزياء">ملابس وأزياء (ملابس للرجال، النساء، الأطفال)</option>
+                    <option value="إلكترونيات">إلكترونيات (أجهزة كهربائية، هواتف، أجهزة منزلية)</option>
+                    <option value="أدوات مكتبية">أدوات مكتبية (قرطاسية، لوازم مدرسية)</option>
+                    <option value="مستحضرات تجميل">مستحضرات تجميل (عطور، مكياج، عناية بالبشرة)</option>
+                    <option value="مستلزمات رياضية">مستلزمات رياضية (أدوات رياضية، ملابس رياضية)</option>
+                    
+                    <!-- صيدليات -->
+                    <option value="أدوية طبية">أدوية طبية (أدوية مسكنة، أدوية أمراض مزمنة)</option>
+                    <option value="مستحضرات تجميل وعناية بالبشرة">مستحضرات تجميل وعناية بالبشرة (شامبو، مرطبات، كريمات)</option>
+                    <option value="مستلزمات طبية">مستلزمات طبية (أجهزة قياس ضغط الدم، مقاييس السكر، ماسكات الوجه)</option>
+                    <option value="منتجات للأطفال">منتجات للأطفال (حليب أطفال، حفاضات، مستلزمات الأطفال)</option>
+                    <option value="فيتامينات ومكملات غذائية">فيتامينات ومكملات غذائية</option>
+                    <option value="منتجات العناية بالفم والأسنان">منتجات العناية بالفم والأسنان (معاجين، فرش أسنان)</option>
+                    
+                    <!-- معامل تحاليل -->
+                    <option value="تحاليل طبية">تحاليل طبية (تحاليل دم، تحاليل بول، تحاليل جينية)</option>
+                    <option value="خدمات فحص كورونا">خدمات فحص كورونا (اختبارات PCR، اختبارات سريعة)</option>
+                    <option value="تحاليل الحمل">تحاليل الحمل</option>
+                    <option value="تحاليل السكر">تحاليل السكر</option>
+                    <option value="خدمات الفحص الطبي المتخصص">خدمات الفحص الطبي المتخصص (فحص الكبد، الكلى، القلب)</option>
+                    <option value="مستلزمات المختبرات">مستلزمات المختبرات (أدوات تحليل، محاليل كيميائية)</option>
+                    
+                    <!-- مستشفيات -->
+                    <option value="خدمات طبية">خدمات طبية (استشارات طبية، فحوصات طبية شاملة)</option>
+                    <option value="إقامة في المستشفى">إقامة في المستشفى (غرف خاصة، أسرة طبية)</option>
+                    <option value="خدمات الطوارئ">خدمات الطوارئ (عيادات طوارئ، أطباء الطوارئ)</option>
+                    <option value="علاج طبيعي">علاج طبيعي (تأهيل بدني، مساج)</option>
+                    <option value="أجهزة طبية">أجهزة طبية (أجهزة مراقبة، معدات طبية)</option>
+                    <option value="خدمات الجراحة">خدمات الجراحة (جراحة عامة، جراحة تجميلية)</option>
+                    <option value="خدمات نقل المرضى">خدمات نقل المرضى (سيارات إسعاف)</option>
+
+                    <!-- مراكز صيانة -->
+                    <option value="صيانة السيارات">صيانة السيارات (صيانة محركات، صيانة ميكانيكية)</option>
+                    <option value="إصلاح الإطارات">إصلاح الإطارات (إصلاح، تغيير الإطارات)</option>
+                    <option value="خدمات تنظيف السيارات">خدمات تنظيف السيارات (غسيل، تلميع السيارات)</option>
+                    <option value="خدمات فحص السيارات">خدمات فحص السيارات (فحص ما قبل الشراء، فحص دوري)</option>
+                    <option value="قطع غيار السيارات">قطع غيار السيارات (محركات، بطاريات، فلاتر)</option>
+                    <option value="خدمات الكهرباء والإلكترونيات في السيارات">خدمات الكهرباء والإلكترونيات في السيارات (أجهزة كمبيوتر السيارات، إصلاح الأعطال الكهربائية)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price"><i class='bx bx-dollar'></i> السعر:</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="stock"><i class='bx bx-archive'></i> الكمية في المخزون:</label>
+                <input type="number" id="stock" name="stock" required>
+            </div>
+            <div class="form-group">
+                <label for="productImage"><i class='bx bx-image'></i> صورة المنتج:</label>
+                <input type="file" id="productImage" name="productImage" accept="image/*" required>
+            </div>
+        </div>
+        <button type="submit" class="submit-button"><i class='bx bx-save'></i> إضافة المنتج</button>
+    </form>
+</div>
+
+
+<!-- جدول المنتجات -->
+<main class="products-page">
+    <div class="header">
+        <div class="title-box">
+            <h1>قائمة المنتجات</h1>
+        </div>
+    </div>
+
+    <table class="products-table">
+        <thead>
+            <tr>
+                <th>اسم المنتج</th>
+                <th>وصف المنتج</th>
+                <th>التصنيف</th>
+                <th>السعر</th>
+                <th>الكمية</th>
+                <th>رمز التعريف</th>
+                <th>الإجراءات</th> <!-- عمود الإجراءات -->
+            </tr>
+        </thead>
+        <tbody id="productsTableBody">
+            <!-- يتم إضافة الصفوف هنا عبر JavaScript -->
+        </tbody>
+    </table>
+</main>
+
+
+
+<!-- نافذة تعديل المنتج -->
+<div id="editProductModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="modal-title">تعديل المنتج</h2>
+        <form id="editProductForm" onsubmit="updateProduct(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="editProductName"><i class='bx bx-package'></i> اسم المنتج:</label>
+                    <input type="text" id="editProductName" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editProductDescription"><i class='bx bx-info-circle'></i> وصف المنتج:</label>
+                    <textarea id="editProductDescription" name="productDescription" required></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="editCategory"><i class='bx bx-category'></i> التصنيف:</label>
+                    <select id="editCategory" name="category" required>
+                        <!-- خيارات التصنيف -->
+                        <option value="منتجات غذائية">منتجات غذائية</option>
+                        <option value="منتجات منزلية">منتجات منزلية</option>
+                        <option value="ملابس وأزياء">ملابس وأزياء</option>
+                        <option value="إلكترونيات">إلكترونيات</option>
+                        <option value="أدوات مكتبية">أدوات مكتبية</option>
+                        <option value="مستحضرات تجميل">مستحضرات تجميل</option>
+                        <option value="مستلزمات رياضية">مستلزمات رياضية</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editPrice"><i class='bx bx-dollar'></i> السعر:</label>
+                    <input type="number" id="editPrice" name="price" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="editStock"><i class='bx bx-archive'></i> الكمية في المخزون:</label>
+                    <input type="number" id="editStock" name="stock" required>
+                </div>
+                <div class="form-group">
+                    <label for="editProductImage"><i class='bx bx-image'></i> صورة المنتج:</label>
+                    <input type="file" id="editProductImage" name="productImage" accept="image/*">
+                </div>
+            </div>
+            <button type="submit" class="submit-button"><i class='bx bx-save'></i> حفظ التغييرات</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- مثال على رابط للمنتج -->
+<a href="product-details.html" onclick="saveProductDetails(exampleProduct)">تفاصيل المنتج</a>
+
+<script>
+// الدالة لحفظ معلومات المنتج في localStorage
+function saveProductDetails(product) {
+    localStorage.setItem('productDetails', JSON.stringify(product));
+}
+</script>
+
+
+
+
+
+<script src="js/products.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
