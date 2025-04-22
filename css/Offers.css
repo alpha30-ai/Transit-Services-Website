@@ -199,7 +199,7 @@ button {
 /* ========== البانر الرئيسي ========== */
 /* ======================================= */
 
-.services-products-hero-section {
+.offers-hero-section {
     position: sticky; /* تم تعديل هذه الخاصية لجعل البنر يلتصق بالهدر */
     top: 0; /* تأكد من أن البنر يلتصق بأعلى الصفحة */
     height: 600px;
@@ -313,7 +313,7 @@ button {
         padding: 0 5px;
     }
 
-    .services-products-hero-section {
+    .services-offers-hero-section {
         padding: 30px 0;
         height: auto;
     }
@@ -359,7 +359,7 @@ button {
         font-size: 1.2rem;
     }
 
-    .services-products-section {
+    .offers-section {
         gap: 10px;
         padding: 0 5px;
     }
@@ -374,30 +374,30 @@ button {
         margin-bottom: 10px;
     }
 
-    .products-grid {
+    .offers-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
     }
 
-    .product-card {
+    .offer-card {
         width: 100%;
         margin: 0 auto;
     }
 
-    .product-image {
+    .offer-image {
         height: 120px;
     }
 
-    .product-info {
+    .offer-info {
         padding: 5px;
     }
 
-    .product-info h3 {
+    .offer-info h3 {
         font-size: 0.8rem;
         margin-bottom: 2px;
     }
 
-    .product-description {
+    .offer-description {
         font-size: 0.75rem;
         margin-bottom: 3px;
     }
@@ -414,12 +414,12 @@ button {
         font-size: 0.9rem;
     }
 
-    .product-actions button {
+    .offer-actions button {
         padding: 4px 0;
         font-size: 0.7rem;
     }
 
-    .product-actions {
+    .offer-actions {
         gap: 3px;
     }
 
@@ -548,7 +548,7 @@ button {
 /* ========== شريط الفلترة ========== */
 /* ======================================= */
 
-.services-products-section {
+.offers-section {
     padding: var(--spacing-xl) 0;
 }
 
@@ -719,10 +719,10 @@ button {
 }
 
 /* ======================================= */
-/* ========== أقسام المنتجات ========== */
+/* ========== أقسام العروض ========== */
 /* ======================================= */
 
-.services-products-main-content {
+.offers-main-content {
     background-color: var(--white-color);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xl);
@@ -817,7 +817,7 @@ button {
     color: var(--white-color);
 }
 
-.product-category-section {
+.offer-category-section {
     margin-bottom: var(--spacing-xxl);
     animation: fadeInUp 0.8s ease-in-out;
 }
@@ -872,17 +872,17 @@ button {
 }
 
 /* ======================================= */
-/* ========== كروت المنتجات ========== */
+/* ========== كروت العروض ========== */
 /* ======================================= */
 
-.products-grid {
+.offers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
 }
 
-.product-card {
+.offer-card {
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     box-shadow: var(--box-shadow-card);
@@ -897,27 +897,27 @@ button {
     z-index: 1;
 }
 
-.product-card:hover {
+.offer-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--box-shadow-hover);
     border-color: rgba(122, 28, 172, 0.2);
 }
 
-.product-image {
+.offer-image {
     position: relative;
     height: 220px;
     overflow: hidden;
     background-color: #f9f9f9;
 }
 
-.product-image img {
+.offer-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: var(--transition-medium);
 }
 
-.product-card:hover .product-image img {
+.offer-card:hover .offer-image img {
     transform: scale(1.1);
 }
 
@@ -935,7 +935,7 @@ button {
     box-shadow: 0 3px 8px rgba(255, 88, 0, 0.3);
 }
 
-.product-tag {
+.offer-tag {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -947,22 +947,22 @@ button {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.product-tag.new {
+.offer-tag.new {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
     color: var(--white-color);
 }
 
-.product-tag.bestseller {
+.offer-tag.bestseller {
     background: linear-gradient(135deg, var(--warning-color), #ffdb4d);
     color: var(--dark-color);
 }
 
-.product-tag.featured {
+.offer-tag.featured {
     background: linear-gradient(135deg, #4a90e2, #5ca9fb);
     color: var(--white-color);
 }
 
-.product-actions-overlay {
+.offer-actions-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -978,7 +978,7 @@ button {
     z-index: 3;
 }
 
-.product-card:hover .product-actions-overlay {
+.offer-card:hover .offer-actions-overlay {
     opacity: 1;
 }
 
@@ -1000,8 +1000,8 @@ button {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.product-card:hover .quick-view-btn,
-.product-card:hover .add-to-favorite-btn {
+.offer-card:hover .quick-view-btn,
+.offer-card:hover .add-to-favorite-btn {
     transform: translateY(0);
     opacity: 1;
 }
@@ -1013,21 +1013,21 @@ button {
     transform: scale(1.1);
 }
 
-.product-info {
+.offer-info {
     padding: var(--spacing-md);
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.product-category {
+.offer-category {
     font-size: var(--font-size-xs);
     color: var(--primary-color);
     margin-bottom: var(--spacing-xs);
     font-weight: 500;
 }
 
-.product-info h3 {
+.offer-info h3 {
     font-size: var(--font-size-md);
     color: var(--dark-color);
     margin-bottom: var(--spacing-sm);
@@ -1036,29 +1036,29 @@ button {
     line-height: 1.4;
 }
 
-.product-info h3:hover {
+.offer-info h3:hover {
     color: var(--primary-color);
 }
 
-.product-rating {
+.offer-rating {
     display: flex;
     align-items: center;
     gap: 2px;
     margin-bottom: var(--spacing-sm);
 }
 
-.product-rating i {
+.offer-rating i {
     color: var(--warning-color);
     font-size: var(--font-size-sm);
 }
 
-.product-rating span {
+.offer-rating span {
     color: var(--text-light);
     font-size: var(--font-size-xs);
     margin-right: var(--spacing-xs);
 }
 
-.product-description {
+.offer-description {
     font-size: var(--font-size-sm);
     color: var(--text-light);
     margin-bottom: var(--spacing-md);
@@ -1091,7 +1091,7 @@ button {
     font-weight: 700;
 }
 
-.product-badge {
+.offer-badge {
     font-size: var(--font-size-xs);
     display: flex;
     align-items: center;
@@ -1099,15 +1099,15 @@ button {
     font-weight: 500;
 }
 
-.product-badge.in-stock {
+.offer-badge.in-stock {
     color: var(--success-color);
 }
 
-.product-badge.out-of-stock {
+.offer-badge.out-of-stock {
     color: var(--danger-color);
 }
 
-.product-actions {
+.offer-actions {
     display: flex;
     justify-content: space-between;
     gap: var(--spacing-sm);
@@ -1116,7 +1116,7 @@ button {
     z-index: 2;
 }
 
-.product-actions button {
+.offer-actions button {
     flex: 1;
     background: none;
     border: 1px solid var(--primary-color);
@@ -1133,19 +1133,19 @@ button {
     font-weight: 500;
 }
 
-.product-actions button.add-to-cart {
+.offer-actions button.add-to-cart {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
     color: white;
     font-weight: 600;
     border: none;
 }
 
-.product-actions button:hover {
+.offer-actions button:hover {
     transform: translateY(-3px);
     box-shadow: var(--box-shadow);
 }
 
-.product-actions button:disabled {
+.offer-actions button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     background: #f0f0f0;
@@ -1153,60 +1153,60 @@ button {
     border-color: #ddd;
 }
 
-.product-actions button:disabled:hover {
+.offer-actions button:disabled:hover {
     transform: none;
     box-shadow: none;
 }
 
 /* عرض القائمة */
-.products-grid.list-view {
+.offers-grid.list-view {
     grid-template-columns: 1fr;
 }
 
-.products-grid.list-view .product-card {
+.offers-grid.list-view .offer-card {
     flex-direction: row;
     height: 200px;
 }
 
-.products-grid.list-view .product-image {
+.offers-grid.list-view .offer-image {
     width: 200px;
     height: 100%;
 }
 
-.products-grid.list-view .product-info {
+.offers-grid.list-view .offer-info {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.products-grid.list-view .product-description {
+.offers-grid.list-view .offer-description {
     flex-grow: 1;
 }
 
-.products-grid.list-view .price {
+.offers-grid.list-view .price {
     margin-top: auto;
 }
 
-/* رسالة عدم وجود منتجات */
-.no-products-message {
+/* رسالة عدم وجود عروض */
+.no-offers-message {
     text-align: center;
     padding: var(--spacing-xxl) 0;
     animation: fadeIn 0.8s ease-in-out;
 }
 
-.no-products-message i {
+.no-offers-message i {
     font-size: 4rem;
     color: var(--text-light);
     margin-bottom: var(--spacing-lg);
 }
 
-.no-products-message h3 {
+.no-offers-message h3 {
     font-size: var(--font-size-xl);
     color: var(--dark-color);
     margin-bottom: var(--spacing-md);
 }
 
-.no-products-message p {
+.no-offers-message p {
     font-size: var(--font-size-md);
     color: var(--text-light);
     margin-bottom: var(--spacing-lg);
@@ -1524,10 +1524,10 @@ button {
 }
 
 /* ======================================= */
-/* ========== قسم المنتجات العشوائية ========== */
+/* ========== قسم العروض العشوائية ========== */
 /* ======================================= */
 
-.random-products-section {
+.random-offers-section {
     margin: var(--spacing-xxl) 0;
     width: 100%; /* تأكد من أن العرض 100% */
 }
@@ -1938,7 +1938,7 @@ button {
         width: 180px;
     }
 
-    .products-grid {
+    .offers-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
 
@@ -1948,7 +1948,7 @@ button {
 }
 
 @media (max-width: 992px) {
-    .services-products-hero-section {
+    .services-offers-hero-section {
         height: auto;
         padding: var(--spacing-xl) 0;
     }
@@ -2041,17 +2041,17 @@ button {
         align-self: flex-end;
     }
 
-    .products-grid {
+    .offers-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-sm);
     }
 
-    .products-grid.list-view .product-card {
+    .offers-grid.list-view .offer-card {
         flex-direction: column;
         height: auto;
     }
 
-    .products-grid.list-view .product-image {
+    .offers-grid.list-view .offer-image {
         width: 100%;
         height: 200px;
     }
@@ -2112,7 +2112,7 @@ button {
 }
 
 @media (max-width: 576px) {
-    .services-products-hero-section {
+    .services-offers-hero-section {
         height: auto;
         padding: var(--spacing-lg) 0;
     }
@@ -2134,28 +2134,28 @@ button {
         padding: var(--spacing-lg) var(--spacing-md);
     }
 
-    .services-products-main-content {
+    .offers-main-content {
         padding: var(--spacing-lg) var(--spacing-md);
     }
 
-    .product-card {
+    .offer-card {
         border-radius: var(--border-radius-sm);
     }
 
-    .product-image {
+    .offer-image {
         height: 150px;
     }
 
-    .product-info {
+    .offer-info {
         padding: var(--spacing-sm);
     }
 
-    .product-info h3 {
+    .offer-info h3 {
         font-size: 0.9rem;
         margin-bottom: 5px;
     }
 
-    .product-description {
+    .offer-description {
         font-size: 0.85rem;
         margin-bottom: var(--spacing-xs);
     }
@@ -2172,16 +2172,16 @@ button {
         font-size: 1.1rem;
     }
 
-    .product-actions button {
+    .offer-actions button {
         padding: 6px 0;
         font-size: 0.8rem;
     }
 
-    .product-actions button.add-to-cart {
+    .offer-actions button.add-to-cart {
         font-size: 0.8rem;
     }
 
-    .product-actions button i {
+    .offer-actions button i {
         font-size: 0.8rem;
     }
 
@@ -2275,34 +2275,34 @@ button {
     }
 
     /* تنسيقات البطاقات */
-    .products-grid,
-    .pharmacy-products,
+    .offers-grid,
+    .pharmacy-offers,
     .hospital-services,
     .lab-services,
-    .hypermarket-products,
-    .restaurant-products,
+    .hypermarket-offers,
+    .restaurant-offers,
     .car-services-services {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 5px !important;
     }
 
-    .product-card,
+    .offer-card,
     .service-card {
         width: 100% !important;
         margin: 0 auto !important;
     }
 
-    .product-image,
+    .offer-image,
     .service-image {
         height: 120px !important;
     }
 
-    .product-info,
+    .offer-info,
     .service-info {
         padding: 5px !important;
     }
 
-    .product-info h3,
+    .offer-info h3,
     .service-info h3 {
         font-size: 0.8rem !important;
         margin-bottom: 2px !important;
@@ -2315,7 +2315,7 @@ button {
         -webkit-box-orient: vertical !important;
     }
 
-    .product-description,
+    .offer-description,
     .service-description {
         font-size: 0.75rem !important;
         margin-bottom: 3px !important;
@@ -2342,7 +2342,7 @@ button {
     }
 
     /* تحسين أزرار البطاقات */
-    .product-actions,
+    .offer-actions,
     .service-actions {
         gap: 3px !important;
         display: flex !important;
@@ -2352,7 +2352,7 @@ button {
         width: 100% !important;
     }
 
-    .product-actions button,
+    .offer-actions button,
     .service-actions button,
     .add-to-cart,
     .add-to-favorite,
@@ -2379,25 +2379,25 @@ button {
     }
 
     /* تحسين أيقونات الأزرار */
-    .product-actions button i,
+    .offer-actions button i,
     .service-actions button i {
         font-size: 0.7rem !important;
         margin-left: 3px !important;
     }
 
-    /* تحسين شارات المنتج */
-    .product-badge, .discount, .product-tag {
+    /* تحسين شارات العروض */
+    .offer-tag, .discount, .offer-badge {
         font-size: 0.6rem !important;
         padding: 2px 4px !important;
     }
 
-    /* تحسين تصنيف المنتج */
-    .product-rating i {
+    /* تحسين تصنيف العروض */
+    .offer-rating i {
         font-size: 0.7rem !important;
     }
 
-    /* تحسين فئة المنتج */
-    .product-category {
+    /* تحسين فئة العروض */
+    .offer-category {
         font-size: 0.65rem !important;
         margin-bottom: 2px !important;
     }
