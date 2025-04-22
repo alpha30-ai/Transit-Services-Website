@@ -425,19 +425,68 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
 
-            // خلط العروض بشكل عشوائي
-            const shuffledOffers = [...offersData].sort(() => 0.5 - Math.random());
+            // تفريغ الحاوية
+            randomOffers.innerHTML = '';
 
             // الحد الأقصى للعروض العشوائية
             const maxRandomOffers = 4;
 
-            // تفريغ الحاوية
-            randomOffers.innerHTML = '';
+            // تقسيم العروض حسب الخدمة
+            const serviceTypes = ['pharmacy', 'hypermarket', 'restaurant', 'car-service'];
+            const offersByService = {};
+
+            // تجميع العروض حسب نوع الخدمة
+            serviceTypes.forEach(service => {
+                offersByService[service] = offersData.filter(offer => offer.service === service);
+            });
+
+            // اختيار عرض واحد على الأقل من كل خدمة (إذا كان متاحًا)
+            const selectedOffers = [];
+
+            // أولاً، نختار عرضًا واحدًا من كل خدمة
+            serviceTypes.forEach(service => {
+                if (offersByService[service].length > 0) {
+                    // اختيار عرض عشوائي من هذه الخدمة
+                    const randomIndex = Math.floor(Math.random() * offersByService[service].length);
+                    selectedOffers.push(offersByService[service][randomIndex]);
+
+                    // إزالة العرض المختار من القائمة لتجنب التكرار
+                    offersByService[service].splice(randomIndex, 1);
+                }
+            });
+
+            // إذا كنا بحاجة إلى المزيد من العروض لإكمال العدد المطلوب
+            while (selectedOffers.length < maxRandomOffers) {
+                // تجميع جميع العروض المتبقية في مصفوفة واحدة
+                const remainingOffers = [];
+                serviceTypes.forEach(service => {
+                    remainingOffers.push(...offersByService[service]);
+                });
+
+                // إذا لم يتبق أي عروض، نخرج من الحلقة
+                if (remainingOffers.length === 0) break;
+
+                // اختيار عرض عشوائي من العروض المتبقية
+                const randomIndex = Math.floor(Math.random() * remainingOffers.length);
+                const selectedOffer = remainingOffers[randomIndex];
+                selectedOffers.push(selectedOffer);
+
+                // إزالة العرض المختار من قائمة الخدمة المناسبة
+                const serviceIndex = offersByService[selectedOffer.service].findIndex(offer => offer.id === selectedOffer.id);
+                if (serviceIndex !== -1) {
+                    offersByService[selectedOffer.service].splice(serviceIndex, 1);
+                }
+            }
+
+            // خلط العروض المختارة لتكون عشوائية تمامًا
+            const shuffledSelectedOffers = selectedOffers.sort(() => 0.5 - Math.random());
 
             // إضافة العروض العشوائية إلى الحاوية
-            shuffledOffers.slice(0, maxRandomOffers).forEach(offer => {
+            shuffledSelectedOffers.forEach(offer => {
                 randomOffers.appendChild(createOfferCard(offer));
             });
+
+            console.log("تم تحميل العروض العشوائية بنجاح:", shuffledSelectedOffers);
         } catch (error) {
             console.error("حدث خطأ أثناء تحميل العروض العشوائية:", error);
         }
