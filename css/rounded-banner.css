@@ -1,0 +1,46 @@
+/* تنسيق البانر المنحني */
+.services-products-hero-section {
+    border-radius: 15px !important; /* انحناء متوسط للبانر */
+    overflow: hidden;
+    margin: 20px auto !important;
+    position: relative !important; /* تغيير من sticky إلى relative */
+    top: auto !important; /* إزالة خاصية top */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* تأكد من أن الطبقة العلوية تتبع نفس الانحناء */
+.hero-overlay {
+    border-radius: 15px !important;
+}
+
+/* تعديل للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .services-products-hero-section {
+        border-radius: 15px !important;
+        margin: 15px auto !important;
+    }
+
+    .hero-overlay {
+        border-radius: 15px !important;
+    }
+}
+
+/* تعديل للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .services-products-hero-section {
+        border-radius: 15px !important;
+        margin: 10px auto !important;
+    }
+
+    .hero-overlay {
+        border-radius: 15px !important;
+    }
+}
+
+/* تنسيق للبانرات الأخرى في الصفحة */
+.banner-section, .promo-banner, .offer-banner, .category-banner {
+    border-radius: 15px !important;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+}

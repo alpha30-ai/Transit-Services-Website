@@ -1,0 +1,422 @@
+/* أنماط قسم فريق العمل المتميز */
+:root {
+    --team-primary-color: #7A1CAC;
+    --team-secondary-color: #AD49E1;
+    --team-light-color: #f8f9fa;
+    --team-dark-color: #212529;
+    --team-gradient: linear-gradient(135deg, #7A1CAC, #AD49E1);
+    --team-shadow: 0 10px 30px rgba(122, 28, 172, 0.2);
+    --team-transition: all 0.3s ease;
+}
+
+/* قسم فريق العمل */
+.team-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--team-light-color);
+    overflow: hidden;
+}
+
+.team-bg-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(122, 28, 172, 0.03), rgba(173, 73, 225, 0.05));
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+}
+
+.team-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1330px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* عنوان القسم */
+.team-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.team-title {
+    font-size: 2.5rem;
+    color: var(--team-dark-color);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.team-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--team-gradient);
+    border-radius: 3px;
+}
+
+.team-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* تبويبات الفريق */
+.team-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.team-tab {
+    padding: 12px 25px;
+    background-color: #fff;
+    color: #666;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--team-transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: none;
+}
+
+.team-tab.active {
+    background: var(--team-gradient);
+    color: #fff;
+    box-shadow: var(--team-shadow);
+}
+
+.team-tab:hover:not(.active) {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+}
+
+/* شبكة أعضاء الفريق */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* كارت عضو الفريق */
+.team-member {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--team-transition);
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--team-shadow);
+}
+
+.member-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-image {
+    transform: scale(1.1);
+}
+
+.member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    opacity: 0;
+    transition: var(--team-transition);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.team-member:hover .member-overlay {
+    opacity: 1;
+}
+
+.member-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--team-primary-color);
+    font-size: 1rem;
+    transition: var(--team-transition);
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.team-member:hover .social-link {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.social-link:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.social-link:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.social-link:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.social-link:hover {
+    background: var(--team-gradient);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.member-info {
+    padding: 25px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.member-category {
+    display: inline-block;
+    padding: 5px 15px;
+    background: var(--team-gradient);
+    color: #fff;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.member-name {
+    font-size: 1.4rem;
+    color: var(--team-dark-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.member-role {
+    font-size: 1rem;
+    color: var(--team-primary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.member-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.skill-tag {
+    padding: 5px 12px;
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: #666;
+    transition: var(--team-transition);
+}
+
+.skill-tag:hover {
+    background-color: var(--team-primary-color);
+    color: #fff;
+}
+
+/* إحصائيات الفريق */
+.team-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+    background: var(--team-gradient);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--team-shadow);
+}
+
+.team-stat {
+    text-align: center;
+    color: #fff;
+}
+
+.stat-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-text {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* دعوة للانضمام للفريق */
+.team-join {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-join-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/pattern-light.png');
+    background-size: cover;
+    opacity: 0.05;
+    z-index: 1;
+}
+
+.team-join-content {
+    position: relative;
+    z-index: 2;
+}
+
+.team-join-title {
+    font-size: 2rem;
+    color: var(--team-dark-color);
+    margin-bottom: 20px;
+}
+
+.team-join-text {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.team-join-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--team-gradient);
+    color: #fff;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--team-transition);
+    box-shadow: var(--team-shadow);
+}
+
+.team-join-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(122, 28, 172, 0.3);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .team-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .team-section {
+        padding: 80px 0;
+    }
+    
+    .team-title {
+        font-size: 2rem;
+    }
+    
+    .team-join {
+        padding: 30px;
+    }
+    
+    .team-join-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-tab {
+        width: calc(50% - 5px);
+        text-align: center;
+        padding: 10px;
+    }
+}

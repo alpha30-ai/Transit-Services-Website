@@ -1,0 +1,340 @@
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .glass-card {
+    display: flex;
+    flex-direction: row; /* تصنيف العناصر جنبًا إلى جنب في الشاشات الكبيرة */
+    width: 95%; /* زيادة عرض التصميم قليلاً */
+    max-width: 1200px; /* زيادة العرض ليصبح أكثر احترافي */
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-section, .info-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .form-section {
+    flex: 1 1 55%; /* زيادة حجم الفورم بالنسبة للقسم الأيمن */
+  }
+  
+  .info-section {
+    flex: 1 1 45%; /* تقليل حجم القسم الأيمن مقارنة بالفورم */
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .site-logo {
+    max-width: 30%;
+    height: auto;
+  }
+  
+  .form-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .form-section p {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 15px;
+    color: #000000;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    font-size: 1rem;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+  }
+  
+  .form-group input:hover,
+  .form-group input:focus {
+    border-color: #00CCDD;
+    box-shadow: 0 0 10px rgba(122, 28, 172, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #2E073F, #00CCDD, #AD49E1); /* تدرج لوني للأزرار */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-submit:hover {
+    background: linear-gradient(135deg, #7A1CAC, #00CCDD, #2E073F); /* تأثير عند التمرير */
+    transform: scale(1.05);
+  }
+  
+  /* إضافة تأثيرات للزر "تذكرني" */
+  .checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  
+  .checkbox input {
+    margin-left: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid #7A1CAC;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .checkbox input:checked {
+    background-color: #00CCDD;
+    transform: scale(1.1);
+  }
+  
+  .checkbox input:hover {
+    background-color: #AD49E1;
+    transform: scale(1.1);
+  }
+  
+  /* أزرار الإجراءات الإضافية */
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .btn-secondary {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    color: #fff;
+    background: linear-gradient(135deg, #2E073F, #7A1CAC);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-secondary:hover {
+    background: linear-gradient(135deg, #7A1CAC, #AD49E1);
+    transform: scale(1.05);
+  }
+  
+  /* التأثيرات على أيقونات الشبكات */
+  .social-buttons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    background: linear-gradient(135deg, #AD49E1, #00CCDD);
+    transition: transform 0.3s, background 0.3s;
+  }
+  
+  .social-buttons a:hover {
+    transform: scale(1.2);
+    background: linear-gradient(135deg, #AD49E1, #00CCDD);
+  }
+  
+  .info-section {
+    position: relative;
+  }
+  
+  .info-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .info-section .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .info-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .info-section p {
+    font-size: 1rem;
+  }
+  
+  /* Media Queries for Responsive Design */
+  /* تصميم الزر الجديد داخل overlay */
+  .btn-main {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2E073F, #00CCDD, #AD49E1); /* تدرج لوني للأزرار */
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .btn-main:hover {
+    background: linear-gradient(135deg, #00CCDD, #AD49E1, #2E073F);
+    transform: scale(1.05);
+  }
+  
+  /* الشاشات الصغيرة */
+  @media (max-width: 768px) {
+    .glass-card {
+      flex-direction: column; /* ترتيب العناصر عموديًا في الشاشات الصغيرة */
+    }
+  
+    .form-section, .info-section {
+      padding: 20px;
+    }
+  
+    .form-section {
+      flex: 1 1 60%; /* زيادة حجم الفورم بالنسبة للقسم الأيمن في الشاشات الصغيرة */
+    }
+  
+    .info-section {
+      flex: 1 1 40%; /* تقليل حجم القسم الأيمن بالنسبة للفورم في الشاشات الصغيرة */
+    }
+  
+    .form-section h1 {
+      font-size: 1.6rem;
+    }
+  
+    .form-section p {
+      font-size: 0.9rem;
+    }
+  
+    .btn-submit {
+      padding: 10px;
+    }
+  
+    .social-buttons a {
+      font-size: 1.3rem;
+    }
+  
+    .info-section h2 {
+      font-size: 1.4rem;
+    }
+  
+    .info-section p {
+      font-size: 0.9rem;
+    }
+  
+    .info-image {
+      height: 300px; /* تحديد ارتفاع مناسب للصورة */
+    }
+  
+    /* تغيير الحشو */
+    .site-logo {
+      width: 80%;
+      margin-bottom: 10px;
+    }
+  
+    .action-buttons {
+      flex-direction: column; /* ترتيب الأزرار بشكل عمودي */
+      align-items: center;
+    }
+  
+    .btn-secondary {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  
+  /* الشاشات الكبيرة */
+  @media (min-width: 1024px) {
+    .glass-card {
+      flex-direction: row; /* ترتيب العناصر جنبًا إلى جنب */
+    }
+  
+    .form-section, .info-section {
+      padding: 40px;
+    }
+  
+    .form-section {
+      flex: 1 1 60%; /* زيادة حجم الفورم بالنسبة للقسم الأيمن في الشاشات الكبيرة */
+    }
+  
+    .info-section {
+      flex: 1 1 40%; /* تقليل حجم القسم الأيمن بالنسبة للفورم في الشاشات الكبيرة */
+    }
+  
+    .form-section h1 {
+      font-size: 1.8rem;
+    }
+  
+    .form-section p {
+      font-size: 1rem;
+    }
+  
+    .btn-submit {
+      padding: 12px;
+    }
+  
+    .social-buttons a {
+      font-size: 1.5rem;
+    }
+  
+    .info-section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .info-section p {
+      font-size: 1rem;
+    }
+  }
+  

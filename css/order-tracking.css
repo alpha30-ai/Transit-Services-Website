@@ -1,0 +1,529 @@
+/* المتغيرات الرئيسية */
+:root {
+    --color-primary: #0028ff; /* لون رئيسي متناسق مع صفحة السلة */
+    --color-secondary: #4CAF50; /* لون ثانوي */
+    --color-accent: #f44336; /* لون للتأكيد */
+    --color-background: #f9f9ff; /* لون خلفية */
+    --color-text: #333; /* لون النص */
+    --color-border: #eee; /* لون الحدود */
+    --shadow: 0 4px 12px rgba(0, 40, 255, 0.1); /* ظل عام */
+    --shadow-hover: 0 8px 24px rgba(0, 40, 255, 0.15); /* ظل عند التمرير */
+    --transition: all 0.3s ease; /* انتقال سلس */
+    --border-radius: 16px; /* زوايا دائرية */
+}
+
+/* تنسيق عام للصفحة */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* رأس صفحة التتبع */
+.tracking-header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.tracking-header h1 {
+    font-size: 32px;
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.tracking-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 3px;
+}
+
+.tracking-header p {
+    color: #666;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* مؤشر حالة الطلب */
+.order-progress {
+    margin: 50px 0;
+    animation: fadeInUp 0.8s ease;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    height: 4px;
+    background-color: var(--color-border);
+    width: 100%;
+    z-index: 1;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 25%;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    color: #999;
+    font-size: 20px;
+}
+
+.step-label {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.progress-step.active .step-icon {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 0 0 5px rgba(0, 40, 255, 0.2);
+}
+
+.progress-step.active .step-label {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.progress-step.completed .step-icon {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: white;
+}
+
+.progress-step.completed .step-label {
+    color: var(--color-secondary);
+}
+
+/* حاوية التتبع */
+.tracking-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* قسم تفاصيل الطلب */
+.order-details-section {
+    flex: 2;
+}
+
+.order-container {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    transition: var(--transition);
+    animation: fadeInUp 0.8s ease;
+}
+
+.order-container:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.order-info {
+    margin-bottom: 25px;
+    text-align: right;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.order-info h2 {
+    font-size: 20px;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.order-info p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.status {
+    display: inline-block;
+    font-weight: 600;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background-color: var(--color-primary);
+    font-size: 14px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item:hover {
+    transform: translateY(-3px);
+}
+
+.order-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-left: 20px;
+    border: 1px solid var(--color-border);
+    padding: 5px;
+    background-color: #fff;
+    transition: var(--transition);
+}
+
+.order-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-item-info {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.order-item-info h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.order-item:hover .order-item-info h2 {
+    color: var(--color-primary);
+}
+
+.order-item-info p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.order-summary {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9ff;
+    border-radius: var(--border-radius);
+    text-align: right;
+}
+
+.order-summary p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.order-summary p:last-child {
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 18px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--color-border);
+}
+
+/* قسم معلومات الشحن والتوصيل */
+.shipping-info-section {
+    flex: 1;
+}
+
+.shipping-info-card, .delivery-info-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: var(--transition);
+    animation: fadeInRight 0.8s ease;
+}
+
+.shipping-info-card:hover, .delivery-info-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.shipping-info-card h2, .delivery-info-card h2 {
+    font-size: 20px;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+}
+
+.shipping-info-card h2::after, .delivery-info-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 3px;
+}
+
+.info-row {
+    display: flex;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #555;
+    width: 40%;
+    padding-left: 10px;
+}
+
+.info-value {
+    color: #333;
+    width: 60%;
+}
+
+.delivery-person {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9ff;
+    border-radius: 10px;
+}
+
+.delivery-avatar {
+    font-size: 50px;
+    color: var(--color-primary);
+    margin-left: 15px;
+}
+
+.delivery-details {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.delivery-details h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.delivery-details p {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.rating {
+    color: #FFD700;
+    font-size: 14px;
+}
+
+.rating span {
+    color: #666;
+    margin-right: 5px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.action-buttons button {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+}
+
+.contact-button {
+    background-color: var(--color-secondary);
+}
+
+.cancel-button {
+    background-color: var(--color-accent);
+}
+
+.action-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.action-buttons button i {
+    font-size: 16px;
+}
+
+/* الرسوم المتحركة */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* تصميم متجاوب */
+@media (max-width: 992px) {
+    .tracking-container {
+        flex-direction: column;
+    }
+
+    .shipping-info-section {
+        order: 1;
+    }
+
+    .order-details-section {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .progress-container {
+        flex-wrap: wrap;
+    }
+
+    .progress-step {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .progress-bar {
+        display: none;
+    }
+
+    .order-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .order-item img {
+        margin: 0 auto 15px;
+    }
+
+    .order-item-info {
+        text-align: center;
+    }
+
+    .info-row {
+        flex-direction: column;
+    }
+
+    .info-label, .info-value {
+        width: 100%;
+        text-align: center;
+    }
+
+    .delivery-person {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .delivery-avatar {
+        margin: 0 0 15px 0;
+    }
+
+    .delivery-details {
+        text-align: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 15px 10px;
+    }
+
+    .tracking-header h1 {
+        font-size: 24px;
+    }
+
+    .tracking-header p {
+        font-size: 14px;
+    }
+
+    .progress-step {
+        width: 100%;
+    }
+}
