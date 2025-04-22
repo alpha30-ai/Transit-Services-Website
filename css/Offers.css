@@ -200,20 +200,20 @@ button {
 /* ======================================= */
 
 .offers-hero-section {
-    position: sticky; /* تم تعديل هذه الخاصية لجعل البنر يلتصق بالهدر */
-    top: 0; /* تأكد من أن البنر يلتصق بأعلى الصفحة */
-    height: 600px;
+    position: relative; /* تغيير من sticky إلى relative لتجنب مشاكل العرض */
+    height: auto; /* تغيير من ارتفاع ثابت إلى ارتفاع تلقائي */
+    min-height: 500px; /* إضافة حد أدنى للارتفاع */
     background-image: url('../img/discount-water-bottle-podium.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 0; /* تم تعديل هذه الخاصية لإزالة الانحناءات */
+    border-radius: 0;
     margin: var(--spacing-xl) auto;
     overflow: hidden;
     box-shadow: var(--box-shadow);
-    width: 100%; /* تأكد من أن العرض 100% */
+    width: 100%;
     max-width: 1600px;
-    z-index: 10; /* تأكد من أن البنر يكون فوق العناصر الأخرى */
+    z-index: 2; /* تقليل قيمة z-index لتجنب التداخل مع العناصر الأخرى */
 }
 
 .hero-overlay {
